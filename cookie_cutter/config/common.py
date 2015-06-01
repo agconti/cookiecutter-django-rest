@@ -23,6 +23,7 @@ class Common(Configuration):
         'push_notifications',
 
         # Your apps
+        'users'
 
     )
     # https://docs.djangoproject.com/en/1.8/topics/http/middleware/
@@ -33,10 +34,9 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
-        'django.middleware.security.SecurityMiddleware',
     )
 
-    ROOT_URLCONF = 'cookie_cutter.urls'
+    ROOT_URLCONF = 'urls'
 
     TEMPLATES = [
         {
@@ -57,7 +57,7 @@ class Common(Configuration):
     # Needs to be changed in production
     SECRET_KEY = 'Not a secret'
 
-    WSGI_APPLICATION = 'cookie_cutter.wsgi.application'
+    WSGI_APPLICATION = 'wsgi.application'
 
     # Allow for less strict handling of urls
     APPEND_SLASH = values.BooleanValue(True)
@@ -119,6 +119,7 @@ class Common(Configuration):
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     )
+    MEDIA_URL = '/media/'
 
     # Logging
     LOGGING = {
