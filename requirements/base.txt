@@ -1,0 +1,25 @@
+# Django
+django==1.7.8
+
+# Environmental var configuration
+django-configurations==0.8
+
+# Models
+django-model-utils==2.2
+
+# For the persistence stores
+psycopg2==2.6
+
+# Rest apis
+djangorestframework==3.1.2
+Markdown==2.6.2
+django-filter==0.10.0
+
+# push notifications
+django-pnm==0.1.3
+
+# For asynchronous queuing
+django-rq==0.8.0
+
+# Time zones support
+pytz==2015.4

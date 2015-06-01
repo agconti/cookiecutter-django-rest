@@ -1,0 +1,4 @@
+site_name: project_name
+site_description: project_short_description
+repo_url: https://github.com/github_username/repo_name
+site_dir: html

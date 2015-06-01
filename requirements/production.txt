@@ -1,0 +1,18 @@
+# Pro-tip: Try not to put anything here. There should be no dependency in
+#	production that isn't in development.
+-r base.txt
+
+# WSGI Handler
+gevent==1.0.2
+gunicorn==19.3.0
+
+# Static and Media Storage
+boto==2.38.0
+django-storages-redux==1.2.3
+
+# Caching 
+hiredis==0.2.0
+django-redis-cache==0.13.1
+
+# Django-secure
+django-secure==1.0.1
