@@ -80,12 +80,12 @@ class Common(Configuration):
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
     MANAGERS = (
-        ("Author", '{{cookie_cutter.email}}'),
+        ("Author", '{{cookiecutter.email}}'),
     )
 
     # Database
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-    DATABASES = values.DatabaseURLValue('postgres://localhost/{{cookie_cutter.app_name}}')
+    DATABASES = values.DatabaseURLValue('postgres://localhost/{{cookiecutter.app_name}}')
 
     # General
     TIME_ZONE = 'UTC'
