@@ -1,0 +1,4 @@
+site_name: {{cookiecutter.app_name}}
+site_description: {{cookiecutter.description}}
+repo_url: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}
+site_dir: html

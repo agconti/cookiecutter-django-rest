@@ -1,5 +1,4 @@
-# Pro-tip: Try not to put anything here. There should be no dependency in
-#	production that isn't in development.
+# Dependencies related to deploying {{cookiecutter.github_repository_name}}
 -r base.txt
 
 # WSGI Handler
