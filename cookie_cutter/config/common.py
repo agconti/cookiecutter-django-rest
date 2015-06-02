@@ -16,6 +16,7 @@ class Common(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
+
         # Third party apps
         'rest_framework',            # utilities for rest apis
         'rest_framework.authtoken',  # token authentication
@@ -23,6 +24,7 @@ class Common(Configuration):
         'push_notifications',        # push notifications
 
         # Your apps
+        'authentication',
         'users'
 
     )
@@ -33,7 +35,7 @@ class Common(Configuration):
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
-        'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
     )
 
