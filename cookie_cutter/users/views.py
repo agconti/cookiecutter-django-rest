@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from rest_framework import generics
 
-# Create your views here.
+from .models import User
+from .permissions import IsOwnerOrReadOnly
+from .serializers import UserSerializer
+
+
+class UserView(generics.RetrieveUpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = (IsOwnerOrReadOnly,)

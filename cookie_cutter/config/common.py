@@ -18,14 +18,15 @@ class Common(Configuration):
 
         # Third party apps
         'rest_framework',            # utilities for rest apis
-        'rest_framework.authtoken',  # for token authentication
-        'django_rq',
-        'push_notifications',
+        'rest_framework.authtoken',  # token authentication
+        'django_rq',                 # asynchronous queuing
+        'push_notifications',        # push notifications
 
         # Your apps
         'users'
 
     )
+
     # https://docs.djangoproject.com/en/1.8/topics/http/middleware/
     MIDDLEWARE_CLASSES = (
         'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,9 +55,7 @@ class Common(Configuration):
         },
     ]
 
-    # Needs to be changed in production
     SECRET_KEY = 'Not a secret'
-
     WSGI_APPLICATION = 'wsgi.application'
 
     # Allow for less strict handling of urls
