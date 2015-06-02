@@ -1,9 +1,13 @@
 from __future__ import unicode_literals
 
-from django.conf.urls import url
+from django.conf.urls import url, include
+from rest_framework.routers import DefaultRouter
 
 import views
 
+router = DefaultRouter()
+router.register(r'users', views.UserViewSet)
+
 urlpatterns = [
-    url(r'^users/', views.UserView.as_view(), name='users-list'),
+    url(r'^', include(router.urls)),
 ]
