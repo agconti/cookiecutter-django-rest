@@ -1,5 +1,5 @@
 #{{cookiecutter.github_repository_name}}
-{{cookiecutter.description}}
+{{cookiecutter.description}}. Check out the project's [documentation](http://{{cookiecutter.github_username}}.github.io/{{cookiecutter.repo_name}}/).
 
 # Dependencies
 - [virtualenv](https://virtualenv.pypa.io/en/latest/)

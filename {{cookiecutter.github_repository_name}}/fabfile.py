@@ -36,6 +36,7 @@ def init():
     for environment in env.environments:
         env.environment = environment
         create_standard_server()
+    deploy_docs()
 
 
 def set_remotes():
@@ -97,6 +98,12 @@ def configure_sever():
     local('heroku config:set DJANGO_SECRET_KEY="{}" --remote {}'.format(create_secret_key(), env.environment))
     set_aws_keys()
     ps()
+
+
+def deploy_docs():
+    print cyan('Deploying docs...')
+    local('mkdocs gh-deploy')
+
 
 def push():
     """
