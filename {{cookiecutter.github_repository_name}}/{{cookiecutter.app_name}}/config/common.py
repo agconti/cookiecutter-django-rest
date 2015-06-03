@@ -69,53 +69,34 @@ class Common(Configuration):
     }
 
     # Set DEBUG to False as a default for safety
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
+    # https://docs.djangoproject.com/en/dev/ref/settings/#debug
     DEBUG = values.BooleanValue(False)
-
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
     TEMPLATE_DEBUG = DEBUG
 
     # Email
     EMAIL_BACKEND = values.Value('django.core.mail.backends.smtp.EmailBackend')
 
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
     MANAGERS = (
         ("Author", '{{cookiecutter.email}}'),
     )
 
-    # Database
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+    # Postgres
     DATABASES = values.DatabaseURLValue('postgres://localhost/{{cookiecutter.app_name}}')
 
     # General
     TIME_ZONE = 'UTC'
     LANGUAGE_CODE = 'en-us'
-
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
     SITE_ID = 1
-
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
     USE_I18N = True
-
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
     USE_L10N = True
-
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
     USE_TZ = True
 
-    # STATIC FILE CONFIGURATION
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
+    # Static Files
     STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
-
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
     STATIC_URL = '/static/'
-
-    # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
     STATICFILES_DIRS = (
         join(BASE_DIR, 'static'),
     )
-
-    # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',

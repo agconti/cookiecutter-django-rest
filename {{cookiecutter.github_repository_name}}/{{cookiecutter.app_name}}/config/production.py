@@ -27,13 +27,13 @@ class Production(Common):
     SECURE_SSL_REDIRECT = values.BooleanValue(True)
 
     # Site
-    # See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
+    # https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
     ALLOWED_HOSTS = ["*"]
 
     INSTALLED_APPS += ("gunicorn", )
 
     # Template
-    # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
+    # https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
     TEMPLATE_LOADERS = (
         ('django.template.loaders.cached.Loader', (
             'django.template.loaders.filesystem.Loader',
