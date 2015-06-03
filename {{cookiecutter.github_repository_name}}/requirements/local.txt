@@ -7,3 +7,6 @@ ipython==3.1.0
 
 # Docs
 mkdocs==0.12.2
+
+# Command Utils
+Fabric==1.10.1
