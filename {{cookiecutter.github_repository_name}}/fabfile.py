@@ -88,8 +88,9 @@ def configure_sever():
     require('environment')
     local('heroku addons:create heroku-postgresql:dev --remote {}'.format(env.environment))
     local('heroku pg:backups schedule DATABASE_URL --remote {}')
-    local('heroku addons:create redistogo:nano --remote {}'.format(env.environment))
     local('heroku pg:promote DATABASE_URL --remote {}'.format(env.environment))
+    local('heroku addons:create redistogo:nano --remote {}'.format(env.environment))
+    local('heroku addons:create zeropush:inception --remote {}'.format(env.environment))
     local('heroku config:set DJANGO_CONFIGURATION=Production --remote {}'.format(env.environment))
     local('heroku config:set DJANGO_SECRET_KEY="{}" --remote {}'
           .format(create_secret_key(), env.environment))
