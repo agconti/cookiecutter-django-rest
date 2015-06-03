@@ -1,4 +1,7 @@
 language: python
+services:
+  - postgresql
+  - redis-server
 python:
   - "2.7"
 install: 
@@ -15,3 +18,5 @@ sudo: false
 
 matrix:
     fast_finish: true
+
+    asdfasdf
