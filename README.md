@@ -8,6 +8,7 @@ For scaffolding django apps that create the REST apis for rapdily developing mob
 - Easy push notifciation integration with [Django-pnm](http://fueled.github.io/django-push-notifications/)
 - Easy async queing with [django-rq](https://github.com/ui/django-rq)
 - Configured for deploying to [Heroku](www.heroku.com)
+- Monitoring with [New Relic](http://newrelic.com/)
 - Docs with [mkdocs](http://www.mkdocs.org/)
 - Testing with [django-nose](https://github.com/django-nose/django-nose) and fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html)
 - Easy debugging with [ipython](http://ipython.org/) and [ipdb](https://pypi.python.org/pypi/ipdb)
