@@ -11,7 +11,7 @@ django-model-utils==2.2
 psycopg2==2.6
 
 # Rest apis
-djangorestframework==3.1.2
+djangorestframework==3.1.3
 Markdown==2.6.2
 django-filter==0.10.0
 
