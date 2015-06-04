@@ -1,6 +1,9 @@
 # Dependencies related to testing {{cookiecutter.github_repository_name}}
 -r base.txt
 
+# Mocking
+mock==1.0.1
+
 # Fixtures
 factory-boy==2.5.2
 
