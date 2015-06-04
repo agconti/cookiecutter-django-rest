@@ -26,4 +26,4 @@ pip install cookiecutter
 ```
 cookiecutter gh:agconti/cookiecutter-django-rest
 ```
-
+Here's an example of the result: https://github.com/agconti/piedpiper-web
