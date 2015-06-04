@@ -27,8 +27,8 @@ createdb {{cookiecutter.app_name}}
 
 Migrate and run the server:
 ```bash
-python {{cookiecutter.app_name}}/mange.py migrate
-python {{cookiecutter.app_name}}/mange.py runserver
+python {{cookiecutter.app_name}}/manage.py migrate
+python {{cookiecutter.app_name}}/manage.py runserver
 ```
 
 # Create Servers
