@@ -1,12 +1,13 @@
 # cookiecutter-django-rest
-For scaffolding django apps that create the REST apis for rapdily developing mobile apps. 
+For scaffolding REST apis for rapidly developing mobile products. 
 
 ## Features
 
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
 - Django Rest Framework [token auth](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication) configuration
-- Easy push notifciation integration with [Django-pnm](http://fueled.github.io/django-push-notifications/)
-- Easy async queing with [django-rq](https://github.com/ui/django-rq)
+- Easy Image manipulation with [django-versatileimagefield](http://django-versatileimagefield.readthedocs.org/en/latest/improving_performance.html)
+- Easy push notification integration with [Django-pnm](http://fueled.github.io/django-push-notifications/)
+- Easy async queuing with [django-rq](https://github.com/ui/django-rq)
 - Configured for deploying to [Heroku](www.heroku.com)
 - Monitoring with [New Relic](http://newrelic.com/)
 - Docs with [mkdocs](http://www.mkdocs.org/)
