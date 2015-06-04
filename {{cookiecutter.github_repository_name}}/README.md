@@ -1,5 +1,5 @@
 #{{cookiecutter.github_repository_name}}
-{{cookiecutter.description}}. Check out the project's [documentation](http://{{cookiecutter.github_username}}.github.io/{{cookiecutter.repo_name}}/).
+{{cookiecutter.description}}. Check out the project's [documentation](http://{{cookiecutter.github_username}}.github.io/{{cookiecutter.github_repository_name}}/).
 
 # Dependencies
 - [virtualenv](https://virtualenv.pypa.io/en/latest/)
@@ -32,9 +32,9 @@ python {{cookiecutter.app_name}}/mange.py runserver
 ```
 
 # Create Servers
-By default the included fabfile will setup three envoirments:
+By default the included fabfile will setup three environments:
 
-- dev -- The bleeding edge of developement
+- dev -- The bleeding edge of development
 - qa -- For quality assurance testing
 - prod -- For the live application
 
@@ -45,7 +45,7 @@ fab init
 ```
 
 # Automated Deploying
-Deployment is handled via Travis. When builds pass it will automatically deploy that branch to Heroku. Enable this with:
+Deployment is handled via Travis. When builds pass Travis will automatically deploy that branch to Heroku. Enable this with:
 ```bash
 travis setup heroku
 ```
