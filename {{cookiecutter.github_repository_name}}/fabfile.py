@@ -67,6 +67,7 @@ def create_standard_server():
     push()
     migrate()
     create_superuser()
+    ps()
     open_heroku()
 
 
@@ -99,7 +100,6 @@ def configure_sever():
     local('heroku config:set DJANGO_CONFIGURATION=Production --remote {}'.format(env.environment))
     local('heroku config:set DJANGO_SECRET_KEY="{}" --remote {}'.format(create_secret_key(), env.environment))
     set_aws_keys()
-    ps()
 
 
 def deploy_docs():
@@ -154,4 +154,4 @@ def create_secret_key():
     """
     Creates a random string of letters and numbers
     """
-    return ''.join(random.choice(string.ascii_letters + string.digits) for i in range(16))
+    return ''.join(random.choice(string.ascii_letters + string.digits) for i in range(30))
