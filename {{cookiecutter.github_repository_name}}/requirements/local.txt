@@ -1,5 +1,5 @@
 # dependencies that are only related to deving on your local machine
--r base.txt
+-r test.txt
 
 # Debugging
 ipdb==0.8
