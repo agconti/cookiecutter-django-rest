@@ -25,9 +25,10 @@ Create the database:
 createdb {{cookiecutter.app_name}}
 ```
 
-Migrate and run the server:
+Migrate, create a superuser, and run the server:
 ```bash
 python {{cookiecutter.app_name}}/manage.py migrate
+python {{cookiecutter.app_name}}/manage.py createsuperuse
 python {{cookiecutter.app_name}}/manage.py runserver
 ```
 
