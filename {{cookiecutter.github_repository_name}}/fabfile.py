@@ -106,26 +106,18 @@ def deploy_docs():
 
 
 def push():
-    """
-    fab [environment] push"""
     print cyan('Pushing to Heroku...')
     require('environment')
     local('git push {} master:master'.format(env.environment))
 
 
-def migrate(app=None):
-    """
-    fab [environment] migrate
-    """
+def migrate():
     require('environment')
     local('heroku run python {}/manage.py migrate --remote {}'.format(env.project_name,
                                                                       env.environment))
 
 
 def create_superuser():
-    """
-    Creates a django superuser
-    """
     require('environment')
     local('heroku run python {}/manage.py '
           'createsuperuser --remote {}'.format(env.project_name, env.environment))
@@ -133,16 +125,13 @@ def create_superuser():
 
 def ps():
     """
-    fab [environment] ps
+    Scales a web dyno on Heroku
     """
     require('environment')
     local('heroku ps:scale web=1 --remote {}'.format(env.environment))
 
 
 def open_heroku():
-    """
-    fab [environment] open
-    """
     require('environment')
     local('heroku open --remote {}'.format(env.environment))
 
