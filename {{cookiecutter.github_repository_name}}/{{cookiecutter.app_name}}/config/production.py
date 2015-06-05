@@ -1,8 +1,8 @@
 import os
 import urlparse
-from .common import Common
 from configurations import values
-
+from boto.s3.connection import OrdinaryCallingFormat
+from .common import Common
 
 class Production(Common):
 
@@ -41,9 +41,11 @@ class Production(Common):
         )),
     )
 
+    # Static files
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
     # Caching
     redis_url = urlparse.urlparse(os.environ.get('REDISTOGO_URL', 'redis://localhost:6379'))
-
     CACHES = {
         'default': {
             'BACKEND': 'redis_cache.RedisCache',
