@@ -28,7 +28,7 @@ def test():
 
 def init():
     """
-    Initializes repository by configuring Travis and deploying servers
+    Deploys servers
     """
     print cyan('Initializing...', bold=True)
     set_remotes()
@@ -105,7 +105,6 @@ def configure_sever():
 def deploy_docs():
     print cyan('Deploying docs...')
     local('mkdocs gh-deploy')
-
 
 def push():
     print cyan('Pushing to Heroku...')
