@@ -50,5 +50,5 @@ fab init
 # Automated Deployment
 Deployment is handled via Travis. When builds pass Travis will automatically deploy that branch to Heroku. Enable this with:
 ```bash
-travis setup heroku
+travis encrypt $(heroku auth:token) --add deploy.api_key
 ```
