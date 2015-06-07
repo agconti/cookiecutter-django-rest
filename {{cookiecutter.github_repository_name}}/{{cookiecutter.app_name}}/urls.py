@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/v1/', include('authentication.urls')),
     url(r'^api/v1/', include('users.urls')),
+    url(r'^api/v1/notifications/', include('push_notifications.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
