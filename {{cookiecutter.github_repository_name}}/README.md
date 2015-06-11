@@ -6,6 +6,7 @@
 # Prerequisites 
 - [virtualenv](https://virtualenv.pypa.io/en/latest/)
 - [postgresql](http://www.postgresql.org/)
+- [redis](http://redis.io/)
 - [travis cli](http://blog.travis-ci.com/2013-01-14-new-client/)
 - [heroku toolbelt](https://toolbelt.heroku.com/)
 
