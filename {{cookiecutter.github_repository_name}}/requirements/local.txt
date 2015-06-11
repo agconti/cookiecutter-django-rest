@@ -6,7 +6,7 @@ ipdb==0.8
 ipython==3.1.0
 
 # Docs
-mkdocs==0.13.3
+mkdocs==0.14.0
 
 # Command Utils
 Fabric==1.10.1
