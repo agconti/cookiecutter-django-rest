@@ -6,7 +6,6 @@ gevent==1.0.2
 gunicorn==19.3.0
 
 # Static and Media Storage
-boto==2.38.0
 django-storages-redux==1.2.3
 
 # Caching 

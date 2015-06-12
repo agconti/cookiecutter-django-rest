@@ -19,6 +19,9 @@ django-filter==0.10.0
 # Static files
 whitenoise==1.0.6
 
+# Media files
+boto==2.38.0
+
 # Image manipulation
 django-versatileimagefield==1.0.2
 

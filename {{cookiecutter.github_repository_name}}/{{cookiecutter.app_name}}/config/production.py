@@ -1,6 +1,7 @@
 import os
 import urlparse
 from configurations import values
+from boto.s3.connection import OrdinaryCallingFormat
 from .common import Common
 
 class Production(Common):
@@ -49,7 +50,6 @@ class Production(Common):
     AWS_STORAGE_BUCKET_NAME = values.Value('DJANGO_AWS_STORAGE_BUCKET_NAME')
     AWS_AUTO_CREATE_BUCKET = True
     MEDIA_URL = 'https://s3.amazonaws.com/{}/'.format(AWS_STORAGE_BUCKET_NAME)
-    from boto.s3.connection import OrdinaryCallingFormat
     AWS_S3_CALLING_FORMAT = OrdinaryCallingFormat()
 
     # https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching#cache-control
