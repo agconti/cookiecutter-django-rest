@@ -90,7 +90,7 @@ def configure_sever():
     """
     require('environment')
     local('heroku addons:create heroku-postgresql:dev --remote {}'.format(env.environment))
-    local('heroku pg:backups schedule DATABASE_URL --remote {}'.format(env.environment))
+    local('heroku pg:backups schedule DATABASE --at "04:00 UTC" --remote {}'.format(env.environment))
     local('heroku pg:promote DATABASE_URL --remote {}'.format(env.environment))
     local('heroku addons:create redistogo:nano --remote {}'.format(env.environment))
     local('heroku addons:create zeropush:inception --remote {}'.format(env.environment))
