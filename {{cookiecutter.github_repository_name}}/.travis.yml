@@ -19,6 +19,8 @@ deploy:
     prod: {{cookiecutter.app_name}}-prod
   on: 
     repo: {{cookiecutter.github_repository_name}}
+  run:
+    - "./{{cookiecutter.app_name}}/mange.py migrate"
 
 # This reportedly works around an issue downloading packages from pypi on
 # travis. Consider removing this after the underlying issue is fixed.
