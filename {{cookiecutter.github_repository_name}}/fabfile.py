@@ -8,6 +8,7 @@ from fabric.operations import prompt
 
 current_dir = os.getcwd()
 env.project_name = '{{cookiecutter.app_name}}'
+env.branch = 'master'
 env.environments = ['dev',
                     'qa',
                     'prod']
@@ -107,9 +108,12 @@ def deploy_docs():
     local('mkdocs gh-deploy')
 
 def push():
+    require('environment')
+    require('branch')
+
     print cyan('Pushing to Heroku...')
     require('environment')
-    local('git push {} master:master'.format(env.environment))
+    local('git push {} {}:master'.format(env.environment, env.branch))
 
 
 def migrate():
@@ -141,6 +145,10 @@ def set_aws_keys():
     """
     Configures S3 Keys
     """
+    require('aws_access')
+    require('aws_secret')
+    require('project_name')
+
     local('heroku config:set DJANGO_AWS_ACCESS_KEY_ID={} --remote {}'
           .format(env.aws_access, env.environment))
     local('heroku config:set DJANGO_AWS_SECRET_ACCESS_KEY={} --remote {}'
@@ -154,3 +162,21 @@ def create_secret_key():
     Creates a random string of letters and numbers
     """
     return ''.join(random.choice(string.ascii_letters + string.digits) for i in range(30))
+
+
+def dev():
+    """fab dev [command]"""
+    env.environment = 'dev'
+    env.branch = 'master'
+
+
+def qa():
+    """fab staging [command]"""
+    env.environment = 'qa'
+    env.branch = 'qa'
+
+
+def prod():
+    """fab staging [command]"""
+    env.environment = 'prod'
+    env.branch = 'prod'
