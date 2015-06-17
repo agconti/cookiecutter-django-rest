@@ -27,6 +27,12 @@ Create the database:
 ```bash
 createdb {{cookiecutter.app_name}}
 ```
+Initialize the git repository
+
+```
+git init
+git remote add origin git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}.git
+```
 
 Migrate, create a superuser, and run the server:
 ```bash
