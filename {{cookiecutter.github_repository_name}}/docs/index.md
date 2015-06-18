@@ -1,17 +1,61 @@
-# Welcome to MkDocs
+#{{cookiecutter.github_repository_name}}
+[![Build Status](https://travis-ci.org/{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}.svg?branch=master)](https://travis-ci.org/{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}})
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+{{cookiecutter.description}}. Check out the project's [documentation](http://{{cookiecutter.github_username}}.github.io/{{cookiecutter.github_repository_name}}/).
 
-## Commands
+# Prerequisites 
+- [virtualenv](https://virtualenv.pypa.io/en/latest/)
+- [postgresql](http://www.postgresql.org/)
+- [redis](http://redis.io/)
+- [travis cli](http://blog.travis-ci.com/2013-01-14-new-client/)
+- [heroku toolbelt](https://toolbelt.heroku.com/)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+# Initialize the project
+Create and activate a virtualenv:
 
-## Project layout
+```bash
+virtualenv env
+source env/bin/activate
+```
+Install dependencies:
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+```bash
+pip install -r requirements/local.txt
+```
+Create the database:
+
+```bash
+createdb {{cookiecutter.app_name}}
+```
+Initialize the git repository
+
+```
+git init
+git remote add origin git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}.git
+```
+
+Migrate, create a superuser, and run the server:
+```bash
+python {{cookiecutter.app_name}}/manage.py migrate
+python {{cookiecutter.app_name}}/manage.py createsuperuser
+python {{cookiecutter.app_name}}/manage.py runserver
+```
+
+# Create Servers
+By default the included fabfile will setup three environments:
+
+- dev -- The bleeding edge of development
+- qa -- For quality assurance testing
+- prod -- For the live application
+
+Create these servers on Heroku with:
+
+```bash
+fab init
+```
+
+# Automated Deployment
+Deployment is handled via Travis. When builds pass Travis will automatically deploy that branch to Heroku. Enable this with:
+```bash
+travis encrypt $(heroku auth:token) --add deploy.api_key
+```
