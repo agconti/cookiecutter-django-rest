@@ -21,11 +21,9 @@ def test():
     """
     Runs nose test suite
     """
-    with lcd(current_dir):
-        local('flake8')
-        print cyan('flake8 passed!', bold=True)
-        local('python {}/manage.py test '
-              '--with-progressive --logging-clear-handlers'.format(env.project_name))
+    local('flake8 {}'.format(env.project_name))
+    print cyan('flake8 passed!', bold=True)
+    local('python {}/manage.py test'.format(env.project_name))
 
 def init():
     """
