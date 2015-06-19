@@ -7,7 +7,7 @@ python:
 install: 
   - "pip install -r requirements/test.txt"
 script: 
-  - ./{{cookiecutter.app_name}}/manage.py test --with-progressive --logging-clear-handlers
+  - ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}} --with-progressive --logging-clear-handlers
 after_success:
   - coveralls
 
