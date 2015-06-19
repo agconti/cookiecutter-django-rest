@@ -12,6 +12,13 @@ class Local(Common):
     INSTALLED_APPS = Common.INSTALLED_APPS
     INSTALLED_APPS += ('django_nose',)
     TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+    NOSE_ARGS = [
+        '{{cookiecutter.app_name}}',
+        '--logging-clear-handlers',
+        '--with-coverage',
+        '--with-progressive',
+        '--cover-package={{cookiecutter.app_name}}'
+    ]
 
     # Mail
     EMAIL_HOST = 'localhost'
