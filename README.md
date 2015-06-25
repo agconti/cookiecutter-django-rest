@@ -4,7 +4,7 @@ For scaffolding REST apis for rapidly developing mobile products.
 ## Features
 
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
-- Django Rest Framework [token auth](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication) configuration
+- [Token authentication](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication) via Django Rest Framework
 - Easy Image manipulation with [django-versatileimagefield](http://django-versatileimagefield.readthedocs.org/en/latest/improving_performance.html)
 - Easy push notification integration with [Django-pnm](http://fueled.github.io/django-push-notifications/)
 - Easy async queuing with [django-rq](https://github.com/ui/django-rq)
