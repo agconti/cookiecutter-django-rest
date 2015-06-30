@@ -7,7 +7,7 @@ python:
 install: 
   - "pip install -r requirements/test.txt"
 script: 
-  - ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}} --with-progressive --logging-clear-handlers
+  - ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}}
 after_success:
   - coveralls
 
@@ -18,9 +18,12 @@ deploy:
     qa: {{cookiecutter.app_name}}-qa
     prod: {{cookiecutter.app_name}}-prod
   on: 
-    repo: {{cookiecutter.github_repository_name}}
+    repo: {{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}
   run:
     - "./{{cookiecutter.app_name}}/mange.py migrate"
+
+notifications:
+  email: false
 
 # This reportedly works around an issue downloading packages from pypi on
 # travis. Consider removing this after the underlying issue is fixed.
@@ -28,4 +31,4 @@ deploy:
 sudo: false
 
 matrix:
-    fast_finish: true
+  fast_finish: true
