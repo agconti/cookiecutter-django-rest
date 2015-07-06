@@ -34,6 +34,6 @@ password | string | The user's password
 **Response**:
 ```json
 { 
-    'token' : '9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b' 
+    "token" : "9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b" 
 }
 ```
