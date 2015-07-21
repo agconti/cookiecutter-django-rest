@@ -1,5 +1,5 @@
 # cookiecutter-django-rest
-For scaffolding REST apis for rapidly developing mobile products. 
+For scaffolding REST apis for rapidly developing mobile products.
 
 ## Features
 
@@ -12,6 +12,7 @@ For scaffolding REST apis for rapidly developing mobile products.
 - Monitoring with [New Relic](http://newrelic.com/)
 - Docs with [mkdocs](http://www.mkdocs.org/)
 - Testing with [django-nose](https://github.com/django-nose/django-nose) and fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html)
+- Caching with Redis via [Django Redis](https://github.com/niwinz/django-redis)
 - Easy debugging with [ipython](http://ipython.org/) and [ipdb](https://pypi.python.org/pypi/ipdb)
 - Style Enforcement via [flake8](https://flake8.readthedocs.org/en/2.3.0/)
 - [Travis](https://travis-ci.org/) config
