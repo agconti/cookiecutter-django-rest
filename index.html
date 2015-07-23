@@ -22,25 +22,30 @@
       <h1>
 <a id="cookiecutter-django-rest" class="anchor" href="#cookiecutter-django-rest" aria-hidden="true"><span class="octicon octicon-link"></span></a>cookiecutter-django-rest</h1>
 
-<p>For scaffolding REST apis for rapidly developing mobile products.</p>
+<p>For creating REST apis for mobile and web applications.</p>
+
+<h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication and user accounts with the docs and tests to support them. After that, just add your own resources to the api and start shipping.</p>
+
+<p>Afterwards, this project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and monitoring.</p>
 
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
 <ul>
+<li>PostgreSQL</li>
 <li>Complete <a href="http://www.django-rest-framework.org/">Django Rest Framework</a> integration</li>
-<li>
-<a href="http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication">Token authentication</a> via Django Rest Framework</li>
-<li>Easy Image manipulation with <a href="http://django-versatileimagefield.readthedocs.org/en/latest/improving_performance.html">django-versatileimagefield</a>
-</li>
-<li>Easy push notification integration with <a href="http://fueled.github.io/django-push-notifications/">Django-pnm</a>
-</li>
-<li>Easy async queuing with <a href="https://github.com/ui/django-rq">django-rq</a>
-</li>
 <li>Configured for deploying to <a href="www.heroku.com">Heroku</a>
 </li>
+<li>Asset storage via <a href="https://github.com/jschneier/django-storages">S3</a>
+</li>
+<li>
+<a href="https://travis-ci.org/">Travis</a> config</li>
 <li>Monitoring with <a href="http://newrelic.com/">New Relic</a>
 </li>
+<li><a href="http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication">Token authentication</a></li>
 <li>Docs with <a href="http://www.mkdocs.org/">mkdocs</a>
 </li>
 <li>Testing with <a href="https://github.com/django-nose/django-nose">django-nose</a> and fixtures via <a href="http://factoryboy.readthedocs.org/en/latest/orms.html">factory-boy</a>
@@ -51,23 +56,27 @@
 </li>
 <li>Style Enforcement via <a href="https://flake8.readthedocs.org/en/2.3.0/">flake8</a>
 </li>
-<li>
-<a href="https://travis-ci.org/">Travis</a> config</li>
 <li>Fabfile for easily setting up servers</li>
 </ul>
 
 <h1>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
+<a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick Start</h1>
+
+<p>Install <a href="https://github.com/audreyr/cookiecutter">cookiecutter</a>:</p>
 
 <div class="highlight highlight-bash"><pre>pip install cookiecutter</pre></div>
 
-<h1>
-<a id="to-scaffold" class="anchor" href="#to-scaffold" aria-hidden="true"><span class="octicon octicon-link"></span></a>To Scaffold</h1>
+<p>Scaffold your project:</p>
 
 <pre><code>cookiecutter gh:agconti/cookiecutter-django-rest
 </code></pre>
 
-<p>Here's an example of the result: <a href="https://github.com/agconti/piedpiper-web">https://github.com/agconti/piedpiper-web</a></p>
+<p>Example of the result: <a href="https://github.com/agconti/piedpiper-web">https://github.com/agconti/piedpiper-web</a></p>
+
+<h1>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h1>
+
+<p>Want a new feature or find a bug? Submit a Pull Request!</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/agconti/cookiecutter-django-rest">Cookiecutter-django-rest</a> is maintained by <a href="https://github.com/agconti">agconti</a>.</span>
