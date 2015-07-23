@@ -6,6 +6,20 @@ This cookiecutter template takes care of the setup and configuration so you can 
 
 Afterwards, this project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and monitoring.
 
+## Quick Start
+
+Install [cookiecutter](https://github.com/audreyr/cookiecutter):
+```bash
+pip install cookiecutter
+```
+
+Scaffold your project:
+```
+cookiecutter gh:agconti/cookiecutter-django-rest
+```
+
+Example of the result: https://github.com/agconti/piedpiper-web
+
 ## Features
 
 - PostgreSQL
@@ -21,21 +35,6 @@ Afterwards, this project gives you a solid foundation for your api to mature by 
 - Easy debugging with [ipython](http://ipython.org/) and [ipdb](https://pypi.python.org/pypi/ipdb)
 - Style Enforcement via [flake8](https://flake8.readthedocs.org/en/2.3.0/)
 - Fabfile for easily setting up servers
-
-
-## Quick Start
-
-Install [cookiecutter](https://github.com/audreyr/cookiecutter):
-```bash
-pip install cookiecutter
-```
-
-Scaffold your project:
-```
-cookiecutter gh:agconti/cookiecutter-django-rest
-```
-
-Example of the result: https://github.com/agconti/piedpiper-web
 
 ## Contributing
 Want a new feature or find a bug? Submit a Pull Request!
