@@ -16,12 +16,7 @@ Afterwards, this project gives you a solid foundation for your api to mature by 
 - Monitoring with [New Relic](http://newrelic.com/)
 - [Token authentication](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication)
 - Docs with [mkdocs](http://www.mkdocs.org/)
-- Push notification integration with [Django-pnm](http://fueled.github.io/django-push-notifications/)
-- Easy Image manipulation with [django-versatileimagefield](http://django-versatileimagefield.readthedocs.org/en/latest/improving_performance.html)
-- Async queuing with [django-rq](https://github.com/ui/django-rq)
-- Testing with [django-nose](https://github.com/django-nose/django-nose)
-- Fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html) and [faker](https://github.com/joke2k/faker)
-- Test coverage via [coveralls](https://coveralls.io/).
+- Testing with [django-nose](https://github.com/django-nose/django-nose) and fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html)
 - Caching with Redis via [Django Redis](https://github.com/niwinz/django-redis)
 - Easy debugging with [ipython](http://ipython.org/) and [ipdb](https://pypi.python.org/pypi/ipdb)
 - Style Enforcement via [flake8](https://flake8.readthedocs.org/en/2.3.0/)
