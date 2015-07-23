@@ -23,7 +23,7 @@ Afterwards, this project gives you a solid foundation for your api to mature by 
 - Fabfile for easily setting up servers
 
 
-# Quick Start
+## Quick Start
 
 Install [cookiecutter](https://github.com/audreyr/cookiecutter):
 ```bash
@@ -37,5 +37,5 @@ cookiecutter gh:agconti/cookiecutter-django-rest
 
 Example of the result: https://github.com/agconti/piedpiper-web
 
-# Contributing
+## Contributing
 Want a new feature or find a bug? Submit a Pull Request!
