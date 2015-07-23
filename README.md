@@ -1,29 +1,46 @@
 # cookiecutter-django-rest
-For scaffolding REST apis for rapidly developing mobile products. 
+For creating REST apis for mobile and web applications.
+
+## Overview
+This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication and user accounts with the docs and tests to support them. After that, just add your own resources to the api and start shipping.
+
+Afterwards, this project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and monitoring.
 
 ## Features
 
+- PostgreSQL
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
-- [Token authentication](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication) via Django Rest Framework
-- Easy Image manipulation with [django-versatileimagefield](http://django-versatileimagefield.readthedocs.org/en/latest/improving_performance.html)
-- Easy push notification integration with [Django-pnm](http://fueled.github.io/django-push-notifications/)
-- Easy async queuing with [django-rq](https://github.com/ui/django-rq)
 - Configured for deploying to [Heroku](www.heroku.com)
+- Asset storage via [S3](https://github.com/jschneier/django-storages)
+- [Travis](https://travis-ci.org/) config
 - Monitoring with [New Relic](http://newrelic.com/)
+- [Token authentication](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication)
 - Docs with [mkdocs](http://www.mkdocs.org/)
-- Testing with [django-nose](https://github.com/django-nose/django-nose) and fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html)
+- Push notification integration with [Django-pnm](http://fueled.github.io/django-push-notifications/)
+- Easy Image manipulation with [django-versatileimagefield](http://django-versatileimagefield.readthedocs.org/en/latest/improving_performance.html)
+- Async queuing with [django-rq](https://github.com/ui/django-rq)
+- Testing with [django-nose](https://github.com/django-nose/django-nose)
+- Fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html) and [faker](https://github.com/joke2k/faker)
+- Test coverage via [coveralls](https://coveralls.io/).
+- Caching with Redis via [Django Redis](https://github.com/niwinz/django-redis)
 - Easy debugging with [ipython](http://ipython.org/) and [ipdb](https://pypi.python.org/pypi/ipdb)
 - Style Enforcement via [flake8](https://flake8.readthedocs.org/en/2.3.0/)
-- [Travis](https://travis-ci.org/) config
 - Fabfile for easily setting up servers
 
-# Installation
+
+# Quick Start
+
+Install [cookiecutter](https://github.com/audreyr/cookiecutter):
 ```bash
 pip install cookiecutter
 ```
 
-# To Scaffold
+Scaffold your project:
 ```
 cookiecutter gh:agconti/cookiecutter-django-rest
 ```
-Here's an example of the result: https://github.com/agconti/piedpiper-web
+
+Example of the result: https://github.com/agconti/piedpiper-web
+
+# Contributing
+Want a new feature or find a bug? Submit a Pull Request!
