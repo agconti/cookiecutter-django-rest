@@ -184,7 +184,7 @@ class Common(Configuration):
     # Push notifications
     DJANGO_PUSH_NOTIFICATIONS = {
         'SERVICE': 'push_notifications.services.zeropush.ZeroPushService',
-        'AUTH_TOKEN': values.Value(environ_name='ZEROPUSH_AUTH_TOKEN', environ_prefix=None)
+        'AUTH_TOKEN': values.Value('local-development')
     }
 
     # Versatile Image Field
