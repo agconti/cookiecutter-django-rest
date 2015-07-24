@@ -4,7 +4,7 @@ For creating REST apis for mobile and web applications.
 ## Overview
 This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication and user accounts with the docs and tests to support them. After that, just add your own resources to the api and start shipping.
 
-Afterwards, this project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and monitoring.
+This project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and monitoring.
 
 ## Quick Start
 
@@ -22,6 +22,7 @@ Example of the result: https://github.com/agconti/piedpiper-web
 
 ## Features
 
+- Django 1.8+
 - PostgreSQL
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
 - Configured for deploying to [Heroku](www.heroku.com)
