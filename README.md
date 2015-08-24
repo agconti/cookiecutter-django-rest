@@ -18,6 +18,8 @@ Scaffold your project:
 cookiecutter gh:agconti/cookiecutter-django-rest
 ```
 
+![Scaffolding](media/scaffolding.gif)
+
 Example of the result: https://github.com/agconti/piedpiper-web
 
 ## Features
