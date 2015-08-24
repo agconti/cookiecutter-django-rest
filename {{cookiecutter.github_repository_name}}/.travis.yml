@@ -4,6 +4,10 @@ services:
   - redis-server
 python:
   - "2.7"
+before_script:
+- export DATABASE_URL=postgres://postgres@localhost/{{ cookiecutter.repo_name }}
+- export DJANGO_SECRET=`openssl rand -base64 32`
+- psql -c 'CREATE DATABASE "{{ cookiecutter.repo_name }}";' -U postgres
 install: 
   - "pip install -r requirements/test.txt"
 script: 
