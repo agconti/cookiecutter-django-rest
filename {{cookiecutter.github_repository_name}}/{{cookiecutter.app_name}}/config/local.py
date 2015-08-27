@@ -2,6 +2,8 @@ import os
 from .common import Common
 from configurations import values
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 class Local(Common):
 
@@ -13,11 +15,11 @@ class Local(Common):
     INSTALLED_APPS += ('django_nose',)
     TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
     NOSE_ARGS = [
-        '{{cookiecutter.app_name}}',
+        BASE_DIR,
         '--logging-clear-handlers',
         '--with-coverage',
         '--with-progressive',
-        '--cover-package={{cookiecutter.app_name}}'
+        '--cover-package={}'.format(BASE_DIR)
     ]
 
     # Mail

@@ -9,11 +9,11 @@ factory-boy==2.5.2
 fake-factory==0.5.2
 
 # Test Runner
-django-nose==1.4
+django-nose==1.4.1
 nose-progressive==1.5.1
 
 # Code Coverage
 coverage==3.7.1
 
-# Style Enforcement 
+# Style Enforcement
 flake8==2.4.1
