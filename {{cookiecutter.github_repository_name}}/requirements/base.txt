@@ -1,5 +1,5 @@
 # Django
-django==1.8.3
+django==1.8.4
 
 # Environmental var configuration
 # Django 1.8+ compatible django-configurations
