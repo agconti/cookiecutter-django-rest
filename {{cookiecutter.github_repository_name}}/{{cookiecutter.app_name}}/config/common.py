@@ -72,7 +72,8 @@ class Common(Configuration):
     # Set DEBUG to False as a default for safety
     # https://docs.djangoproject.com/en/dev/ref/settings/#debug
     DEBUG = values.BooleanValue(False)
-    TEMPLATE_DEBUG = DEBUG
+    for config in TEMPLATES:
+        config['OPTIONS']['debug'] = DEBUG
 
     # Email
     EMAIL_BACKEND = values.Value('django.core.mail.backends.smtp.EmailBackend')
