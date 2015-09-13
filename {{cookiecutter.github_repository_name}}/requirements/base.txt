@@ -28,7 +28,7 @@ boto==2.38.0
 django-versatileimagefield==1.0.2
 
 # push notifications
-django-pnm==0.1.5
+django-pnm==0.1.6
 
 # For asynchronous queuing
 django-rq==0.8.0
