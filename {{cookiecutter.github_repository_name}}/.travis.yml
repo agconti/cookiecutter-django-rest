@@ -5,12 +5,12 @@ services:
 python:
   - "2.7"
 before_script:
-- export DATABASE_URL=postgres://postgres@localhost/{{ cookiecutter.repo_name }}
+- export DATABASE_URL=postgres://postgres@localhost/{{ cookiecutter.app_name }}
 - export DJANGO_SECRET=`openssl rand -base64 32`
-- psql -c 'CREATE DATABASE "{{ cookiecutter.repo_name }}";' -U postgres
-install: 
+- psql -c 'CREATE DATABASE "{{ cookiecutter.app_name }}";' -U postgres
+install:
   - "pip install -r requirements/test.txt"
-script: 
+script:
   - ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}}
 after_success:
   - coveralls
@@ -21,7 +21,7 @@ deploy:
     master: {{cookiecutter.app_name}}-dev
     qa: {{cookiecutter.app_name}}-qa
     prod: {{cookiecutter.app_name}}-prod
-  on: 
+  on:
     repo: {{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}
   run:
     - "./{{cookiecutter.app_name}}/manage.py migrate"
