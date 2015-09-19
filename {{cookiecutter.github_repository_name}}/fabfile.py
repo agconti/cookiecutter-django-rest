@@ -88,7 +88,7 @@ def configure_sever():
     Configures server with a general configuration
     """
     require('environment')
-    local('heroku addons:create heroku-postgresql:dev --remote {}'.format(env.environment))
+    local('heroku addons:create heroku-postgresql --remote {}'.format(env.environment))
     local('heroku pg:backups schedule DATABASE --at "04:00 UTC" --remote {}'.format(env.environment))
     local('heroku pg:promote DATABASE_URL --remote {}'.format(env.environment))
     local('heroku addons:create redistogo:nano --remote {}'.format(env.environment))
