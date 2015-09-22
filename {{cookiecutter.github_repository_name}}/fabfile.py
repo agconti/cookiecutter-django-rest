@@ -17,6 +17,7 @@ env.environments = ['dev',
 def serve():
     local('python {}/manage.py runserver'.format(env.project_name))
 
+
 def test():
     """
     Runs nose test suite
@@ -24,6 +25,7 @@ def test():
     local('flake8 {}'.format(env.project_name))
     print cyan('flake8 passed!', bold=True)
     local('python {}/manage.py test'.format(env.project_name))
+
 
 def init():
     """
@@ -50,12 +52,14 @@ def set_remotes():
     local('git remote add qa git@heroku.com:{}-qa.git'.format(env.project_name))
     local('git remote add prod git@heroku.com:{}-prod.git'.format(env.project_name))
 
+
 def ask_for_aws_keys():
     """
     Gets AWS keys from user
     """
     env.aws_access = prompt('AWS_ACCESS_KEY_ID?')
     env.aws_secret = prompt('AWS_SECRET_ACCESS_KEY?')
+
 
 def create_standard_server():
     """
@@ -105,6 +109,7 @@ def deploy_docs():
     print cyan('Deploying docs...')
     local('mkdocs gh-deploy')
 
+
 def push():
     require('environment')
     require('branch')
@@ -118,7 +123,6 @@ def migrate():
     require('environment')
     local('heroku run python {}/manage.py migrate --remote {}'.format(env.project_name,
                                                                       env.environment))
-
 
 def create_superuser():
     require('environment')
