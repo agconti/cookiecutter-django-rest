@@ -1,0 +1,28 @@
+language: python
+python:
+  - "2.7"
+services:
+  - postgresql
+  - redis-server
+before_script:
+  - export DATABASE_URL=postgres://postgres@localhost/piedpiper
+  - export DJANGO_SECRET=`openssl rand -base64 32`
+  - psql -c 'CREATE DATABASE "piedpiper";' -U postgres
+install:
+  - pip install cookiecutter
+  - cookiecutter . --no-input
+  - cd piedpiper-web
+  - pip install -r requirements/test.txt
+script:
+  - ./piedpiper/manage.py test piedpiper
+
+notifications:
+  email: false
+
+# This reportedly works around an issue downloading packages from pypi on
+# travis. Consider removing this after the underlying issue is fixed.
+# https://github.com/travis-ci/travis-ci/issues/2389
+sudo: false
+
+matrix:
+  fast_finish: true
