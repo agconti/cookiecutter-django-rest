@@ -1,4 +1,6 @@
 # cookiecutter-django-rest
+[![Build Status](https://travis-ci.org/agconti/cookiecutter-django-rest.svg?branch=docs-project-readme-travis)](https://travis-ci.org/agconti/cookiecutter-django-rest)
+
 For creating REST apis for mobile and web applications.
 
 ## Overview
