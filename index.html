@@ -36,7 +36,7 @@
 
 <p>Install <a href="https://github.com/audreyr/cookiecutter">cookiecutter</a>:</p>
 
-<div class="highlight highlight-bash"><pre>pip install cookiecutter</pre></div>
+<div class="highlight highlight-source-shell"><pre>pip install cookiecutter</pre></div>
 
 <p>Scaffold your project:</p>
 
@@ -80,6 +80,74 @@
 <a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>Want a new feature or find a bug? Submit a Pull Request!</p>
+
+<h2>
+<a id="release-notes" class="anchor" href="#release-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release notes:</h2>
+
+<ul>
+<li><a href="release-0.2.0-#40">0.2.0</a></li>
+<li><a href="release-0.1.0-#4">0.1.0</a></li>
+</ul>
+
+<h4>
+<a id="release-020-40" class="anchor" href="#release-020-40" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release 0.2.0 #40</h4>
+
+<ul>
+<li>Update heroku postgresql addon config #98</li>
+<li>Fix fabfile spacing #103</li>
+<li>Do super() in test case of users #106</li>
+<li>Remove auth_token from UserSerializer #104</li>
+<li>Set up automated testing via travis #107</li>
+</ul>
+
+<h4>
+<a id="release-010-4" class="anchor" href="#release-010-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release 0.1.0 #4</h4>
+
+<ul>
+<li>Update users app with the appropriate test cases #1 </li>
+<li>Add api docs for user app #2</li>
+<li>add tests for auth tokens #43</li>
+<li>Add api docs for auth #3 </li>
+<li>Add django-storages-redux config to production. #6</li>
+<li>Handle "/" routing #7</li>
+<li>add redis to app readme prerequisites. #9</li>
+<li>Upgrade mkdocs to 0.14.0 #10 </li>
+<li>Add <code>git init</code> to project ReadMe #17</li>
+<li>Update pg backups with schedule time #18</li>
+<li>Migrate the database after deploys #19</li>
+<li>add fab dev and qa tasks back in #20</li>
+<li>Update docs index to include readme #27</li>
+<li>Update flake8 fab task to target project dir #30</li>
+<li>Exclude migrations from flake8 #31</li>
+<li>Configure nosetests arguments #32 </li>
+<li>Update flake8 to allow for easy debugging #37</li>
+<li>Add faker for mocking #41</li>
+<li>Remove email notifications from travis #48</li>
+<li>Update cookie cutter params to specify username / <strong>organization name</strong> #47</li>
+<li>Add github username to heroku repo deploy #46</li>
+<li>Update app routing to use a single DefaultRouter #45</li>
+<li>Exclude mkdocs site dir via gitignore #52</li>
+<li>Update django-pnm to 0.1.5 #54</li>
+<li>Update Authentication docs to include obtain <code>auth_token</code> endpoint #56</li>
+<li>Add caching via django-redis to features list #58</li>
+<li>Update ReadMe with more detailed background on project #60</li>
+<li>Upgrade to Django 1.8 after django-configurations has been upgraded. #8</li>
+<li>Add gif of scaffolding to ReadMe #66 </li>
+<li>Fix broken heroku run command #71 </li>
+<li>Database values are not set in Travis file #69</li>
+<li>Running ./manage.py test will result in "Coverage.py warning: Module walc was never imported." #67</li>
+<li>Tests should have <code>--nologcapture</code> added to the NOSE_ARGS #77</li>
+<li>Add <code>contributing.md</code> #74</li>
+<li>RelatedObjectDoesNotExist: User has no auth_token. #75</li>
+<li>Configure Django template debug settings #82</li>
+<li>Update to DRF 3.2.3 #81</li>
+<li>Update to Django 1.8.4 #80</li>
+<li>Upgrade Django-pnm to 1.6 #86</li>
+<li>Update <code>RedirectView.permanent</code> to true for <code>api-root</code> route #90</li>
+<li>Upgrade dependencies #89 </li>
+<li>Update <code>.travis</code> postgres config #88</li>
+<li>Add <code>.coveragerc</code> #73</li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/agconti/cookiecutter-django-rest">Cookiecutter-django-rest</a> is maintained by <a href="https://github.com/agconti">agconti</a>.</span>
