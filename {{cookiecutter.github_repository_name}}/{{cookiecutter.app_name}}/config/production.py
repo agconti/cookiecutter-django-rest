@@ -88,12 +88,6 @@ class Production(Common):
         }
     }
 
-    # Push notifications
-    DJANGO_PUSH_NOTIFICATIONS = {
-        'SERVICE': 'push_notifications.services.zeropush.ZeroPushService',
-        'AUTH_TOKEN': values.Value(environ_name='ZEROPUSH_AUTH_TOKEN', environ_prefix=None)
-    }
-
     # Django RQ production settings
     RQ_QUEUES = {
         'default': {
