@@ -21,7 +21,6 @@ class Common(Configuration):
         'rest_framework',            # utilities for rest apis
         'rest_framework.authtoken',  # token authentication
         'django_rq',                 # asynchronous queuing
-        'push_notifications',        # push notifications
         'versatileimagefield',       # image manipulation
 
         # Your apps
@@ -182,13 +181,7 @@ class Common(Configuration):
             'rest_framework.authentication.TokenAuthentication',
         )
     }
-
-    # Push notifications
-    DJANGO_PUSH_NOTIFICATIONS = {
-        'SERVICE': 'push_notifications.services.zeropush.ZeroPushService',
-        'AUTH_TOKEN': values.Value('local-development')
-    }
-
+    
     # Versatile Image Field
     VERSATILEIMAGEFIELD_SETTINGS = {
         # The amount of time, in seconds, that references to created images
