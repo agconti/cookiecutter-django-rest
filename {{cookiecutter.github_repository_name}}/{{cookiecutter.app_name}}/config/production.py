@@ -1,8 +1,15 @@
 import os
-import urlparse
 from configurations import values
 from boto.s3.connection import OrdinaryCallingFormat
 from .common import Common
+
+try:
+    # Python 2.x
+    import urlparse
+except ImportError:
+    # Python 3.x
+    from urllib import parse as urlparse
+
 
 class Production(Common):
 
