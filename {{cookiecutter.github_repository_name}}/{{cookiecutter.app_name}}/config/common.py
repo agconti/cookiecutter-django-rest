@@ -181,7 +181,7 @@ class Common(Configuration):
             'rest_framework.authentication.TokenAuthentication',
         )
     }
-    
+
     # Versatile Image Field
     VERSATILEIMAGEFIELD_SETTINGS = {
         # The amount of time, in seconds, that references to created images

@@ -2,11 +2,11 @@
 -r test.txt
 
 # Debugging
-ipdb==0.8
-ipython==3.1.0
+ipdb==0.8.1
+ipython==4.0.1
 
 # Docs
 mkdocs==0.14.0
 
 # Command Utils
-Fabric==1.10.1
+Fabric==1.10.2

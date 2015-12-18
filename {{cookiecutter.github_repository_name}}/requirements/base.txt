@@ -7,28 +7,28 @@ Django==1.9
 
 
 # For the persistence stores
-psycopg2==2.6
+psycopg2==2.6.1
 dj-database-url==0.3.0
 
 # Models
-django-model-utils==2.3.1
+django-model-utils==2.4
 
 # Rest apis
-djangorestframework==3.2.3
-Markdown==2.6.2
+djangorestframework==3.3.2
+Markdown==2.6.5
 django-filter==0.11.0
 
 # Static files
-whitenoise==2.0.3
+whitenoise==2.0.6
 
 # Media files
 boto==2.38.0
 
 # Image manipulation
-django-versatileimagefield==1.0.4
+django-versatileimagefield==1.2
 
 # For asynchronous queuing
-django-rq==0.8.0
+django-rq==0.9.0
 
 # Time zones support
-pytz==2015.4
+pytz==2015.7
