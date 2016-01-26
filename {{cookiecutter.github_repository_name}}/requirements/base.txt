@@ -2,9 +2,7 @@
 Django==1.9
 
 # Environmental var configuration
-# Django 1.8+ compatible django-configurations
--e git+https://github.com/alfetopito/django-configurations.git@71b5142354aceb5461d29e5d9e1cdf30b64b657f#egg=django_configurations-master
-
+django-configurations==1.0
 
 # For the persistence stores
 psycopg2==2.6.1
