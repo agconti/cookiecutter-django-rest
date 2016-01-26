@@ -31,6 +31,7 @@ Example of the result: https://github.com/agconti/piedpiper-web
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
 - Configured for deploying to [Heroku](https://www.heroku.com)
 - Asset storage via [S3](https://github.com/jschneier/django-storages)
+- Class based settings and safe environmental variable management via [django-configurations](https://github.com/jazzband/django-configurations)
 - [Travis](https://travis-ci.org/) config
 - Monitoring with [New Relic](http://newrelic.com/)
 - [Token authentication](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication)
