@@ -29,7 +29,7 @@ Example of the result: https://github.com/agconti/piedpiper-web
 - Django 1.9+
 - PostgreSQL
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
-- Configured for deploying to [Heroku](www.heroku.com)
+- Configured for deploying to [Heroku](https://www.heroku.com)
 - Asset storage via [S3](https://github.com/jschneier/django-storages)
 - [Travis](https://travis-ci.org/) config
 - Monitoring with [New Relic](http://newrelic.com/)
