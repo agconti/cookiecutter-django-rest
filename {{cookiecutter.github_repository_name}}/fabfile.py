@@ -96,8 +96,6 @@ def configure_sever():
     local('heroku pg:backups schedule DATABASE --at "04:00 UTC" --remote {}'.format(env.environment))
     local('heroku pg:promote DATABASE_URL --remote {}'.format(env.environment))
     local('heroku addons:create redistogo:nano --remote {}'.format(env.environment))
-    local('heroku addons:create zeropush:inception --remote {}'.format(env.environment))
-    local('heroku config:set ZEROPUSH_AUTH_TOKEN=`heroku config:get ZEROPUSH_PROD_TOKEN --remote={0}` --remote={0}'.format(env.environment))
     local('heroku addons:create newrelic:wayne --remote {}'.format(env.environment))
     local('heroku config:set NEW_RELIC_APP_NAME="{}" --remote {}'.format(env.project_name, env.environment))
     local('heroku config:set DJANGO_CONFIGURATION=Production --remote {}'.format(env.environment))
