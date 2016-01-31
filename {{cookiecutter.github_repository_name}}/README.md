@@ -3,7 +3,7 @@
 
 {{cookiecutter.description}}. Check out the project's [documentation](http://{{cookiecutter.github_username}}.github.io/{{cookiecutter.github_repository_name}}/).
 
-# Prerequisites 
+# Prerequisites
 - [virtualenv](https://virtualenv.pypa.io/en/latest/)
 - [postgresql](http://www.postgresql.org/)
 - [redis](http://redis.io/)
@@ -34,10 +34,14 @@ git init
 git remote add origin git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}.git
 ```
 
-Migrate, create a superuser, and run the server:
+Migrate the database and create a superuser:
 ```bash
 python {{cookiecutter.app_name}}/manage.py migrate
 python {{cookiecutter.app_name}}/manage.py createsuperuser
+```
+
+Run the development server: 
+```bash
 python {{cookiecutter.app_name}}/manage.py runserver
 ```
 
