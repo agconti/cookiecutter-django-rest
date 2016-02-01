@@ -20,19 +20,19 @@
 
     <section class="main-content">
       <h1>
-<a id="cookiecutter-django-rest" class="anchor" href="#cookiecutter-django-rest" aria-hidden="true"><span class="octicon octicon-link"></span></a>cookiecutter-django-rest</h1>
+<a id="cookiecutter-django-rest" class="anchor" href="#cookiecutter-django-rest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cookiecutter-django-rest</h1>
 
 <p>For creating REST apis for mobile and web applications.</p>
 
 <h2>
-<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
 
 <p>This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication and user accounts with the docs and tests to support them. After that, just add your own resources to the api and start shipping.</p>
 
 <p>This project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and monitoring.</p>
 
 <h2>
-<a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick Start</h2>
+<a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick Start</h2>
 
 <p>Install <a href="https://github.com/audreyr/cookiecutter">cookiecutter</a>:</p>
 
@@ -48,7 +48,7 @@
 <p>Example of the result: <a href="https://github.com/agconti/piedpiper-web">https://github.com/agconti/piedpiper-web</a></p>
 
 <h2>
-<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
 
 <ul>
 <li>Django 1.8+</li>
@@ -77,21 +77,43 @@
 </ul>
 
 <h2>
-<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>Want a new feature or find a bug? Submit a Pull Request!</p>
 
 <h2>
-<a id="release-notes" class="anchor" href="#release-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release notes:</h2>
+<a id="release-notes" class="anchor" href="#release-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release notes:</h2>
 
 <ul>
+<li><a href="#release-040">0.4.0</a></li>
 <li><a href="#release-030">0.3.0</a></li>
 <li><a href="#release-020">0.2.0</a></li>
 <li><a href="#release-010">0.1.0</a></li>
 </ul>
 
 <h4>
-<a id="release-030-109" class="anchor" href="#release-030-109" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release 0.3.0 #109</h4>
+<a id="release-040-127" class="anchor" href="#release-040-127" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release 0.4.0 #127</h4>
+
+<ul>
+<li>[x] Updated drf page number pagination settings #145</li>
+<li>[x] Upgrade user model <code>pk</code>s to <code>uuids</code> <a href="https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/65">#65</a>
+</li>
+<li>[x] For connivence, separate runserver from createsuperuser  <a href="https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/140">#140</a>
+</li>
+<li>[x] Add @python_2_unicode_compatible to models <a href="https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/139">#139</a>
+</li>
+<li>[x] Remove zeropush config from fab init #138</li>
+<li>[x] Use standard django-configurations once it releases <code>0.9</code> #63</li>
+<li>[x] Refactor settings to use Django class based settings instead of Django Configurations #118</li>
+<li>[x] Add .editorconfig file #101</li>
+<li>[x] Update dependencies #129</li>
+<li>[x] django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet #131</li>
+<li>[x] Heroku link is broken in ReadMe #135</li>
+<li>[x] Add django configurations to features list #133</li>
+</ul>
+
+<h4>
+<a id="release-030-109" class="anchor" href="#release-030-109" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release 0.3.0 #109</h4>
 
 <ul>
 <li>[x] Add travis badge to project readme #110</li>
@@ -104,7 +126,7 @@
 </ul>
 
 <h4>
-<a id="release-020" class="anchor" href="#release-020" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release 0.2.0</h4>
+<a id="release-020" class="anchor" href="#release-020" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release 0.2.0</h4>
 
 <ul>
 <li>Update heroku postgresql addon config #98</li>
@@ -115,7 +137,7 @@
 </ul>
 
 <h4>
-<a id="release-010" class="anchor" href="#release-010" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release 0.1.0</h4>
+<a id="release-010" class="anchor" href="#release-010" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release 0.1.0</h4>
 
 <ul>
 <li>Update users app with the appropriate test cases #1 </li>
