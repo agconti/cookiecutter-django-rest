@@ -86,6 +86,7 @@ class Common(Configuration):
     DATABASES = values.DatabaseURLValue('postgres://localhost/{{cookiecutter.app_name}}')
 
     # General
+    APPEND_SLASH = False
     TIME_ZONE = 'UTC'
     LANGUAGE_CODE = 'en-us'
     SITE_ID = 1
