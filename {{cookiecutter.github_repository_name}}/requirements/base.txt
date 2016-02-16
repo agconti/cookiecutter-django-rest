@@ -21,6 +21,7 @@ whitenoise==2.0.6
 
 # Media files
 boto==2.38.0
+django_unique_upload==0.2.1
 
 # Image manipulation
 django-versatileimagefield==1.2
