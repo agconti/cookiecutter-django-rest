@@ -97,3 +97,5 @@ class Production(Common):
             'DEFAULT_TIMEOUT': 500,
         },
     }
+
+    Common.VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = False
