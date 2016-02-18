@@ -133,7 +133,7 @@ def ps():
     Scales a web dyno on Heroku
     """
     require('environment')
-    local('heroku ps:scale web=1 --remote {}'.format(env.environment))
+    local('heroku ps:scale web=1:hobby --remote {}'.format(env.environment))
 
 
 def open_heroku():
