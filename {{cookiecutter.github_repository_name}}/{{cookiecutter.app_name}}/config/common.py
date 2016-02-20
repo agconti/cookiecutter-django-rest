@@ -61,9 +61,6 @@ class Common(Configuration):
     SECRET_KEY = 'Not a secret'
     WSGI_APPLICATION = 'wsgi.application'
 
-    # Allow for less strict handling of urls
-    APPEND_SLASH = values.BooleanValue(True)
-
     # Migrations
     MIGRATION_MODULES = {
         'sites': 'contrib.sites.migrations'
@@ -86,7 +83,7 @@ class Common(Configuration):
     DATABASES = values.DatabaseURLValue('postgres://localhost/{{cookiecutter.app_name}}')
 
     # General
-    APPEND_SLASH = False
+    APPEND_SLASH = values.BooleanValue(False)
     TIME_ZONE = 'UTC'
     LANGUAGE_CODE = 'en-us'
     SITE_ID = 1
