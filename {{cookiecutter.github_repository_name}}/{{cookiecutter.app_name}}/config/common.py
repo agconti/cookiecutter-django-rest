@@ -42,22 +42,6 @@ class Common(Configuration):
 
     ROOT_URLCONF = 'urls'
 
-    TEMPLATES = [
-        {
-            'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [],
-            'APP_DIRS': True,
-            'OPTIONS': {
-                'context_processors': [
-                    'django.template.context_processors.debug',
-                    'django.template.context_processors.request',
-                    'django.contrib.auth.context_processors.auth',
-                    'django.contrib.messages.context_processors.messages',
-                ],
-            },
-        },
-    ]
-
     SECRET_KEY = 'Not a secret'
     WSGI_APPLICATION = 'wsgi.application'
 
@@ -66,17 +50,11 @@ class Common(Configuration):
         'sites': 'contrib.sites.migrations'
     }
 
-    # Set DEBUG to False as a default for safety
-    # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-    DEBUG = values.BooleanValue(False)
-    for config in TEMPLATES:
-        config['OPTIONS']['debug'] = DEBUG
-
     # Email
     EMAIL_BACKEND = values.Value('django.core.mail.backends.smtp.EmailBackend')
 
     MANAGERS = (
-        ("Author", '{{cookiecutter.email}}'),
+        ('Author', '{{cookiecutter.email}}'),
     )
 
     # Postgres
@@ -96,6 +74,7 @@ class Common(Configuration):
 
     # Static Files
     STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
+    STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'static'),]
     STATIC_URL = '/static/'
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -105,6 +84,36 @@ class Common(Configuration):
     # Media files
     MEDIA_ROOT = join(os.path.dirname(BASE_DIR), 'media')
     MEDIA_URL = '/media/'
+
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [STATICFILES_DIRS],
+            'OPTIONS': {
+                'context_processors': [
+                    'django.contrib.auth.context_processors.auth',
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.i18n',
+                    'django.template.context_processors.media',
+                    'django.template.context_processors.static',
+                    'django.template.context_processors.tz',
+                    'django.contrib.messages.context_processors.messages'
+                ],
+                'loaders':[
+                    ('django.template.loaders.cached.Loader', [
+                        'django.template.loaders.filesystem.Loader',
+                        'django.template.loaders.app_directories.Loader',
+                    ]),
+                ],
+            },
+        },
+    ]
+
+    # Set DEBUG to False as a default for safety
+    # https://docs.djangoproject.com/en/dev/ref/settings/#debug
+    DEBUG = values.BooleanValue(False)
+    for config in TEMPLATES:
+        config['OPTIONS']['debug'] = DEBUG
 
     # Logging
     LOGGING = {
@@ -122,9 +131,9 @@ class Common(Configuration):
             'simple': {
                 'format': '%(levelname)s %(message)s'
             },
-            "rq_console": {
-                "format": "%(asctime)s %(message)s",
-                "datefmt": "%H:%M:%S",
+            'rq_console': {
+                'format': '%(asctime)s %(message)s',
+                'datefmt': '%H:%M:%S',
             },
         },
         'handlers': {
@@ -138,11 +147,11 @@ class Common(Configuration):
                 'class': 'logging.StreamHandler',
                 'formatter': 'simple'
             },
-            "rq_console": {
-                "level": "DEBUG",
-                "class": "rq.utils.ColorizingStreamHandler",
-                "formatter": "rq_console",
-                "exclude": ["%(asctime)s"],
+            'rq_console': {
+                'level': 'DEBUG',
+                'class': 'rq.utils.ColorizingStreamHandler',
+                'formatter': 'rq_console',
+                'exclude': ['%(asctime)s'],
             },
         },
         'loggers': {
@@ -151,9 +160,9 @@ class Common(Configuration):
                 'level': 'ERROR',
                 'propagate': True
             },
-            "rq.worker": {
-                "handlers": ["rq_console"],
-                "level": "DEBUG"
+            'rq.worker': {
+                'handlers': ['rq_console'],
+                'level': 'DEBUG'
             },
         }
     }
