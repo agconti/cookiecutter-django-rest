@@ -4,9 +4,9 @@
 For creating REST apis for mobile and web applications.
 
 ## Overview
-This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication and user accounts with the docs and tests to support them. After that, just add your own resources to the api and start shipping.
+This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication, user accounts, and the docs and tests to support them. After that, just add your own resources to the api and start shipping.
 
-This project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and monitoring.
+This project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and application monitoring.
 
 ## Quick Start
 
@@ -43,4 +43,7 @@ Example of the result: https://github.com/agconti/piedpiper-web
 - Fabfile for easily setting up servers
 
 ## Contributing
-Want a new feature or find a bug? Submit a Pull Request!
+Want a new feature? Open an issue and let's chat!
+Find a bug? Submit a Pull Request!
+
+This project adheres to the [Contributor Code of Conduct](.github/CONTRIBUTING.md).
