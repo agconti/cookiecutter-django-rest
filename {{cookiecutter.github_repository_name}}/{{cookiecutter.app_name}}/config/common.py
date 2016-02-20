@@ -45,11 +45,6 @@ class Common(Configuration):
     SECRET_KEY = 'Not a secret'
     WSGI_APPLICATION = 'wsgi.application'
 
-    # Migrations
-    MIGRATION_MODULES = {
-        'sites': 'contrib.sites.migrations'
-    }
-
     # Email
     EMAIL_BACKEND = values.Value('django.core.mail.backends.smtp.EmailBackend')
 
@@ -64,7 +59,6 @@ class Common(Configuration):
     APPEND_SLASH = values.BooleanValue(False)
     TIME_ZONE = 'UTC'
     LANGUAGE_CODE = 'en-us'
-    SITE_ID = 1
     # If you set this to False, Django will make some optimizations so as not
     # to load the internationalization machinery.
     USE_I18N = False
