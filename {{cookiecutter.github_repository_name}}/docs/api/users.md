@@ -58,37 +58,7 @@ Content-Type application/json
 }
 ```
 
-## Get a user's profile information
 
-**Request**:
-
-`GET` `users/:id`
-
-Parameters:
-
-Name | Type | Description
----|---|---
-id | integer | The id associated with the user object.
-
-
-*Note:*
-
-- **[Authorization Protected](authentication.md)**
-
-**Response**:
-
-```json
-Content-Type application/json
-200 OK
-
-{
-  "id": 1,
-  "first_name": "Richard",
-  "last_name": "Hendriks",
-  "auth_token": "fFBGRNJru1FQd44AzqT3Zg",
-  "email": "hendriks@piepiper.com"
-}
-```
 
 ## Update your profile information
 
