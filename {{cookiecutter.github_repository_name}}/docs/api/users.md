@@ -5,7 +5,7 @@ Supports registering, viewing, and updating user accounts.
 
 **Request**:
 
-`POST` `users/`
+`POST` `/users/`
 
 Parameters:
 
@@ -40,7 +40,7 @@ authenticating future requests to the API. See [Authentication](authentication.m
 
 **Request**:
 
-`GET` `users/:id`
+`GET` `/users/:id`
 
 Parameters:
 
@@ -67,7 +67,7 @@ Content-Type application/json
 
 **Request**:
 
-`PUT/PATCH` `users/:id`
+`PUT/PATCH` `/users/:id`
 
 Parameters:
 
