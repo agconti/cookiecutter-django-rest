@@ -12,15 +12,13 @@ Parameters:
 Name     | Type   | Description
 ---------|--------|---
 username | string | The username for the new user.
-password | string | The password for the new user (plaintext).
+password | string | The password for the new user.
 
 *Note:*
 
 - *Not* **Authorization Protected**
 
-
 **Response**:
-If a User with given `username` doesn't exist, you'll get a 201:
 
 ```json
 Content-Type application/json
@@ -34,18 +32,8 @@ Content-Type application/json
 }
 ```
 
-else if the `username` is already taken, you'll get a 400:
-
-```json
-Content-Type application/json
-400 Bad Request
-
-{
-    "username": [
-        "A user with that username already exists."
-    ]
-}
-```
+The `auth_token` returned with this response should be stored by the client for
+authenticating future requests to the API. See [Authentication](authentication.md).
 
 
 ## Get a user's profile information
@@ -55,11 +43,6 @@ Content-Type application/json
 `GET` `users/:id`
 
 Parameters:
-
-Name | Type   | Description
------|--------|---
-id   | string | The id associated with the user object.
-
 
 *Note:*
 
@@ -88,10 +71,10 @@ Content-Type application/json
 
 Parameters:
 
-Name | Type | Description
----|---|---
+Name       | Type   | Description
+-----------|--------|---
 first_name | string | The new first_name of the user object.
-last_name | string | The new last_name of the user object.
+last_name  | string | The new last_name of the user object.
 
 
 *Note:*
