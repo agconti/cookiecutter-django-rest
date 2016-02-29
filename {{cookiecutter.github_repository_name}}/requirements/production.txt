@@ -8,9 +8,9 @@ gunicorn==19.3.0
 # Static and Media Storage
 django-storages-redux==1.2.3
 
-# Caching 
+# Caching
 hiredis==0.2.0
-django-redis-cache==0.13.1
+django-redis-cache==1.6.5
 
 # Django-secure
 django-secure==1.0.1
