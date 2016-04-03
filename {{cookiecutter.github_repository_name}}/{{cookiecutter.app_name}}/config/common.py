@@ -68,7 +68,7 @@ class Common(Configuration):
 
     # Static Files
     STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
-    STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'static'),]
+    STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'static'), ]
     STATIC_URL = '/static/'
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
