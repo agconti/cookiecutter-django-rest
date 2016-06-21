@@ -23,4 +23,4 @@ class CreateUserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'password', 'auth_token')
         read_only_fields = ('auth_token',)
-        write_only_fields = ('password',)
+        extra_kwargs = {'password': {'write_only': True}}
