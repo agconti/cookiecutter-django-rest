@@ -2,7 +2,7 @@
 Django==1.9.8
 
 # Environmental var configuration
-django-configurations==1.0
+django-configurations==2.0
 
 # For the persistence stores
 psycopg2==2.6.2
