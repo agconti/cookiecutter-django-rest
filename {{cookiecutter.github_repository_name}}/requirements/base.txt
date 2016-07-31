@@ -20,7 +20,7 @@ django-filter==0.13.0
 whitenoise==3.2
 
 # Media files
-boto==2.39.0
+boto==2.42.0
 django_unique_upload==0.2.1
 
 # Image manipulation
