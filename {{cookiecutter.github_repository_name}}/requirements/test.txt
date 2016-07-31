@@ -15,4 +15,4 @@ nose-progressive==1.5.1
 coverage==4.2
 
 # Style Enforcement
-flake8==2.5.4
+flake8==3.0.3
