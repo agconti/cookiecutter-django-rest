@@ -10,3 +10,4 @@ mkdocs==0.15.3
 
 # Command Utils
 Fabric==1.10.2
+pycrypto==2.6.1
