@@ -5,7 +5,7 @@
 mock==2.0.0
 
 # Fixtures
-factory-boy==2.6.1
+factory-boy==2.7.0
 
 # Test Runner
 django-nose==1.4.4
