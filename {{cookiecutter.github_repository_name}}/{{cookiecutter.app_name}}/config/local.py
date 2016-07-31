@@ -28,6 +28,10 @@ class Local(Common):
     EMAIL_PORT = 1025
     EMAIL_BACKEND = values.Value('django.core.mail.backends.console.EmailBackend')
 
+    # Vesitle Image Field settings
+    VERSATILEIMAGEFIELD_SETTINGS = Common.VERSATILEIMAGEFIELD_SETTINGS
+    VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = True
+
     # Django RQ local settings
     RQ_QUEUES = {
         'default': {
