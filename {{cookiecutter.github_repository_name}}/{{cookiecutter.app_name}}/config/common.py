@@ -1,4 +1,4 @@
-docimport os
+import os
 from os.path import join
 
 from configurations import Configuration, values
