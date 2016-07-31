@@ -1,4 +1,4 @@
-import os
+docimport os
 from os.path import join
 
 from configurations import Configuration, values
@@ -194,3 +194,9 @@ class Common(Configuration):
         'placeholder_directory_name': '__placeholder__',
         'create_images_on_demand': False
     }
+
+    # django-rq
+    # Adds dashboard link for queues in /admin, This will override the default
+    # admin template so it may interfere with other apps that modify the
+    # default admin template. If you're using such an app, simply remove this.
+    RQ_SHOW_ADMIN_LINK = True
