@@ -137,11 +137,11 @@ class Common(Configuration):
                 'class': 'logging.StreamHandler',
                 'formatter': 'simple'
             },
-            "rq_console": {
-                "level": "DEBUG",
-                "class": "rq.utils.ColorizingStreamHandler",
-                "formatter": "rq_console",
-                "exclude": ["%(asctime)s"],
+            'rq_console': {
+                'level': 'DEBUG',
+                'class': 'rq.utils.ColorizingStreamHandler',
+                'formatter': 'rq_console',
+                'exclude': ['%(asctime)s'],
             },
             'mail_admins': {
                 'level': 'ERROR',
