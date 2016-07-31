@@ -1,15 +1,15 @@
 # Django
-Django==1.9.7
+Django==1.9.8
 
 # Environmental var configuration
-django-configurations==1.0
+django-configurations==2.0
 
 # For the persistence stores
-psycopg2==2.6.1
-dj-database-url==0.4.0
+psycopg2==2.6.2
+dj-database-url==0.4.1
 
 # Models
-django-model-utils==2.4
+django-model-utils==2.5
 
 # Rest apis
 djangorestframework==3.4.1
@@ -17,17 +17,17 @@ Markdown==2.6.6
 django-filter==0.13.0
 
 # Static files
-whitenoise==3.0
+whitenoise==3.2
 
 # Media files
-boto==2.39.0
+boto==2.42.0
 django_unique_upload==0.2.1
 
 # Image manipulation
-django-versatileimagefield==1.3
+django-versatileimagefield==1.6
 
 # For asynchronous queuing
-django-rq==0.9.0
+django-rq==0.9.1
 
 # Time zones support
-pytz==2016.3
+pytz==2016.6.1
