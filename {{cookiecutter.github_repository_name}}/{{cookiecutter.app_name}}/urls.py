@@ -15,6 +15,7 @@ router.register(r'users', UserViewSet)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^django-rq/', include('django_rq.urls')),
     url(r'^api/v1/', include('authentication.urls')),
     url(r'^api/v1/', include(router.urls)),
 
