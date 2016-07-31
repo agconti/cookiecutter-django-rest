@@ -113,11 +113,6 @@ class Common(Configuration):
     LOGGING = {
         'version': 1,
         'disable_existing_loggers': False,
-        'filters': {
-            'require_debug_false': {
-                '()': 'django.utils.log.RequireDebugFalse'
-            }
-        },
         'formatters': {
             'verbose': {
                 'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
@@ -130,34 +125,43 @@ class Common(Configuration):
                 'datefmt': '%H:%M:%S',
             },
         },
-        'handlers': {
-            'mail_admins': {
-                'level': 'ERROR',
-                'filters': ['require_debug_false'],
-                'class': 'django.utils.log.AdminEmailHandler'
+        'filters': {
+            'require_debug_true': {
+                '()': 'django.utils.log.RequireDebugTrue',
             },
+        },
+        'handlers': {
             'console': {
-                'level': 'DEBUG',
+                'level': 'INFO',
+                'filters': ['require_debug_true'],
                 'class': 'logging.StreamHandler',
                 'formatter': 'simple'
             },
-            'rq_console': {
-                'level': 'DEBUG',
-                'class': 'rq.utils.ColorizingStreamHandler',
-                'formatter': 'rq_console',
-                'exclude': ['%(asctime)s'],
+            "rq_console": {
+                "level": "DEBUG",
+                "class": "rq.utils.ColorizingStreamHandler",
+                "formatter": "rq_console",
+                "exclude": ["%(asctime)s"],
             },
+            'mail_admins': {
+                'level': 'ERROR',
+                'class': 'django.utils.log.AdminEmailHandler'
+            }
         },
         'loggers': {
+            'django': {
+                'handlers': ['console'],
+                'propagate': True,
+            },
             'django.request': {
                 'handlers': ['mail_admins'],
                 'level': 'ERROR',
-                'propagate': True
+                'propagate': False,
             },
             'rq.worker': {
                 'handlers': ['rq_console'],
                 'level': 'DEBUG'
-            },
+            }
         }
     }
 
