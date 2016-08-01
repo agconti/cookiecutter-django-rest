@@ -4,10 +4,19 @@
 
 For creating REST apis for mobile and web applications.
 
+- [Overview](#overview)
+- [Quick Start](#quick-start)
+- [Features](#features)
+- [Contributing](#contributing)
+
 ## Overview
 This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication, user accounts, and the docs and tests to support them. After that, just add your own resources to the api and start shipping.
 
 This project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and application monitoring.
+
+### What you'll be building
+
+![ia diagram](media/ia-diagram.svg)
 
 ## Quick Start
 
