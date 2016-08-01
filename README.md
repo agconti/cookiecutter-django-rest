@@ -16,7 +16,7 @@ This project gives you a solid foundation for your api to mature by baking in th
 
 ### What you'll be building
 
-![ia diagram](media/ia-diagram.svg)
+![ia diagram](https://cdn.rawgit.com/agconti/cookiecutter-django-rest/master/media/ia-diagram.svg)
 
 ## Quick Start
 
