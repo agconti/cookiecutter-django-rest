@@ -22,7 +22,18 @@
       <h1>
 <a id="cookiecutter-django-rest" class="anchor" href="#cookiecutter-django-rest" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>cookiecutter-django-rest</h1>
 
+<p><a href="https://travis-ci.org/agconti/cookiecutter-django-rest"><img src="https://travis-ci.org/agconti/cookiecutter-django-rest.svg?branch=docs-project-readme-travis" alt="Build Status"></a>
+<a href="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/"><img src="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/shield.svg" alt="Updates"></a></p>
+
 <p>For creating REST apis for mobile and web applications.</p>
+
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#release-notes">Release Notes</a></li>
+</ul>
 
 <h2>
 <a id="overview" class="anchor" href="#overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h2>
@@ -30,6 +41,11 @@
 <p>This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication, user accounts, and the docs and tests to support them. After that, just add your own resources to the api and start shipping.</p>
 
 <p>This project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and application monitoring.</p>
+
+<h3>
+<a id="what-youll-be-building" class="anchor" href="#what-youll-be-building" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What you'll be building</h3>
+
+<p><img src="https://cdn.rawgit.com/agconti/cookiecutter-django-rest/master/media/ia-diagram.svg" alt="ia diagram"></p>
 
 <h2>
 <a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quick Start</h2>
@@ -43,7 +59,7 @@
 <pre><code>cookiecutter gh:agconti/cookiecutter-django-rest
 </code></pre>
 
-<p><img src="https://github.com/agconti/cookiecutter-django-rest/raw/master/media/scaffolding.gif" alt="Scaffolding"></p>
+<p><img src="media/scaffolding.gif" alt="Scaffolding"></p>
 
 <p>Example of the result: <a href="https://github.com/agconti/piedpiper-web">https://github.com/agconti/piedpiper-web</a></p>
 
@@ -51,12 +67,14 @@
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
 
 <ul>
-<li>Django 1.8+</li>
+<li>Django 1.9+</li>
 <li>PostgreSQL</li>
 <li>Complete <a href="http://www.django-rest-framework.org/">Django Rest Framework</a> integration</li>
-<li>Configured for deploying to <a href="www.heroku.com">Heroku</a>
+<li>Configured for deploying to <a href="https://www.heroku.com">Heroku</a>
 </li>
 <li>Asset storage via <a href="https://github.com/jschneier/django-storages">S3</a>
+</li>
+<li>Class based settings and safe environmental variable management via <a href="https://github.com/jazzband/django-configurations">django-configurations</a>
 </li>
 <li>
 <a href="https://travis-ci.org/">Travis</a> config</li>
@@ -79,10 +97,13 @@
 <h2>
 <a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributing</h2>
 
-<p>Want a new feature or find a bug? Submit a Pull Request!</p>
+<p>Want a new feature? Open an issue and let's chat!
+Find a bug? Submit a Pull Request!</p>
+
+<p>This project adheres to the <a href=".github/CONTRIBUTING.md">Contributor Code of Conduct</a>.</p>
 
 <h2>
-<a id="release-notes" class="anchor" href="#release-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release notes:</h2>
+<a id="release-notes" class="anchor" href="#release-notes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Release notes</h2>
 
 <ul>
 <li><a href="#release-050">0.5.0</a></li>
