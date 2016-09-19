@@ -9,7 +9,7 @@ psycopg2==2.6.2
 dj-database-url==0.4.1
 
 # Models
-django-model-utils==2.5.2
+django-model-utils==2.6
 
 # Rest apis
 djangorestframework==3.4.6
