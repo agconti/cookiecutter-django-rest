@@ -48,7 +48,7 @@ class Common(Configuration):
     # Email
     EMAIL_BACKEND = values.Value('django.core.mail.backends.smtp.EmailBackend')
 
-    MANAGERS = (
+    ADMINS = (
         ('Author', '{{cookiecutter.email}}'),
     )
 
