@@ -53,7 +53,15 @@ class Common(Configuration):
     )
 
     # Postgres
-    DATABASES = values.DatabaseURLValue('postgres://localhost/{{cookiecutter.app_name}}')
+    DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.postgresql',
+             'NAME': 'postgres',
+             'USER': 'postgres',
+             'HOST': 'db',
+             'PORT': 5432,
+         }
+     }
 
     # General
     APPEND_SLASH = values.BooleanValue(False)
