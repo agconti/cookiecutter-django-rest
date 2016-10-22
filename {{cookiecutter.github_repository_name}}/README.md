@@ -22,13 +22,13 @@ git remote add origin git@github.com:{{cookiecutter.github_username}}/{{cookiecu
 Build the docker containers for development
 
 ```bash
-docker-compose -f local.yml build
+docker-compose -f ./compose/local.yml build
 ```
 
 Start the for local development
 
 ```bash
-docker-compose -f local.yml up
+docker-compose -f ./compose/local.yml up
 ```
 
 Migrate the database and create a superuser:

@@ -6,4 +6,4 @@ ADD requirements /code/
 COPY . /code/
 
 WORKDIR /code
-RUN pip install -r requirements/local.txt
+RUN pip install -r requirements/main.txt

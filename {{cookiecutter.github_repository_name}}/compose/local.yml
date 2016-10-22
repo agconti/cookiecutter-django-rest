@@ -14,3 +14,10 @@
      depends_on:
        - postgres
        - redis
+    worker:
+      build: .
+      command: ./{{cookiecutter.app_name}}/manage.py rqworker default
+        - .:/code
+      depends_on:
+        - postgres
+        - redis

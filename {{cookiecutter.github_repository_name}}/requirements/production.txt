@@ -1,5 +1,4 @@
 # Dependencies related to deploying {{cookiecutter.github_repository_name}}
--r base.txt
 
 # WSGI Handler
 gevent==1.1.2

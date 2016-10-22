@@ -1,5 +1,4 @@
 # Dependencies related to testing {{cookiecutter.github_repository_name}}
--r base.txt
 
 # Mocking
 mock==2.0.0
