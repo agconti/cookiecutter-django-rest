@@ -5,20 +5,20 @@ services:
   postgres:
    image: postgres:9.6
   web:
-   build: .
+   build: ../
    command: newrelic-admin run-program gunicorn --pythonpath="$PWD/{{ cookiecutter.app_name }}" wsgi:application
    volumes:
-     - .:/code
+     - ../:/code
    ports:
      - "8000:8000"
    depends_on:
      - postgres
      - redis
   worker:
-    build: .
+    build: ../
     command: ./{{cookiecutter.app_name}}/manage.py rqworker default
     volumes:
-      - .:/code
+      - ../:/code
     depends_on:
       - postgres
       - redis

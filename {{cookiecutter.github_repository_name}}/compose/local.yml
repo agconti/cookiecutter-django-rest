@@ -1,23 +1,24 @@
- version: '2'
- services:
-   redis:
-     image: redis:3.0
-   postgres:
-     image: postgres:9.6
-   web:
-     build: .
-     command: ./{{cookiecutter.app_name}}/manage.py runserver 0.0.0.0:8000
-     volumes:
-       - .:/code
-     ports:
-       - "8000:8000"
-     depends_on:
-       - postgres
-       - redis
-    worker:
-      build: .
-      command: ./{{cookiecutter.app_name}}/manage.py rqworker default
-        - .:/code
-      depends_on:
-        - postgres
-        - redis
+version: '2'
+services:
+ redis:
+   image: redis:3.0
+ postgres:
+   image: postgres:9.6
+ web:
+   build: ../
+   command: ./{{cookiecutter.app_name}}/manage.py runserver 0.0.0.0:8000
+   volumes:
+     - ../:/code
+   ports:
+     - "8000:8000"
+   depends_on:
+     - postgres
+     - redis
+  worker:
+    build: ../
+    command: ./{{cookiecutter.app_name}}/manage.py rqworker default
+    volumes:
+      - ../:/code
+    depends_on:
+      - postgres
+      - redis
