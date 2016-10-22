@@ -26,3 +26,5 @@ sudo: false
 
 matrix:
   fast_finish: true
+
+cache: pip
