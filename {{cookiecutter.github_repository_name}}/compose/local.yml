@@ -1,10 +1,10 @@
 version: '2'
 services:
- redis:
+  redis:
    image: redis:3.0
- postgres:
+  postgres:
    image: postgres:9.6
- web:
+  web:
    build: ../
    command: ./{{cookiecutter.app_name}}/manage.py runserver 0.0.0.0:8000
    volumes:
@@ -12,13 +12,13 @@ services:
    ports:
      - "8000:8000"
    depends_on:
-     - postgres
      - redis
+     - postgres
   worker:
     build: ../
     command: ./{{cookiecutter.app_name}}/manage.py rqworker default
     volumes:
       - ../:/code
     depends_on:
-      - postgres
       - redis
+      - postgres

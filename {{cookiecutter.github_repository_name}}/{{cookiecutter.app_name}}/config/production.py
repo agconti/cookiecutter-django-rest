@@ -3,13 +3,6 @@ from configurations import values
 from boto.s3.connection import OrdinaryCallingFormat
 from .common import Common
 
-try:
-    # Python 2.x
-    import urlparse
-except ImportError:
-    # Python 3.x
-    from urllib import parse as urlparse
-
 
 class Production(Common):
 
@@ -71,32 +64,5 @@ class Production(Common):
     # Static files
     STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-    # Caching
-    redis_url = urlparse.urlparse(os.environ.get('REDISTOGO_URL', 'redis://localhost:6379'))
-    CACHES = {
-        'default': {
-            'BACKEND': 'redis_cache.RedisCache',
-            'LOCATION': '{}:{}'.format(redis_url.hostname, redis_url.port),
-            'OPTIONS': {
-                'DB': 0,
-                'PASSWORD': redis_url.password,
-                'PARSER_CLASS': 'redis.connection.HiredisParser',
-                'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
-                'CONNECTION_POOL_CLASS_KWARGS': {
-                    'max_connections': 50,
-                    'timeout': 20,
-                }
-            }
-        }
-    }
-
-    # Django RQ production settings
-    RQ_QUEUES = {
-        'default': {
-            'URL': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
-            'DB': 0,
-            'DEFAULT_TIMEOUT': 500,
-        },
-    }
-
+    # Versatile Imagefield
     Common.VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = False

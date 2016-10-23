@@ -1,9 +1,15 @@
 import os
 from os.path import join
-
 from configurations import Configuration, values
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    # Python 2.x
+    import urlparse
+except ImportError:
+    # Python 3.x
+    from urllib import parse as urlparse
 
 
 class Common(Configuration):
@@ -63,6 +69,33 @@ class Common(Configuration):
          }
      }
 
+    # Caching
+    redis_url = urlparse.urlparse(os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379'))
+    CACHES = {
+     'default': {
+         'BACKEND': 'redis_cache.RedisCache',
+         'LOCATION': 'localhost:6379',
+         'OPTIONS': {
+             'DB': 0,
+             'PASSWORD': '',
+             'PARSER_CLASS': 'redis.connection.HiredisParser',
+             'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
+             'CONNECTION_POOL_CLASS_KWARGS': {
+                 'max_connections': 50,
+                 'timeout': 20,
+             }
+         }
+     }
+    }
+
+    # Django RQ worker
+    RQ_QUEUES = {
+     'default': {
+         'URL': os.getenv('REDIS_URL', 'redis://127.0.0.1:6379'),
+         'DB': 0,
+         'DEFAULT_TIMEOUT': 500,
+     },
+    }
     # General
     APPEND_SLASH = values.BooleanValue(False)
     TIME_ZONE = 'UTC'
