@@ -2,11 +2,13 @@ version: '2'
 services:
   redis:
    image: redis:3.0
+   ports:
+     - "6379:6379"
   postgres:
    image: postgres:9.6
   web:
    build: ../
-   command: newrelic-admin run-program gunicorn --pythonpath="$PWD/{{ cookiecutter.app_name }}" wsgi:application
+   command: newrelic-admin run-program /usr/local/bin/gunicorn -w 4 -b 0.0.0.0:5000 wsgi:application --chdir={{cookiecutter.app_name}}
    volumes:
      - ../:/code
    ports:
