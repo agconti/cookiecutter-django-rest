@@ -29,5 +29,4 @@ class Local(Common):
     EMAIL_BACKEND = values.Value('django.core.mail.backends.console.EmailBackend')
 
     # Vesitle Image Field settings
-    VERSATILEIMAGEFIELD_SETTINGS = Common.VERSATILEIMAGEFIELD_SETTINGS
-    VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = True
+    Common.VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = True

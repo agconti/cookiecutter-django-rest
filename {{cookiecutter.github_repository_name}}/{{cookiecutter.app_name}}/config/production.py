@@ -63,6 +63,3 @@ class Production(Common):
 
     # Static files
     STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-    # Versatile Imagefield
-    Common.VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = False

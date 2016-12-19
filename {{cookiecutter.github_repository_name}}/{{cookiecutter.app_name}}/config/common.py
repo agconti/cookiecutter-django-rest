@@ -78,7 +78,7 @@ class Common(Configuration):
             'BACKEND': 'redis_cache.RedisCache',
             'LOCATION': redis_url,
             'OPTIONS': {
-                'DB': 1,
+                'DB': 0,
                 # 'PASSWORD': 'yadayada',
                 'PARSER_CLASS': 'redis.connection.HiredisParser',
                 'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
@@ -97,7 +97,7 @@ class Common(Configuration):
         'default': {
             'HOST': 'redis',
             'PORT': 6379,
-            'DB': 0,
+            'DB': 1,
             # 'PASSWORD': 'some-password',
             'DEFAULT_TIMEOUT': 360,
         },

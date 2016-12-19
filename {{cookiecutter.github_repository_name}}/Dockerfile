@@ -6,5 +6,3 @@ RUN pip install -r /requirements/main.txt
 COPY . /code/
 
 WORKDIR /code
-
-EXPOSE 6379
