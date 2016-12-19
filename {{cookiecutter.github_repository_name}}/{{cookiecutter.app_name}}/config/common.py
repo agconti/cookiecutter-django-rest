@@ -76,10 +76,10 @@ class Common(Configuration):
     CACHES = {
         'default': {
             'BACKEND': 'redis_cache.RedisCache',
-            'LOCATION': [redis_url],
+            'LOCATION': redis_url,
             'OPTIONS': {
                 'DB': 1,
-                'PASSWORD': 'yadayada',
+                # 'PASSWORD': 'yadayada',
                 'PARSER_CLASS': 'redis.connection.HiredisParser',
                 'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
                 'CONNECTION_POOL_CLASS_KWARGS': {
@@ -95,8 +95,12 @@ class Common(Configuration):
     # Django RQ worker
     RQ_QUEUES = {
         'default': {
-            'USE_REDIS_CACHE': 'default'
-        }
+            'HOST': 'redis',
+            'PORT': 6379,
+            'DB': 0,
+            # 'PASSWORD': 'some-password',
+            'DEFAULT_TIMEOUT': 360,
+        },
     }
     # General
     APPEND_SLASH = values.BooleanValue(False)
