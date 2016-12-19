@@ -31,12 +31,3 @@ class Local(Common):
     # Vesitle Image Field settings
     VERSATILEIMAGEFIELD_SETTINGS = Common.VERSATILEIMAGEFIELD_SETTINGS
     VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = True
-
-    # Django RQ local settings
-    RQ_QUEUES = {
-        'default': {
-            'URL': os.getenv('REDISTOGO_URL', 'redis://localhost:6379'),
-            'DB': 0,
-            'DEFAULT_TIMEOUT': 500,
-        },
-    }

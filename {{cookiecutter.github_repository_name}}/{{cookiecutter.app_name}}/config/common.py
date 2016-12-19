@@ -59,42 +59,44 @@ class Common(Configuration):
     )
 
     # Postgres
-    DATABASES = {
-         'default': {
-             'ENGINE': 'django.db.backends.postgresql',
-             'NAME': 'postgres',
-             'USER': 'postgres',
-             'HOST': 'db',
-             'PORT': 5432,
-         }
-     }
+    DATABASES = DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            # 'PASSWORD': 'mysecretpassword', # add new password via env file
+            'HOST': 'postgres',
+            'PORT': 5432,
+        }
+    }
+
 
     # Caching
-    redis_url = urlparse.urlparse(os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379'))
+    redis_url = urlparse.urlparse(os.environ.get('REDIS_URL', 'redis:6379'))
     CACHES = {
-     'default': {
-         'BACKEND': 'redis_cache.RedisCache',
-         'LOCATION': 'localhost:6379',
-         'OPTIONS': {
-             'DB': 0,
-             'PASSWORD': '',
-             'PARSER_CLASS': 'redis.connection.HiredisParser',
-             'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
-             'CONNECTION_POOL_CLASS_KWARGS': {
-                 'max_connections': 50,
-                 'timeout': 20,
-             }
-         }
-     }
+        'default': {
+            'BACKEND': 'redis_cache.RedisCache',
+            'LOCATION': [redis_url],
+            'OPTIONS': {
+                'DB': 1,
+                'PASSWORD': 'yadayada',
+                'PARSER_CLASS': 'redis.connection.HiredisParser',
+                'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
+                'CONNECTION_POOL_CLASS_KWARGS': {
+                    'max_connections': 50,
+                    'timeout': 20,
+                },
+                'MAX_CONNECTIONS': 1000,
+                'PICKLE_VERSION': -1,
+            },
+        },
     }
 
     # Django RQ worker
     RQ_QUEUES = {
-     'default': {
-         'URL': os.getenv('REDIS_URL', 'redis://127.0.0.1:6379'),
-         'DB': 0,
-         'DEFAULT_TIMEOUT': 500,
-     },
+        'default': {
+            'USE_REDIS_CACHE': 'default'
+        }
     }
     # General
     APPEND_SLASH = values.BooleanValue(False)
