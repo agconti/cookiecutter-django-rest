@@ -61,11 +61,88 @@ This project adheres to the [Contributor Code of Conduct](.github/CONTRIBUTING.m
 
 ## Release notes 
 
+- [0.6.0](#release-060)
 - [0.5.0](#release-050)
 - [0.4.0](#release-040)
 - [0.3.0](#release-030)
 - [0.2.0](#release-020)
 - [0.1.0](#release-010)
+
+#### Release 0.6.0 #167 
+
+- [x] Update travis badge to private repo #26
+- [x] django-configuration conflicts with pycharm python console #234
+- [x] Add jwt and oauth2 for third parties (social) #239
+- [x] Upgrade gevent to secure version #322
+- [x] Update newrelic to 2.76.0.55 #321
+- [x] Update factory-boy to 2.8.1 #320
+- [x] Update boto to 2.45.0 #319
+- [x] Update pytz to 2016.10 #314
+- [x] Update django-versatileimagefield to 1.6.2 #313
+- [x] Update boto to 2.44.0 #312
+- [x] Update fabric to 1.13.1 #311
+- [x] Update django-filter to 1.0.1 #303
+- [x] Update flake8 to 3.2.1 #302
+- [x] Upgrade Django to secure version, 1.9.11 #297
+- [x] Update django-versatileimagefield to 1.6.1 #296
+- [x] Update flake8 to 3.2.0 #294
+- [x] Update newrelic to 2.74.0.54 #293
+- [x] Update django-rq to 0.9.4 #288
+- [x] Update mkdocs to 0.16.0
+- [x] Update djangorestframework to 3.5.2 #281
+- [x] Update newrelic to 2.72.1.53 #278
+- [x] Update django-redis-cache to 1.7.1 #279 
+- [x] Add dependency caching for traivs #272
+- [x] Update djangorestframework to 3.5 #275
+- [x] Update newrelic to 2.72.0.52 #271
+- [x] Update djangorestframework to 3.5.0 #270
+- [x] Update django-rq #269
+- [x] Update boto to 2.43.0 #265 
+- [x] Update django-filter to 0.15.3 #263
+- [x] Update pytz to 2016.7 #261
+- [x] Update django-filter to 0.15.2
+- [x] Update whitenoise to 3.2.2
+- [x] Update django-model-utils to 2.6
+- [x] Update django-filter to 0.15.0
+- [x] Update djangorestframework to 3.4.7
+- [x] Update markdown to 2.6.7
+- [x] Update newrelic to 2.70.0.51 #240
+- [x] Update djangorestframework to 3.4.6 #237
+- [x] Update django-redis-cache to 1.7.0 #232
+- [x] Update djangorestframework to 3.4.5 #231
+- [x] Update django-filter to 0.14.0 #228
+- [x] Update ipython to 5.1.0 #229
+- [x] Update django-model-utils to 2.5.2 #223
+- [x] Update whitenoise to 3.2.1 #222
+- [x] Update flake8 to 3.0.4 #219
+- [x] Update django-rq to 0.9.2 
+- [x] Update djangorestframework to 3.4.3 #215
+- [x] Update django-model-utils to 2.5.1 #213
+- [x] Update djangorestframework to 3.4.2 #212
+- [x] Move pyup badge to top level readme #201
+- [x] Limit default pagination size to 10 #191
+- [x] Update logging config to match django 1.9 changes #190
+- [x] Add pyup for easy dependency management. #189
+- [x] Set django storages default acl to public read #188
+- [x] Update IsOwnerOrReadOnly to IsUserOrReadOnly #187
+- [x] Add RQ_SHOW_ADMIN_LINK to true in config/common #186
+- [x] Add `created_on_demand` versatile image field to True for local development #185
+- [x] Upgrade to DRF 3.4 #184
+- [x] Error when running migrate command on Azure VM #181
+- [x] Update users serializer for new write only field syntax #183
+- [x] Upgrade Django 1.9.7 #180
+- [x] Update `IsOwnerOrReadOnly` permission docstring to be more clear #178
+- [x] Upgrade `django-redis-cache` to `v1.6.5` #173
+- [x] Update `/users` documentation. #172
+- [x] Update language in README overview #168
+- [x] Add push notifications to features list  [#123](https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/123) [[ Decided against implementing ]](https://github.com/agconti/cookiecutter-django-rest/issues/122#issuecomment-205048991)
+- [x] Implement `django-push-notifications` over django-pnm [#122](https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/122) [[ Decided against implementing ]](https://github.com/agconti/cookiecutter-django-rest/issues/122#issuecomment-205048991)
+- [x] Upgrade auth to use jwt [#21](https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/21) [[ Decided against implementing ]](https://github.com/agconti/cookiecutter-django-rest/pull/146#issuecomment-205039612)
+- [x] Update dependencies #175 
+- [x] Add ia diagram that details the scaffolded server's structure to docs [#119](https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/119)
+- [x] Evaluate heroku redis as a replacement for Redis To Go [#99](https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/99)
+- [x] Evaluate django-q to replace django-rq [#59](https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/59)
+- [x] Update travis badge to private repo [#26](https://api.github.com/repos/agconti/cookiecutter-django-rest/issues/26)
 
 #### Release 0.5.0
 - [x] Remove duplicate append slash setting in `config/common` #162
