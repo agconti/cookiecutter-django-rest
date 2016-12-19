@@ -109,6 +109,20 @@ class Common(Configuration):
     for config in TEMPLATES:
         config['OPTIONS']['debug'] = DEBUG
 
+    # Password Validation
+    # https://docs.djangoproject.com/en/1.10/topics/auth/passwords/#module-django.contrib.auth.password_validation
+    AUTH_PASSWORD_VALIDATORS = [
+        {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+        {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+        {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+        {
+            'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+            'OPTIONS': {
+                'min_length': 9,
+            }
+        },
+    ]
+
     # Logging
     LOGGING = {
         'version': 1,
