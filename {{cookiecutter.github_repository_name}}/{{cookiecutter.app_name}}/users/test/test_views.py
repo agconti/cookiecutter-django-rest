@@ -1,4 +1,4 @@
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.forms.models import model_to_dict
 from django.contrib.auth.hashers import check_password
 from nose.tools import ok_, eq_

@@ -29,8 +29,8 @@ class Common(Configuration):
 
     )
 
-    # https://docs.djangoproject.com/en/1.8/topics/http/middleware/
-    MIDDLEWARE_CLASSES = (
+    # https://docs.djangoproject.com/en/1.10/topics/http/middleware/
+    MIDDLEWARE = (
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
@@ -109,11 +109,29 @@ class Common(Configuration):
     for config in TEMPLATES:
         config['OPTIONS']['debug'] = DEBUG
 
+    # Password Validation
+    # https://docs.djangoproject.com/en/1.10/topics/auth/passwords/#module-django.contrib.auth.password_validation
+    AUTH_PASSWORD_VALIDATORS = [
+        {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+        {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+        {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+        {
+            'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+            'OPTIONS': {
+                'min_length': 9,
+            }
+        },
+    ]
+
     # Logging
     LOGGING = {
         'version': 1,
         'disable_existing_loggers': False,
         'formatters': {
+            'django.server': {
+                '()': 'django.utils.log.ServerFormatter',
+                'format': '[%(server_time)s] %(message)s',
+            },
             'verbose': {
                 'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
             },
@@ -131,6 +149,11 @@ class Common(Configuration):
             },
         },
         'handlers': {
+            'django.server': {
+                'level': 'INFO',
+                'class': 'logging.StreamHandler',
+                'formatter': 'django.server',
+            },
             'console': {
                 'level': 'INFO',
                 'filters': ['require_debug_true'],
@@ -152,6 +175,11 @@ class Common(Configuration):
             'django': {
                 'handlers': ['console'],
                 'propagate': True,
+            },
+            'django.server': {
+                'handlers': ['django.server'],
+                'level': 'INFO',
+                'propagate': False,
             },
             'django.request': {
                 'handlers': ['mail_admins'],

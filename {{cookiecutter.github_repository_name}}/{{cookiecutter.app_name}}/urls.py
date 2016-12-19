@@ -1,8 +1,8 @@
 from __future__ import unicode_literals
 
 from django.conf import settings
+from django.urls import reverse_lazy
 from django.conf.urls import include, url
-from django.core.urlresolvers import reverse_lazy
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic.base import RedirectView
@@ -14,7 +14,7 @@ router = DefaultRouter()
 router.register(r'users', UserViewSet)
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', admin.site.urls),
     url(r'^django-rq/', include('django_rq.urls')),
     url(r'^api/v1/', include('authentication.urls')),
     url(r'^api/v1/', include(router.urls)),
