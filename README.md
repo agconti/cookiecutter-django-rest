@@ -36,7 +36,7 @@ Example of the result: https://github.com/agconti/piedpiper-web
 
 ## Features
 
-- Django 1.9+
+- Django 1.10+
 - PostgreSQL
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
 - Configured for deploying to [Heroku](https://www.heroku.com)
