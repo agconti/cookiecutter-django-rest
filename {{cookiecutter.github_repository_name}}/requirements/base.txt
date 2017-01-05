@@ -6,7 +6,7 @@ django-configurations==2.0
 
 # For the persistence stores
 psycopg2==2.6.2
-dj-database-url==0.4.1
+dj-database-url==0.4.2
 
 # Models
 django-model-utils==2.6
