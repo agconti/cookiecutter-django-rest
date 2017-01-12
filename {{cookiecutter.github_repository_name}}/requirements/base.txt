@@ -1,5 +1,5 @@
 # Django
-Django==1.10.4
+Django==1.10.5
 
 # Environmental var configuration
 django-configurations==2.0
