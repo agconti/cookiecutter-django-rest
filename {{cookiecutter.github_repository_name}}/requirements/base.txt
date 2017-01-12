@@ -17,7 +17,7 @@ Markdown==2.6.7
 django-filter==1.0.1
 
 # Static files
-whitenoise==3.2.2
+whitenoise==3.2.3
 
 # Media files
 boto==2.45.0
