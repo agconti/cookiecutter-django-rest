@@ -12,7 +12,7 @@ django-nose==1.4.4
 nose-progressive==1.5.1
 
 # Code Coverage
-coverage==4.3.1
+coverage==4.3.3
 
 # Style Enforcement
 flake8==3.2.1
