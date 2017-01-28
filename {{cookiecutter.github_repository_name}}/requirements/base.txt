@@ -13,7 +13,7 @@ django-model-utils==2.6.1
 
 # Rest apis
 djangorestframework==3.5.3
-Markdown==2.6.7
+Markdown==2.6.8
 django-filter==1.0.1
 
 # Static files
