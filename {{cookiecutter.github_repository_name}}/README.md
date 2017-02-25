@@ -45,6 +45,12 @@ Run the development server:
 python {{cookiecutter.app_name}}/manage.py runserver
 ```
 
+Run the backoffice server:
+```bash
+python {{cookiecutter.app_name}}/manage.py migrate --configuration=Backoffice
+python {{cookiecutter.app_name}}/manage.py runserver --configuration=Backoffice
+```
+
 # Create Servers
 By default the included fabfile will setup three environments:
 
