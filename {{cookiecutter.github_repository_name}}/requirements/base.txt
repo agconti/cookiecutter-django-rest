@@ -12,7 +12,7 @@ dj-database-url==0.4.2
 django-model-utils==2.6.1
 
 # Rest apis
-djangorestframework==3.5.3
+djangorestframework==3.5.4
 Markdown==2.6.8
 django-filter==1.0.1
 
@@ -20,11 +20,11 @@ django-filter==1.0.1
 whitenoise==3.3.0
 
 # Media files
-boto==2.45.0
+boto==2.46.1
 django_unique_upload==0.2.1
 
 # Image manipulation
-django-versatileimagefield==1.6.2
+django-versatileimagefield==1.6.3
 
 # For asynchronous queuing
 django-rq==0.9.4
