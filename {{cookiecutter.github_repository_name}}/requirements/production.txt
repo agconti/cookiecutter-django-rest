@@ -13,4 +13,4 @@ hiredis==0.2.0
 django-redis-cache==1.7.1
 
 # App Monitoring
-newrelic==2.78.0.57
+newrelic==2.80.1.61
