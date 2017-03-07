@@ -23,7 +23,7 @@ def test():
     Runs nose test suite
     """
     local('flake8 {}'.format(env.project_name))
-    print cyan('flake8 passed!', bold=True)
+    print(cyan('flake8 passed!', bold=True))
     local('python {}/manage.py test'.format(env.project_name))
 
 
@@ -31,7 +31,7 @@ def init():
     """
     Deploys servers
     """
-    print cyan('Initializing...', bold=True)
+    print(cyan('Initializing...', bold=True))
     set_remotes()
     ask_for_aws_keys()
     for environment in env.environments:
@@ -46,7 +46,7 @@ def set_remotes():
     Sets git remotes based on project structure
     """
     require('project_name')
-    print cyan('Setting git remotes...')
+    print(cyan('Setting git remotes...'))
 
     local('git remote add dev git@heroku.com:{}-dev.git'.format(env.project_name))
     local('git remote add qa git@heroku.com:{}-qa.git'.format(env.project_name))
@@ -81,7 +81,7 @@ def create_server():
     require('environment')
     require('project_name')
 
-    print cyan('Creating new server'.format(env.project_name, env.environment))
+    print(cyan('Creating new server'.format(env.project_name, env.environment)))
     require('environment')
     local('heroku create {}-{} --buildpack https://github.com/heroku/heroku-buildpack-python'
           .format(env.project_name, env.environment))
@@ -104,7 +104,7 @@ def configure_sever():
 
 
 def deploy_docs():
-    print cyan('Deploying docs...')
+    print(cyan('Deploying docs...'))
     local('mkdocs gh-deploy')
 
 
@@ -112,7 +112,7 @@ def push():
     require('environment')
     require('branch')
 
-    print cyan('Pushing to Heroku...')
+    print(cyan('Pushing to Heroku...'))
     require('environment')
     local('git push {} {}:master'.format(env.environment, env.branch))
 
