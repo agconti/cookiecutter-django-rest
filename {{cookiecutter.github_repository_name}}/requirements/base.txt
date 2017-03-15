@@ -27,7 +27,7 @@ django_unique_upload==0.2.1
 django-versatileimagefield==1.6.3
 
 # For asynchronous queuing
-django-rq==0.9.4
+django-rq==0.9.5
 
 # Time zones support
 pytz==2016.10
