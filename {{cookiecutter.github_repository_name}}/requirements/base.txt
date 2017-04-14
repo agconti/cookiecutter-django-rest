@@ -30,4 +30,4 @@ django-versatileimagefield==1.6.3
 django-rq==0.9.5
 
 # Time zones support
-pytz==2016.10
+pytz==2017.2
