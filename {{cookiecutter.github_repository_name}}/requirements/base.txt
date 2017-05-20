@@ -14,7 +14,7 @@ django-model-utils==3.0.0
 # Rest apis
 djangorestframework==3.6.2
 Markdown==2.6.8
-django-filter==1.0.2
+django-filter==1.0.4
 
 # Static files
 whitenoise==3.3.0
