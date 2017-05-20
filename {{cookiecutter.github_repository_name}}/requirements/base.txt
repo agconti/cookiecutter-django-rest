@@ -12,7 +12,7 @@ dj-database-url==0.4.2
 django-model-utils==3.0.0
 
 # Rest apis
-djangorestframework==3.6.2
+djangorestframework==3.6.3
 Markdown==2.6.8
 django-filter==1.0.4
 
