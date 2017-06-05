@@ -2,7 +2,7 @@
 -r base.txt
 
 # WSGI Handler
-gevent==1.2.1
+gevent==1.2.2
 gunicorn==19.7.1
 
 # Static and Media Storage
