@@ -24,7 +24,7 @@ boto==2.48.0
 django_unique_upload==0.2.1
 
 # Image manipulation
-django-versatileimagefield==1.7.0
+django-versatileimagefield==1.7.1
 
 # For asynchronous queuing
 django-rq==0.9.6
