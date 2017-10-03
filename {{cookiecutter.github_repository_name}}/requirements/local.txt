@@ -9,5 +9,5 @@ ipython==5.3.0
 mkdocs==0.16.3
 
 # Command Utils
-Fabric==1.13.2
+Fabric==1.14.0
 pycrypto==2.6.1
