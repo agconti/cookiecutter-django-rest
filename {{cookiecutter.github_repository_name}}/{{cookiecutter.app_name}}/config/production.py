@@ -13,10 +13,6 @@ class Production(Common):
     INSTALLED_APPS = Common.INSTALLED_APPS
     SECRET_KEY = values.SecretValue()
 
-    # django-secure
-    # http://django-secure.readthedocs.org/en/v0.1.2/settings.html
-    INSTALLED_APPS += ("djangosecure", )
-
     SECURE_HSTS_SECONDS = 60
     SECURE_HSTS_INCLUDE_SUBDOMAINS = values.BooleanValue(True)
     SECURE_FRAME_DENY = values.BooleanValue(True)

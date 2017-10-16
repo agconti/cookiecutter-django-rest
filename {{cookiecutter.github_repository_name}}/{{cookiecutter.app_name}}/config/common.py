@@ -129,7 +129,7 @@ class Common(Configuration):
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [STATICFILES_DIRS],
+            'DIRS': STATICFILES_DIRS,
             'OPTIONS': {
                 'context_processors': [
                     'django.contrib.auth.context_processors.auth',

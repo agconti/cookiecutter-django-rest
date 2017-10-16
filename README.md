@@ -21,6 +21,13 @@ This project gives you a solid foundation for your api to mature by baking in th
 ## Quick Start
 
 Install [cookiecutter](https://github.com/audreyr/cookiecutter):
+
+```bash
+brew install cookiecutter
+```
+
+or
+
 ```bash
 pip install cookiecutter
 ```
@@ -36,7 +43,7 @@ Example of the result: https://github.com/agconti/piedpiper-web
 
 ## Features
 
-- Django 1.10+
+- Django 1.11+
 - PostgreSQL
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
 - Configured for deploying to [Heroku](https://www.heroku.com)
