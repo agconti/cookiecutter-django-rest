@@ -15,10 +15,6 @@ This cookiecutter template takes care of the setup and configuration so you can 
 
 This project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and application monitoring.
 
-### What you'll be building
-
-![ia diagram](https://cdn.rawgit.com/agconti/cookiecutter-django-rest/master/media/ia-diagram.svg)
-
 ## Quick Start
 
 Install [cookiecutter](https://github.com/audreyr/cookiecutter):
