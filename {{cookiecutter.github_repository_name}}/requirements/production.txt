@@ -1,7 +1,7 @@
 # Dependencies related to deploying {{cookiecutter.github_repository_name}}
 
 # WSGI Handler
-gevent==1.2a2
+gevent==1.2.2
 gunicorn==19.7.1
 
 # Static and Media Storage
