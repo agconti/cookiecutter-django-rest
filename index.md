@@ -61,7 +61,7 @@ This project adheres to the [Contributor Code of Conduct](.github/CONTRIBUTING.m
 
 ## Release notes
 
-- [0.6.0](#release-070)
+- [0.7.0](#release-070)
 - [0.6.0](#release-060)
 - [0.5.0](#release-050)
 - [0.4.0](#release-040)
