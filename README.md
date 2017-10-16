@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/agconti/cookiecutter-django-rest.svg?branch=docs-project-readme-travis)](https://travis-ci.org/agconti/cookiecutter-django-rest)
 [![Updates](https://pyup.io/repos/github/agconti/cookiecutter-django-rest/shield.svg)](https://pyup.io/repos/github/agconti/cookiecutter-django-rest/)
 
-For creating REST apis for mobile and web applications.
+`cookiecutter-django-rest` takes care of the details so you can focus on making your api awesome. Scaffolding a project takes seconds and gives you a solid foundation by baking in Django's best practices. Just add your own resources to the api and start shipping!
 
 - [Overview](#overview)
 - [Quick Start](#quick-start)
