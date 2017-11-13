@@ -1,13 +1,11 @@
 import os
 from .common import Common
-from configurations import values
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Local(Common):
 
-    DEBUG = values.BooleanValue(True)
+    DEBUG = True
     for config in Common.TEMPLATES:
         config['OPTIONS']['debug'] = DEBUG
 
@@ -27,7 +25,7 @@ class Local(Common):
     # Mail
     EMAIL_HOST = 'localhost'
     EMAIL_PORT = 1025
-    EMAIL_BACKEND = values.Value('django.core.mail.backends.console.EmailBackend')
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
     # Vesitle Image Field settings
     Common.VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = True

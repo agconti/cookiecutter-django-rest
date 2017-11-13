@@ -1,7 +1,6 @@
 import os
 from os.path import join
-from configurations import Configuration, values
-
+from configurations import Configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 try:
@@ -46,13 +45,13 @@ class Common(Configuration):
         'django.middleware.security.SecurityMiddleware'
     )
 
+    ALLOWED_HOSTS = ["*"]
     ROOT_URLCONF = 'urls'
-
     SECRET_KEY = 'Not a secret'
     WSGI_APPLICATION = 'wsgi.application'
 
     # Email
-    EMAIL_BACKEND = values.Value('django.core.mail.backends.smtp.EmailBackend')
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
     ADMINS = (
         ('Author', '{{cookiecutter.email}}'),
@@ -64,7 +63,7 @@ class Common(Configuration):
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'postgres',
             'USER': 'postgres',
-            # 'PASSWORD': 'mysecretpassword', # add new password via env file
+            'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
             'HOST': 'postgres',
             'PORT': 5432,
         }
@@ -79,7 +78,7 @@ class Common(Configuration):
             'LOCATION': redis_url,
             'OPTIONS': {
                 'DB': 0,
-                # 'PASSWORD': 'yadayada',
+                'PASSWORD': os.getenv('REDIS_PASSWORD'),
                 'PARSER_CLASS': 'redis.connection.HiredisParser',
                 'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
                 'CONNECTION_POOL_CLASS_KWARGS': {
@@ -98,12 +97,12 @@ class Common(Configuration):
             'HOST': 'redis',
             'PORT': 6379,
             'DB': 1,
-            # 'PASSWORD': 'some-password',
+            'PASSWORD': os.getenv('REDIS_PASSWORD'),
             'DEFAULT_TIMEOUT': 360,
         },
     }
     # General
-    APPEND_SLASH = values.BooleanValue(False)
+    APPEND_SLASH = False
     TIME_ZONE = 'UTC'
     LANGUAGE_CODE = 'en-us'
     # If you set this to False, Django will make some optimizations so as not
@@ -152,7 +151,7 @@ class Common(Configuration):
 
     # Set DEBUG to False as a default for safety
     # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-    DEBUG = values.BooleanValue(False)
+    DEBUG = False
     for config in TEMPLATES:
         config['OPTIONS']['debug'] = DEBUG
 

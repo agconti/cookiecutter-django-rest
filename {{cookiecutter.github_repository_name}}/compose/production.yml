@@ -1,18 +1,18 @@
 version: '2'
 services:
   redis:
-   image: redis:3.0
+   image: redis:3.2.11
    ports:
      - "6379:6379"
   postgres:
-   image: postgres:9.6
+   image: postgres:9.6.5
   web:
    build: ../
    command: newrelic-admin run-program /usr/local/bin/gunicorn -w 4 -b 0.0.0.0:5000 wsgi:application --chdir={{cookiecutter.app_name}}
    volumes:
      - ../:/code
    ports:
-     - "8000:8000"
+     - 8000
    depends_on:
      - postgres
      - redis
