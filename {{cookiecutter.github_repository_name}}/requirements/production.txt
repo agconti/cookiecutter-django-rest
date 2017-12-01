@@ -15,4 +15,4 @@ django-redis-cache==1.7.1
 django-secure==1.0.1
 
 # App Monitoring
-newrelic==2.96.0.80
+newrelic==2.98.0.81
