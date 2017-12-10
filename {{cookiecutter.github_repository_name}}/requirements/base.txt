@@ -13,7 +13,7 @@ django-model-utils==3.0.0
 
 # Rest apis
 djangorestframework==3.7.3
-Markdown==2.6.9
+Markdown==2.6.10
 django-filter==1.1.0
 
 # Static files
@@ -27,7 +27,7 @@ django_unique_upload==0.2.1
 django-versatileimagefield==1.8.1
 
 # For asynchronous queuing
-django-rq==1.0.0
+django-rq==1.0.1
 
 # Time zones support
 pytz==2017.3
