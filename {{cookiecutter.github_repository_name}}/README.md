@@ -1,17 +1,19 @@
-#{{cookiecutter.github_repository_name}}
+# {{cookiecutter.github_repository_name}}
+
 [![Build Status](https://travis-ci.org/{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}.svg?branch=master)](https://travis-ci.org/{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}})
+[![Built with](https://img.shields.io/badge/Built_with-Cookiecutter_Django_Rest-F7B633.svg)](https://github.com/agconti/cookiecutter-django-rest)
 
 {{cookiecutter.description}}. Check out the project's [documentation](http://{{cookiecutter.github_username}}.github.io/{{cookiecutter.github_repository_name}}/).
 
 # Prerequisites
 
-- [docker](https://docs.docker.com/docker-for-mac/install/).  
-- [travis cli](http://blog.travis-ci.com/2013-01-14-new-client/)
-- [heroku toolbelt](https://toolbelt.heroku.com/)
+- [Docker](https://docs.docker.com/docker-for-mac/install/)  
+- [Travis CLI](http://blog.travis-ci.com/2013-01-14-new-client/)
+- [Heroku Toolbelt](https://toolbelt.heroku.com/)
 
 # Initialize the project
 
-Initialize the git repository
+Initialize the git repository:
 
 ```bash
 git init
