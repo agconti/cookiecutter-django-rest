@@ -1,8 +1,0 @@
-# dependencies that are only related to deving on your local machine
-
-# Debugging
-ipdb==0.10.3
-ipython==5.3.0
-
-# Docs
-mkdocs==0.17.1
