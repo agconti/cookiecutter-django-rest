@@ -53,7 +53,6 @@ Example of the result: https://github.com/agconti/piedpiper-web
 - Caching with Redis via [Django Redis](https://github.com/niwinz/django-redis)
 - Easy debugging with [ipython](http://ipython.org/) and [ipdb](https://pypi.python.org/pypi/ipdb)
 - Style Enforcement via [flake8](https://flake8.readthedocs.org/en/2.3.0/)
-- Fabfile for easily setting up servers
 
 ## Contributing
 Want a new feature? Open an issue and let's chat!
