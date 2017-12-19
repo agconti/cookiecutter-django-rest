@@ -1,14 +1,9 @@
 import os
 from os.path import join
+from distutils.util import strtobool
+from urllib import parse
 from configurations import Configuration
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-try:
-    # Python 2.x
-    import urlparse
-except ImportError:
-    # Python 3.x
-    from urllib import parse as urlparse
 
 
 class Common(Configuration):
@@ -27,6 +22,7 @@ class Common(Configuration):
         'rest_framework.authtoken',  # token authentication
         'django_rq',                 # asynchronous queuing
         'versatileimagefield',       # image manipulation
+        'django_filters',            # for filtering rest endpoints
 
         # Your apps
         'authentication',
@@ -34,20 +30,20 @@ class Common(Configuration):
 
     )
 
-    # https://docs.djangoproject.com/en/1.10/topics/http/middleware/
+    # https://docs.djangoproject.com/en/1.11/topics/http/middleware/
     MIDDLEWARE = (
+        'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
         'django.middleware.csrf.CsrfViewMiddleware',
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
-        'django.middleware.security.SecurityMiddleware'
     )
 
     ALLOWED_HOSTS = ["*"]
     ROOT_URLCONF = 'urls'
-    SECRET_KEY = 'Not a secret'
+    SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     WSGI_APPLICATION = 'wsgi.application'
 
     # Email
@@ -60,18 +56,18 @@ class Common(Configuration):
     # Postgres
     DATABASES = DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'postgres',
-            'USER': 'postgres',
-            'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-            'HOST': 'postgres',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('POSTGRES_DB', 'postgres'),
+            'USER': os.getenv('POSTGRES_USER', 'postgres'),
+            'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
+            'HOST': os.getenv('DATABASE_URL', 'postgres'),
+            'CONN_MAX_AGE': int(os.getenv('POSTGRES_CONN_MAX_AGE', 600)),
             'PORT': 5432,
         }
     }
 
-
     # Caching
-    redis_url = urlparse.urlparse(os.environ.get('REDIS_URL', 'redis:6379'))
+    redis_url = parse.urlparse(os.environ.get('REDIS_URL', 'redis:6379'))
     CACHES = {
         'default': {
             'BACKEND': 'redis_cache.RedisCache',
@@ -101,6 +97,7 @@ class Common(Configuration):
             'DEFAULT_TIMEOUT': 360,
         },
     }
+
     # General
     APPEND_SLASH = False
     TIME_ZONE = 'UTC'
@@ -112,9 +109,11 @@ class Common(Configuration):
     USE_TZ = True
     LOGIN_REDIRECT_URL = '/'
 
-    # Static Files
-    STATIC_ROOT = join(os.path.dirname(BASE_DIR), 'staticfiles')
-    STATICFILES_DIRS = [join(os.path.dirname(BASE_DIR), 'static'), ]
+    # Static files (CSS, JavaScript, Images)
+    # https://docs.djangoproject.com/en/1.11/howto/static-files/
+    STATIC_ROOT = os.path.normpath(join(os.path.dirname(BASE_DIR), 'static'))
+    MKDOCS_BUILD_DIR = join(os.path.dirname(BASE_DIR), 'site')
+    STATICFILES_DIRS = [MKDOCS_BUILD_DIR, ]
     STATIC_URL = '/static/'
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -129,21 +128,13 @@ class Common(Configuration):
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
             'DIRS': STATICFILES_DIRS,
+            'APP_DIRS': True,
             'OPTIONS': {
                 'context_processors': [
-                    'django.contrib.auth.context_processors.auth',
                     'django.template.context_processors.debug',
-                    'django.template.context_processors.i18n',
-                    'django.template.context_processors.media',
-                    'django.template.context_processors.static',
-                    'django.template.context_processors.tz',
-                    'django.contrib.messages.context_processors.messages'
-                ],
-                'loaders':[
-                    ('django.template.loaders.cached.Loader', [
-                        'django.template.loaders.filesystem.Loader',
-                        'django.template.loaders.app_directories.Loader',
-                    ]),
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
                 ],
             },
         },
@@ -151,21 +142,22 @@ class Common(Configuration):
 
     # Set DEBUG to False as a default for safety
     # https://docs.djangoproject.com/en/dev/ref/settings/#debug
-    DEBUG = False
-    for config in TEMPLATES:
-        config['OPTIONS']['debug'] = DEBUG
+    DEBUG = strtobool(os.getenv('DJANGO_DEBUG', 'no'))
 
     # Password Validation
-    # https://docs.djangoproject.com/en/1.10/topics/auth/passwords/#module-django.contrib.auth.password_validation
+    # https://docs.djangoproject.com/en/1.11/topics/auth/passwords/#module-django.contrib.auth.password_validation
     AUTH_PASSWORD_VALIDATORS = [
-        {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
-        {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
-        {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+        {
+            'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        },
         {
             'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-            'OPTIONS': {
-                'min_length': 9,
-            }
+        },
+        {
+            'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        },
+        {
+            'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
         },
     ]
 
@@ -184,10 +176,6 @@ class Common(Configuration):
             'simple': {
                 'format': '%(levelname)s %(message)s'
             },
-            'rq_console': {
-                'format': '%(asctime)s %(message)s',
-                'datefmt': '%H:%M:%S',
-            },
         },
         'filters': {
             'require_debug_true': {
@@ -201,16 +189,9 @@ class Common(Configuration):
                 'formatter': 'django.server',
             },
             'console': {
-                'level': 'INFO',
-                'filters': ['require_debug_true'],
+                'level': 'DEBUG',
                 'class': 'logging.StreamHandler',
                 'formatter': 'simple'
-            },
-            'rq_console': {
-                'level': 'DEBUG',
-                'class': 'rq.utils.ColorizingStreamHandler',
-                'formatter': 'rq_console',
-                'exclude': ['%(asctime)s'],
             },
             'mail_admins': {
                 'level': 'ERROR',
@@ -223,19 +204,19 @@ class Common(Configuration):
                 'propagate': True,
             },
             'django.server': {
-                'handlers': ['django.server'],
+                'handlers': ['django.server', 'console'],
                 'level': 'INFO',
                 'propagate': False,
             },
             'django.request': {
-                'handlers': ['mail_admins'],
+                'handlers': ['mail_admins', 'console'],
                 'level': 'ERROR',
                 'propagate': False,
             },
-            'rq.worker': {
-                'handlers': ['rq_console'],
-                'level': 'DEBUG'
-            }
+            'django.db.backends': {
+                'handlers': ['console'],
+                'level': 'INFO'
+            },
         }
     }
 

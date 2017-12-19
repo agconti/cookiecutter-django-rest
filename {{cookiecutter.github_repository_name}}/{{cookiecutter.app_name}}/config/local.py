@@ -4,10 +4,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Local(Common):
-
     DEBUG = True
-    for config in Common.TEMPLATES:
-        config['OPTIONS']['debug'] = DEBUG
 
     # Testing
     INSTALLED_APPS = Common.INSTALLED_APPS
