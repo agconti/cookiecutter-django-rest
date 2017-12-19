@@ -25,8 +25,7 @@ class Common(Configuration):
         'django_filters',            # for filtering rest endpoints
 
         # Your apps
-        'authentication',
-        'users'
+        'users',
 
     )
 
