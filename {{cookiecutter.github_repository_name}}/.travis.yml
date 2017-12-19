@@ -1,19 +1,13 @@
+sudo: required
 language: python
 services:
-  - postgresql
-  - redis-server
+  - docker
 python:
-  - "2.7"
+  - "3.6"
 before_script:
-- export DATABASE_URL=postgres://postgres@localhost/{{ cookiecutter.app_name }}
-- export DJANGO_SECRET=`openssl rand -base64 32`
-- psql -c 'CREATE DATABASE "{{ cookiecutter.app_name }}";' -U postgres
-install:
-  - "pip install -r requirements/test.txt"
+  - docker-compose build
 script:
-  - ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}}
-after_success:
-  - coveralls
+  - docker-compose run -rm web ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}}
 
 deploy:
   provider: heroku
@@ -29,12 +23,5 @@ deploy:
 notifications:
   email: false
 
-# This reportedly works around an issue downloading packages from pypi on
-# travis. Consider removing this after the underlying issue is fixed.
-# https://github.com/travis-ci/travis-ci/issues/2389
-sudo: false
-
 matrix:
   fast_finish: true
-
-cache: pip
