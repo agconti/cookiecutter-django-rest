@@ -4,9 +4,8 @@
 {{cookiecutter.description}}. Check out the project's [documentation](http://{{cookiecutter.github_username}}.github.io/{{cookiecutter.github_repository_name}}/).
 
 # Prerequisites
-- [virtualenv](https://virtualenv.pypa.io/en/latest/)
-- [postgresql](http://www.postgresql.org/)
-- [redis](http://redis.io/)
+
+- [docker](https://docs.docker.com/docker-for-mac/install/).  
 - [travis cli](http://blog.travis-ci.com/2013-01-14-new-client/)
 - [heroku toolbelt](https://toolbelt.heroku.com/)
 
@@ -19,22 +18,16 @@ git init
 git remote add origin git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}.git
 ```
 
-Build the docker containers for development
+Start the dev server for local development:
 
 ```bash
-docker-compose -f ./compose/local.yml build
+docker-compose up
 ```
 
-Start the for local development
+Create a superuser to login to the admin:
 
 ```bash
-docker-compose -f ./compose/local.yml up
-```
-
-Migrate the database and create a superuser:
-```bash
-docker run web {{cookiecutter.app_name}}/manage.py migrate
-docker run web {{cookiecutter.app_name}}/manage.py createsuperuser
+docker-compose run -rm web ./viral/manage.py createsuperuser
 ```
 
 
