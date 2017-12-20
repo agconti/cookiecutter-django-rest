@@ -7,29 +7,14 @@ python:
   - "3.6"
 services:
   - docker
-  - postgresql
-before_install:
-  - docker pull carlad/sinatra
-  - docker run -d -p 127.0.0.1:80:4567 carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec foreman start;"
-  - docker ps -a
-  - docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
 install:
   - pip install cookiecutter
   - cookiecutter . --no-input
   - cd piedpiper-web
-  - docker-compose -f ./compose/local.yml build
-  - docker-compose -f ./compose/local.yml up
-  - docker ps -a
-
 before_script:
-  - export DATABASE_URL=postgres://postgres@localhost/piedpiper
-  - export DJANGO_SECRET=`openssl rand -base64 32`
-  - psql -c 'CREATE DATABASE "piedpiper";' -U postgres
+  - docker-compose up
 script:
-    - docker run web piedpiper/manage.py test piedpiper
+  - docker run --rm web ./piedpiper/manage.py test
 
 notifications:
   email: false
-
-matrix:
-  fast_finish: true
