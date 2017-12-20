@@ -23,6 +23,3 @@ class Local(Common):
     EMAIL_HOST = 'localhost'
     EMAIL_PORT = 1025
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-    # Vesitle Image Field settings
-    Common.VERSATILEIMAGEFIELD_SETTINGS['create_images_on_demand'] = True

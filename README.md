@@ -39,14 +39,16 @@ Example of the result: https://github.com/agconti/piedpiper-web
 
 ## Features
 
+- Python 3.6+
 - Django 1.11+
-- PostgreSQL
+- Fully dockerized, local development via docker-compose.
+- PostgreSQL 9.6+
 - Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
-- Configured for deploying to [Heroku](https://www.heroku.com)
 - Asset storage via [S3](https://github.com/jschneier/django-storages)
-- Class based settings and safe environmental variable management via [django-configurations](https://github.com/jazzband/django-configurations)
-- [Travis](https://travis-ci.org/) config
+- [Travis](https://travis-ci.org/) continuous integration and continuous deployment configuration
+- Continuous deployment with containers deploying to [Heroku](https://www.heroku.com)
 - Monitoring with [New Relic](http://newrelic.com/)
+- Class based settings via [django-configurations](https://github.com/jazzband/django-configurations)
 - [Token authentication](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication)
 - Docs with [mkdocs](http://www.mkdocs.org/)
 - Testing with [django-nose](https://github.com/django-nose/django-nose) and fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html)

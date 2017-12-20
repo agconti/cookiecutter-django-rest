@@ -19,7 +19,6 @@ class Common(Configuration):
         # Third party apps
         'rest_framework',            # utilities for rest apis
         'rest_framework.authtoken',  # token authentication
-        'versatileimagefield',       # image manipulation
         'django_filters',            # for filtering rest endpoints
 
         # Your apps
@@ -204,17 +203,4 @@ class Common(Configuration):
             'rest_framework.authentication.SessionAuthentication',
             'rest_framework.authentication.TokenAuthentication',
         )
-    }
-
-    # Versatile Image Field
-    VERSATILEIMAGEFIELD_SETTINGS = {
-        # The amount of time, in seconds, that references to created images
-        # should be stored in the cache. Defaults to `2592000` (30 days)
-        'cache_length': 2592000,
-        'cache_name': 'versatileimagefield_cache',
-        'jpeg_resize_quality': 70,
-        'sized_directory_name': '__sized__',
-        'filtered_directory_name': '__filtered__',
-        'placeholder_directory_name': '__placeholder__',
-        'create_images_on_demand': False
     }
