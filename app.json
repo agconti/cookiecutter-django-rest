@@ -12,7 +12,11 @@
 	"website": "http://agconti.github.io/cookiecutter-django-rest/",
 	"repository": "https://github.com/agconti/cookiecutter-django-rest",
 	"logo": "http://agconti.com/images/icons/agclogo.png",
-    "image": "heroku/python",
+    "buildpacks": [
+       {
+         "url": "heroku/python"
+       }
+    ],
 	"env": {
 		"DJANGO_SECRET_KEY": {
 			"description": "A secret key for verifying the integrity of signed cookies.",
