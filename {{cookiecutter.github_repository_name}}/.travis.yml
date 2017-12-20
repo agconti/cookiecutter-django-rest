@@ -9,19 +9,19 @@ before_script:
 script:
   - docker-compose run -rm web ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}}
 
-deploy:
-  provider: heroku
-  app:
-    master: {{cookiecutter.app_name}}-dev
-    qa: {{cookiecutter.app_name}}-qa
-    prod: {{cookiecutter.app_name}}-prod
-  on:
-    repo: {{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}
-  run:
-    - "./{{cookiecutter.app_name}}/manage.py migrate"
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com;
+    # could also use `image:` prop of dockercompose to explicitly name this
+    docker tag web registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
+    docker push registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
+    fi
+  - if [ "$TRAVIS_BRANCH" == "qa" ]; then
+    docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com;
+    # could also use `image:` prop of dockercompose to explicitly name this
+    docker tag web registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
+    docker push registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
+    fi
 
 notifications:
   email: false
-
-matrix:
-  fast_finish: true

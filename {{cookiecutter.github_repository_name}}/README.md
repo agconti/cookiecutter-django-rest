@@ -13,13 +13,6 @@
 
 # Initialize the project
 
-Initialize the git repository:
-
-```bash
-git init
-git remote add origin git@github.com:{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}.git
-```
-
 Start the dev server for local development:
 
 ```bash
@@ -33,8 +26,17 @@ docker-compose run -rm web ./viral/manage.py createsuperuser
 ```
 
 
-# Automated Deployment
-Deployment is handled via Travis. When builds pass Travis will automatically deploy that branch to Heroku. Enable this with:
+# Continuous Deployment
+
+Deployment automated via Travis. When builds pass on the master or qa branch, Travis will deploy that branch to Heroku. Enable this by:
+
+Create the production and qa servers:
+
+![Create prod]() ![create qa]()
+
+Securely add your heroku credentials to travis so it can deploy your changes.
 ```bash
-travis encrypt $(heroku auth:token) --add deploy.api_key
+travis encrypt HEROKU_AUTH_TOKEN="$(heroku auth:token)" --add
 ```
+
+You're ready to ship! ✨ 💅 🛳
