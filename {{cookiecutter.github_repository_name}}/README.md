@@ -32,9 +32,15 @@ Deployment automated via Travis. When builds pass on the master or qa branch, Tr
 
 Create the production and qa servers:
 
-![Create prod]() ![create qa]()
+Click the deploy button and name your app `{{cookiecutter.app_name}}-prod`:
 
-Securely add your heroku credentials to travis so it can deploy your changes.
+[![Create Prod](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/agconti/cdr-docker)
+
+Click the deploy button and name your app `{{cookiecutter.app_name}}-qa`:
+
+[![Create QA](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/agconti/cdr-docker)
+
+Securely add your heroku credentials to travis so it can automatically deploy your changes.
 ```bash
 travis encrypt HEROKU_AUTH_TOKEN="$(heroku auth:token)" --add
 ```
