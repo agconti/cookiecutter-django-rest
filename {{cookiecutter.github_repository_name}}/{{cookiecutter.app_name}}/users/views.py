@@ -18,5 +18,6 @@ class UserViewSet(mixins.RetrieveModelMixin,
 
 class UserCreateViewSet(mixins.CreateModelMixin,
                         viewsets.GenericViewSet):
+    queryset = User.objects.all()
     serializer_class = CreateUserSerializer
     permission_classes = (AllowAny,)

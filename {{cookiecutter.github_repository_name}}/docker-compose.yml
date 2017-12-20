@@ -11,8 +11,8 @@ services:
       - DJANGO_SECRET_KEY=local
     build: ./
     command: >
-      bash -c "./viral/manage.py migrate &&
-               ./viral/manage.py runserver 0.0.0.0:8000"
+      bash -c "./{{ cookiecutter.app_name }}/manage.py migrate &&
+               ./{{ cookiecutter.app_name }}/manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./:/code
     ports:
