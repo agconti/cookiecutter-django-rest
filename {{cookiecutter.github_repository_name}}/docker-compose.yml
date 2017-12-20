@@ -1,8 +1,6 @@
 version: '2'
 
 services:
-  redis:
-    image: redis:3.2
   postgres:
     image: postgres:9.6
   web:
@@ -18,5 +16,4 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - redis
       - postgres

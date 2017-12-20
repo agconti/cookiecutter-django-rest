@@ -50,7 +50,6 @@ Example of the result: https://github.com/agconti/piedpiper-web
 - [Token authentication](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication)
 - Docs with [mkdocs](http://www.mkdocs.org/)
 - Testing with [django-nose](https://github.com/django-nose/django-nose) and fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html)
-- Caching with Redis via [Django Redis](https://github.com/niwinz/django-redis)
 - Easy debugging with [ipython](http://ipython.org/) and [ipdb](https://pypi.python.org/pypi/ipdb)
 - Style Enforcement via [flake8](https://flake8.readthedocs.org/en/2.3.0/)
 

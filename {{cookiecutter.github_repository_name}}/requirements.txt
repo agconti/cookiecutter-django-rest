@@ -3,9 +3,6 @@ pytz==2017.3
 Django==1.11.8
 django-configurations==2.0
 gunicorn==19.7.1
-hiredis==0.2.0
-django-redis-cache==1.7.1
-django-rq==0.9.6
 newrelic==2.96.0.80
 
 # For the persistence stores
