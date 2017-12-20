@@ -1,38 +1,38 @@
 {
-  "name": "Cookiecutter Django Rest",
-  "description": "A production ready api built by cookiecutter django rest.",
-  "keywords": [
-    "django",
-    "python",
-    "django rest framework",
-    "postgres",
-    "rest api"
-    "rest"
-  ],
-  "website": "http://agconti.github.io/cookiecutter-django-rest/",
-  "repository": "https://github.com/agconti/cookiecutter-django-rest",
-  "logo": "http://agconti.com/images/icons/agclogo.png",
-  "success_url": "/",
-  "scripts": {
-    "postdeploy": "./piedpiper/manage.py migrate"
-  },
-  "env": {
-    "DJANGO_SECRET_KEY": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
-      "generator": "secret"
-    },
-    "DJANGO_AWS_BUCKET_NAME": {
-      "description": "A bucket name.",
-    },
-  },
-  "formation": {
-    "web": {
-      "quantity": 1,
-      "size": "free"
-    }
-  },
-  "addons": [
-    "newrelic:wayne",
-    "heroku-postgresql:hobby-dev",
-  ],
+	"name": "Cookiecutter Django Rest",
+	"description": "A production ready api built by cookiecutter django rest.",
+	"keywords": [
+		"django",
+		"python",
+		"django rest framework",
+		"postgres",
+		"rest api",
+		"rest"
+	],
+	"website": "http://agconti.github.io/cookiecutter-django-rest/",
+	"repository": "https://github.com/agconti/cookiecutter-django-rest",
+	"logo": "http://agconti.com/images/icons/agclogo.png",
+	"success_url": "/",
+	"scripts": {
+		"postdeploy": "./piedpiper/manage.py migrate"
+	},
+	"env": {
+		"DJANGO_SECRET_KEY": {
+			"description": "A secret key for verifying the integrity of signed cookies.",
+			"generator": "secret"
+		},
+		"DJANGO_AWS_BUCKET_NAME": {
+			"description": "A bucket name."
+		}
+	},
+	"formation": {
+		"web": {
+			"quantity": 1,
+			"size": "free"
+		}
+	},
+	"addons": [
+		"newrelic:wayne",
+		"heroku-postgresql:hobby-dev"
+	]
 }
