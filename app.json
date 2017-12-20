@@ -16,7 +16,7 @@
 		"DJANGO_SECRET_KEY": {
 			"description": "A secret key for verifying the integrity of signed cookies.",
 			"generator": "secret"
-		},
+		}
 	},
 	"formation": {
 		"web": {
