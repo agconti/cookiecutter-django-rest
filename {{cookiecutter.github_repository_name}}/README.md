@@ -30,19 +30,42 @@ docker-compose run -rm web ./viral/manage.py createsuperuser
 
 Deployment automated via Travis. When builds pass on the master or qa branch, Travis will deploy that branch to Heroku. Enable this by:
 
-Create the production and qa servers:
+Creating the production sever:
 
-Click the deploy button and name your app `{{cookiecutter.app_name}}-prod`:
+```
+heroku create `{{cookiecutter.app_name}}-prod --remote prod && \
+    heroku addons:create newrelic:wayne && \
+    heroku addons:create heroku-postgresql:hobby-dev && \
+    heroku config:set DJANGO_SECRET=`openssl rand -base64 32` \
+        DJANGO_AWS_ACCESS_KEY_ID="Add your id" \
+        DJANGO_AWS_SECRET_ACCESS_KEY="Add your key" \
+        DJANGO_AWS_STORAGE_BUCKET_NAME="{{cookiecutter.app_name}}-prod" \
+```
 
-[![Create Prod](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/agconti/cdr-docker)
+Creating the qa sever:
 
-Click the deploy button and name your app `{{cookiecutter.app_name}}-qa`:
-
-[![Create QA](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/agconti/cdr-docker)
+```
+heroku create `{{cookiecutter.app_name}}-qa --remote qa && \
+    heroku addons:create newrelic:wayne && \
+    heroku addons:create heroku-postgresql:hobby-dev && \
+    heroku config:set DJANGO_SECRET=`openssl rand -base64 32` \
+        DJANGO_AWS_ACCESS_KEY_ID="Add your id" \
+        DJANGO_AWS_SECRET_ACCESS_KEY="Add your key" \
+        DJANGO_AWS_STORAGE_BUCKET_NAME="{{cookiecutter.app_name}}-qa" \
+```
 
 Securely add your heroku credentials to travis so it can automatically deploy your changes.
+
 ```bash
 travis encrypt HEROKU_AUTH_TOKEN="$(heroku auth:token)" --add
 ```
 
-You're ready to ship! ✨ 💅 🛳
+Commit your changes and push to master and qa to trigger your first deploy:
+
+```bash
+git commit -m "ci(travis): added heroku credentials" && \
+git push origin master && \
+git checkout -b qa && \
+git push -u origin qa
+```
+You're ready to continuously ship! ✨ 💅 🛳

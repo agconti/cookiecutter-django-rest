@@ -16,8 +16,10 @@ EXPOSE 8000
 RUN adduser -m web
 USER web
 
-# Runs the production server
-CMD newrelic-admin run-program gunicorn \
+
+# Migrates the database and runs the production server
+CMD /{{ cookiecutter.app_name }}/manage.py migrate && \
+    newrelic-admin run-program gunicorn \
     --pythonpath="$PWD/{{ cookiecutter.app_name }}" \
     --bind 0.0.0.0:$PORT \
     wsgi:application
