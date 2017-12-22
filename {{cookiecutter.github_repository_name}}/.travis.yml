@@ -7,18 +7,17 @@ python:
 before_script:
   - docker-compose build
 script:
-  - docker-compose run -rm web ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}}
+  - docker-compose run --rm web flake8 .
+  - docker-compose run --rm web ./{{cookiecutter.app_name}}/manage.py test
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com;
-    # could also use `image:` prop of dockercompose to explicitly name this
+    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
     docker tag web registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
     docker push registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
     fi
   - if [ "$TRAVIS_BRANCH" == "qa" ]; then
-    docker login --username=_ --password=$HEROKU_AUTH_TOKEN registry.heroku.com;
-    # could also use `image:` prop of dockercompose to explicitly name this
+    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
     docker tag web registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
     docker push registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
     fi
