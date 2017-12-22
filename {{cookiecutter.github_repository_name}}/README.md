@@ -22,7 +22,7 @@ docker-compose up
 Create a superuser to login to the admin:
 
 ```bash
-docker-compose run -rm web ./viral/manage.py createsuperuser
+docker-compose run --rm web ./{{cookiecutter.app_name}}/manage.py createsuperuser
 ```
 
 
@@ -33,13 +33,14 @@ Deployment automated via Travis. When builds pass on the master or qa branch, Tr
 Creating the production sever:
 
 ```
-heroku create `{{cookiecutter.app_name}}-prod --remote prod && \
-    heroku addons:create newrelic:wayne && \
-    heroku addons:create heroku-postgresql:hobby-dev && \
+heroku create {{cookiecutter.app_name}}-prod --remote prod && \
+    heroku addons:create newrelic:wayne --app {{cookiecutter.app_name}}-prod && \
+    heroku addons:create heroku-postgresql:hobby-dev --app {{cookiecutter.app_name}}-prod && \
     heroku config:set DJANGO_SECRET=`openssl rand -base64 32` \
         DJANGO_AWS_ACCESS_KEY_ID="Add your id" \
         DJANGO_AWS_SECRET_ACCESS_KEY="Add your key" \
         DJANGO_AWS_STORAGE_BUCKET_NAME="{{cookiecutter.app_name}}-prod" \
+        --app {{cookiecutter.app_name}}-prod
 ```
 
 Creating the qa sever:
@@ -60,7 +61,7 @@ Securely add your heroku credentials to travis so it can automatically deploy yo
 travis encrypt HEROKU_AUTH_TOKEN="$(heroku auth:token)" --add
 ```
 
-Commit your changes and push to master and qa to trigger your first deploy:
+Commit your changes and push to master and qa to trigger your first deploys:
 
 ```bash
 git commit -m "ci(travis): added heroku credentials" && \
