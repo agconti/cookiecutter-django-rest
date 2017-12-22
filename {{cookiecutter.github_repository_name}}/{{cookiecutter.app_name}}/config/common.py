@@ -168,7 +168,7 @@ class Common(Configuration):
                 'propagate': True,
             },
             'django.server': {
-                'handlers': ['django.server', 'console'],
+                'handlers': ['django.server'],
                 'level': 'INFO',
                 'propagate': False,
             },
