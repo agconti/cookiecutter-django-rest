@@ -21,14 +21,14 @@ def pg_isready(host, user, password, dbname):
     while time() - start_time < check_timeout:
         try:
             conn = psycopg2.connect(**vars())
-            logger.info("Postgres is ready!")
+            logger.info("Postgres is ready! ✨ 💅")
             conn.close()
             return True
         except psycopg2.OperationalError:
-            logger.info(f"Postgres is not ready. Waiting {check_interval} seconds...")
+            logger.info(f"Postgres isn't ready. Chilling for {check_interval} seconds...")
             sleep(check_interval)
 
-    logger.error("Postgres readiness check timed out.")
+    logger.error(f"We could not connect to Postgres within {check_timeout} seconds.")
     return False
 
 
