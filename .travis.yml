@@ -10,7 +10,7 @@ install:
   - cd piedpiper-web
 script:
   - docker-compose run --rm web bash -c "python wait_for_postgres.py &&
-                                         ./{{cookiecutter.app_name}}/manage.py test"
+                                         ./piedpiper/manage.py test"
 notifications:
   email: false
 cache:
