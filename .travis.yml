@@ -1,9 +1,6 @@
 sudo: required
 language: python
-cache: pip
-
 python:
-  - "2.7"
   - "3.6"
 services:
   - docker
@@ -11,10 +8,10 @@ install:
   - pip install cookiecutter
   - cookiecutter . --no-input
   - cd piedpiper-web
-before_script:
-  - docker-compose up
 script:
-  - docker run --rm web ./piedpiper/manage.py test
-
+  - docker-compose run --rm web bash -c "python wait_for_postgres.py &&
+                                         ./{{cookiecutter.app_name}}/manage.py test"
 notifications:
   email: false
+cache:
+  pip: True
