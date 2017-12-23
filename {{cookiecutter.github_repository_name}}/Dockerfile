@@ -11,16 +11,11 @@ WORKDIR /code
 
 EXPOSE 8000
 
-# Runs the container as a non-root user
-# https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#user
-# https://www.projectatomic.io/blog/2015/08/why-we-dont-let-non-root-users-run-docker-in-centos-fedora-or-rhel/
-RUN groupadd -r web && useradd -r -g web web
-USER web
-
-# Migrates the database and runs the production server
-CMD /{{ cookiecutter.app_name }}/manage.py migrate && \
+# Migrates the database, uploads staticfiles, and runs the production server
+CMD /{{cookiecutter.app_name}}/manage.py migrate &&
+    /{{cookiecutter.app_name}}/manage.py collectstatic --noinput &&
     newrelic-admin run-program gunicorn \
-    --pythonpath="$PWD/{{ cookiecutter.app_name }}" \
+    --pythonpath="./{{cookiecutter.app_name}}" \
     --bind 0.0.0.0:$PORT \
     -w 3 \
     wsgi:application
