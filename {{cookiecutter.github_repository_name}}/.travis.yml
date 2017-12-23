@@ -7,8 +7,9 @@ python:
 before_script:
   - docker-compose build
 script:
-  - docker-compose run --rm web flake8 .
-  - docker-compose run --rm web ./{{cookiecutter.app_name}}/manage.py test
+  - docker-compose run --rm web bash -c "flake8 . &&
+                                         python wait_for_postgres.py &&
+                                         ./{{cookiecutter.app_name}}/manage.py test"
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
@@ -24,3 +25,6 @@ after_success:
 
 notifications:
   email: false
+
+cache:
+  pip: true
