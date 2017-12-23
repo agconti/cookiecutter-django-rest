@@ -4,6 +4,7 @@ from time import time, sleep
 import psycopg2
 check_timeout = os.getenv("POSTGRES_CHECK_TIMEOUT", 30)
 check_interval = os.getenv("POSTGRES_CHECK_INTERVAL", 1)
+interval_unit = "second" if check_interval == 1 else "seconds"
 config = {
     "dbname": os.getenv("POSTGRES_DB", "postgres"),
     "user": os.getenv("POSTGRES_USER", "postgres"),
@@ -25,7 +26,7 @@ def pg_isready(host, user, password, dbname):
             conn.close()
             return True
         except psycopg2.OperationalError:
-            logger.info(f"Postgres isn't ready. Chilling for {check_interval} seconds...")
+            logger.info(f"Postgres isn't ready. Chilling for {check_interval} {interval_unit}...")
             sleep(check_interval)
 
     logger.error(f"We could not connect to Postgres within {check_timeout} seconds.")
