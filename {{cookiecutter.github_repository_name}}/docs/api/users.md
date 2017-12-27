@@ -19,7 +19,7 @@ email      | string | No       | The user's email address.
 
 *Note:*
 
-- *Not* **Authorization Protected**
+- Not Authorization Protected
 
 **Response**:
 
