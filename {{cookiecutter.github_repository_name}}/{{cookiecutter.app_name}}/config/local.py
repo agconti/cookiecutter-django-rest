@@ -1,6 +1,5 @@
 import os
 from .common import Common
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Local(Common):
@@ -16,7 +15,7 @@ class Local(Common):
         '--nologcapture',
         '--with-coverage',
         '--with-progressive',
-        '--cover-package={}'.format(BASE_DIR)
+        '--cover-package={{cookiecutter.app_name}}'
     ]
 
     # Mail
