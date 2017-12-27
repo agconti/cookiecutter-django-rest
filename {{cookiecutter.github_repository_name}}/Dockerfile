@@ -11,12 +11,8 @@ WORKDIR /code
 
 EXPOSE 8000
 
-# Build docs site
-RUN mkdocs build
-
 # Migrates the database, uploads staticfiles, and runs the production server
 CMD /{{cookiecutter.app_name}}/manage.py migrate && \
-    mkdocs gh-deploy && \
     /{{cookiecutter.app_name}}/manage.py collectstatic --noinput && \
     newrelic-admin run-program gunicorn \
     --pythonpath="./{{cookiecutter.app_name}}" \
