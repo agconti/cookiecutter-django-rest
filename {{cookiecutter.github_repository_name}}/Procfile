@@ -1,2 +1,0 @@
-web: newrelic-admin run-program gunicorn --pythonpath="$PWD/{{ cookiecutter.app_name }}" wsgi:application
-worker: python {{cookiecutter.app_name}}/manage.py rqworker default

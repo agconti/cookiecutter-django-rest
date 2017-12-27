@@ -1,40 +1,30 @@
+sudo: required
 language: python
 services:
-  - postgresql
-  - redis-server
+  - docker
 python:
-  - "2.7"
+  - "3.6"
 before_script:
-- export DATABASE_URL=postgres://postgres@localhost/{{ cookiecutter.app_name }}
-- export DJANGO_SECRET=`openssl rand -base64 32`
-- psql -c 'CREATE DATABASE "{{ cookiecutter.app_name }}";' -U postgres
-install:
-  - "pip install -r requirements/test.txt"
+  - docker-compose build
 script:
-  - ./{{cookiecutter.app_name}}/manage.py test {{cookiecutter.app_name}}
-after_success:
-  - coveralls
+  - docker-compose run --rm web bash -c "flake8 . &&
+                                         python wait_for_postgres.py &&
+                                         ./{{cookiecutter.app_name}}/manage.py test"
 
-deploy:
-  provider: heroku
-  app:
-    master: {{cookiecutter.app_name}}-dev
-    qa: {{cookiecutter.app_name}}-qa
-    prod: {{cookiecutter.app_name}}-prod
-  on:
-    repo: {{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}
-  run:
-    - "./{{cookiecutter.app_name}}/manage.py migrate"
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
+    docker tag web registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
+    docker push registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
+    fi
+  - if [ "$TRAVIS_BRANCH" == "qa" ]; then
+    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
+    docker tag web registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
+    docker push registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
+    fi
 
 notifications:
   email: false
 
-# This reportedly works around an issue downloading packages from pypi on
-# travis. Consider removing this after the underlying issue is fixed.
-# https://github.com/travis-ci/travis-ci/issues/2389
-sudo: false
-
-matrix:
-  fast_finish: true
-
-cache: pip
+cache:
+  pip: true
