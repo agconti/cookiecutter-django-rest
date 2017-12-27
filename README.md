@@ -1,18 +1,35 @@
-# cookiecutter-django-rest
-[![Build Status](https://travis-ci.org/agconti/cookiecutter-django-rest.svg?branch=docs-project-readme-travis)](https://travis-ci.org/agconti/cookiecutter-django-rest)
-[![Updates](https://pyup.io/repos/github/agconti/cookiecutter-django-rest/shield.svg)](https://pyup.io/repos/github/agconti/cookiecutter-django-rest/)
+<p align="center">
+  <div style="background: linear-gradient(325deg, #4203DA, #FF04AD); border-radius: 50%; width: 64px; height: 64px; margin: 0 auto;"></div>
+  <h3 align="center">cookiecutter-django-rest</h3>
+  <p align="center">A factory for building bleeding edge, best practiced, scalable, apis<p>
+  <p align="center">
+    <a href="https://travis-ci.org/agconti/cookiecutter-django-rest">
+      <img src="https://travis-ci.org/agconti/cookiecutter-django-rest.svg?branch=master" alt="Build Status">
+    </a>
+    <a href="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/">
+      <img src="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/shield.svg" alt="Dependencies">
+    </a>
+    <a href="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/">
+      <img src="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/python-3-shield.svg" alt="Python 3">
+    </a>
+  </p>
+</p>
 
-`cookiecutter-django-rest` takes care of the details so you can focus on making your api awesome. Scaffolding a project takes seconds and gives you a solid foundation by baking in Django's best practices. Just add your own resources to the api and start shipping!
+You need to make a scalable api on a deadline. You deeply care about the quality of your work.
+`cookiecutter-django-rest` takes care of the details so you can focus on making your api awesome.  Scaffolding a project takes seconds and it gives you authentication, user accounts, and the docs and tests to support them. Just add your own resources to the api and start shipping. ✨ 💅
 
-- [Overview](#overview)
-- [Quick Start](#quick-start)
-- [Features](#features)
-- [Contributing](#contributing)
 
-## Overview
-This cookiecutter template takes care of the setup and configuration so you can focus on making your api awesome. Scaffolding a project takes seconds and it gives you authentication, user accounts, and the docs and tests to support them. After that, just add your own resources to the api and start shipping.
 
-This project gives you a solid foundation for your api to mature by baking in things like asynchronous queueing, image optimization, and application monitoring.
+## Highlights
+- Modern Python development with Python 3.6+
+- Bleeding edge Django 1.11+
+- Fully dockerized, local development via docker-compose.
+- PostgreSQL 9.6+
+- Start off with 100% test coverage, continuous integration, and continuous deployment.
+- Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
+- Auto deployment to heroku, but since we're using containers we can easily deploy anywhere
+- Always current dependencies and security updates, via [pyup.io](https://pyup.io/)
+- A slim but robust foundation -- just enough to maximize your productivity, nothing more.
 
 ## Quick Start
 
@@ -20,12 +37,6 @@ Install [cookiecutter](https://github.com/audreyr/cookiecutter):
 
 ```bash
 brew install cookiecutter
-```
-
-or
-
-```bash
-pip install cookiecutter
 ```
 
 Scaffold your project:
@@ -36,27 +47,3 @@ cookiecutter gh:agconti/cookiecutter-django-rest
 ![Scaffolding](media/scaffolding.gif)
 
 Example of the result: https://github.com/agconti/piedpiper-web
-
-## Features
-
-- Python 3.6+
-- Django 1.11+
-- Fully dockerized, local development via docker-compose.
-- PostgreSQL 9.6+
-- Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
-- Asset storage via [S3](https://github.com/jschneier/django-storages)
-- [Travis](https://travis-ci.org/) continuous integration and continuous deployment configuration
-- Continuous deployment with containers deploying to [Heroku](https://www.heroku.com)
-- Monitoring with [New Relic](http://newrelic.com/)
-- Class based settings via [django-configurations](https://github.com/jazzband/django-configurations)
-- [Token authentication](http://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication)
-- Docs with [mkdocs](http://www.mkdocs.org/)
-- Testing with [django-nose](https://github.com/django-nose/django-nose) and fixtures via [factory-boy](http://factoryboy.readthedocs.org/en/latest/orms.html)
-- Easy debugging with [ipython](http://ipython.org/) and [ipdb](https://pypi.python.org/pypi/ipdb)
-- Style Enforcement via [flake8](https://flake8.readthedocs.org/en/2.3.0/)
-
-## Contributing
-Want a new feature? Open an issue and let's chat!
-Find a bug? Submit a Pull Request!
-
-This project adheres to the [Contributor Code of Conduct](.github/CONTRIBUTING.md).
