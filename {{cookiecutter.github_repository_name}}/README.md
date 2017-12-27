@@ -28,7 +28,7 @@ docker-compose run --rm web ./{{cookiecutter.app_name}}/manage.py createsuperuse
 
 # Continuous Deployment
 
-Deployment automated via Travis. When builds pass on the master or qa branch, Travis will deploy that branch to Heroku. Enable this by:
+Deployment is automated via Travis. When builds pass on the master or qa branch, Travis will deploy that branch to Heroku. Enable this by:
 
 Creating the production sever:
 
@@ -55,13 +55,13 @@ heroku create `{{cookiecutter.app_name}}-qa --remote qa && \
         DJANGO_AWS_STORAGE_BUCKET_NAME="{{cookiecutter.app_name}}-qa" \
 ```
 
-Securely add your heroku credentials to travis so it can automatically deploy your changes.
+Securely adding your Heroku credentials to Travis so it can automatically deploy your changes.
 
 ```bash
 travis encrypt HEROKU_AUTH_TOKEN="$(heroku auth:token)" --add
 ```
 
-Commit your changes and push to master and qa to trigger your first deploys:
+Committing your changes and pushing to master and qa to trigger your first deploys:
 
 ```bash
 git commit -m "ci(travis): added heroku credentials" && \
@@ -69,4 +69,4 @@ git push origin master && \
 git checkout -b qa && \
 git push -u origin qa
 ```
-You're ready to continuously ship! ✨ 💅 🛳
+You're now ready to continuously ship! ✨ 💅 🛳
