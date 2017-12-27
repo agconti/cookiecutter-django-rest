@@ -17,6 +17,5 @@ CMD /{{cookiecutter.app_name}}/manage.py migrate && \
     newrelic-admin run-program gunicorn \
     --pythonpath="./{{cookiecutter.app_name}}" \
     --bind 0.0.0.0:$PORT \
-    -w 3 \
     --log-file - \
     wsgi:application
