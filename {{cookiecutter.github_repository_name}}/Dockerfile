@@ -12,10 +12,6 @@ WORKDIR /code
 EXPOSE 8000
 
 # Migrates the database, uploads staticfiles, and runs the production server
-CMD /{{cookiecutter.app_name}}/manage.py migrate && \
-    /{{cookiecutter.app_name}}/manage.py collectstatic --noinput && \
-    newrelic-admin run-program gunicorn \
-    --pythonpath="./{{cookiecutter.app_name}}" \
-    --bind 0.0.0.0:$PORT \
-    --log-file - \
-    wsgi:application
+CMD manage.py migrate && \
+    manage.py collectstatic --noinput && \
+    newrelic-admin run-program gunicorn --bind 0.0.0.0:$PORT  --log-file - {{cookiecutter.app_name}}.wsgi:application

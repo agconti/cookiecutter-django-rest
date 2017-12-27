@@ -9,7 +9,7 @@ before_script:
 script:
   - docker-compose run --rm web bash -c "flake8 . &&
                                          python wait_for_postgres.py &&
-                                         ./{{cookiecutter.app_name}}/manage.py test"
+                                         ./manage.py test"
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then

@@ -4,7 +4,7 @@ omit = *migrations*,
        *urls*,
        *test*,
        *admin*,
+       ./manage.py,
        ./{{ cookiecutter.app_name }}/config/*,
-       ./{{ cookiecutter.app_name }}/manage.py,
        ./{{ cookiecutter.app_name }}/wsgi.py,
        *__init__*

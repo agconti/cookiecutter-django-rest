@@ -16,7 +16,7 @@
 Create a superuser to login to the admin:
 
 ```bash
-docker-compose run --rm web ./{{cookiecutter.app_name}}/manage.py createsuperuser
+docker-compose run --rm web ./manage.py createsuperuser
 ```
 
 Start the dev server for local development:
