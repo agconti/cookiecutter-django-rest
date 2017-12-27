@@ -1,7 +1,6 @@
 from django.conf import settings
-from django.urls import reverse_lazy
-from django.conf.urls import include, url
-from django.conf.urls.static import static
+from django.urls import path, re_path, include, reverse_lazy
+from django.urls.static import static
 from django.contrib import admin
 from django.views.generic.base import RedirectView
 from rest_framework.routers import DefaultRouter
@@ -13,13 +12,13 @@ router.register(r'users', UserViewSet)
 router.register(r'users', UserCreateViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^api/v1/', include(router.urls)),
-    url(r'^api-token-auth/', views.obtain_auth_token),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('admin/', admin.site.urls),
+    path('api/v1/', include(router.urls)),
+    path('api-token-auth/', views.obtain_auth_token),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     # the 'api-root' from django rest-frameworks default router
     # http://www.django-rest-framework.org/api-guide/routers/#defaultrouter
-    url(r'^$', RedirectView.as_view(url=reverse_lazy('api-root'), permanent=False)),
+    re_path(r'^$', RedirectView.as_view(url=reverse_lazy('api-root'), permanent=False)),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
