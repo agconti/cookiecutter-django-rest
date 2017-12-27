@@ -9,7 +9,7 @@ class UserViewSet(mixins.RetrieveModelMixin,
                   mixins.UpdateModelMixin,
                   viewsets.GenericViewSet):
     """
-    Updates and retrives User accounts
+    Updates and retrives user accounts
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -18,6 +18,9 @@ class UserViewSet(mixins.RetrieveModelMixin,
 
 class UserCreateViewSet(mixins.CreateModelMixin,
                         viewsets.GenericViewSet):
+    """
+    Creates user accounts
+    """
     queryset = User.objects.all()
     serializer_class = CreateUserSerializer
     permission_classes = (AllowAny,)
