@@ -1,5 +1,5 @@
 <p align="center">
-  <div style="background: linear-gradient(325deg, #4203DA, #FF04AD); border-radius: 50%; width: 64px; height: 64px; margin: 0 auto;"></div>
+  <img width="64" src="media/cdr-icon.png" alt="cookiecutter-django-rest" >
   <h3 align="center">cookiecutter-django-rest</h3>
   <p align="center">A factory for building bleeding edge, best practiced, scalable, apis<p>
   <p align="center">
