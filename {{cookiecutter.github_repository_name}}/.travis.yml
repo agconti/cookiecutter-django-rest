@@ -1,30 +1,25 @@
 sudo: required
 language: python
 services:
-  - docker
+- docker
 python:
-  - "3.6"
+- '3.6'
 before_script:
-  - docker-compose build
+- docker-compose build
 script:
-  - docker-compose run --rm web bash -c "flake8 . &&
-                                         python wait_for_postgres.py &&
-                                         ./manage.py test"
-
+- docker-compose run --rm web bash -c "flake8 . && python wait_for_postgres.py &&
+  ./manage.py test"
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
-    docker tag web registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
-    docker push registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
-    fi
-  - if [ "$TRAVIS_BRANCH" == "qa" ]; then
-    docker login --username=_ --password="$HEROKU_AUTH_TOKEN" registry.heroku.com;
-    docker tag web registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
-    docker push registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
-    fi
-
+- if [ "$TRAVIS_BRANCH" == "master" ]; then docker login --username=_ --password="$HEROKU_AUTH_TOKEN"
+  registry.heroku.com; docker tag web registry.heroku.com/{{cookiecutter.app_name}}-prod/web;
+  docker push registry.heroku.com/{{cookiecutter.app_name}}-prod/web; fi
+- if [ "$TRAVIS_BRANCH" == "qa" ]; then docker login --username=_ --password="$HEROKU_AUTH_TOKEN"
+  registry.heroku.com; docker tag web registry.heroku.com/{{cookiecutter.app_name}}-qa/web;
+  docker push registry.heroku.com/{{cookiecutter.app_name}}-qa/web; fi
 notifications:
   email: false
-
 cache:
   pip: true
+env:
+  global:
+    secure: EikOhvr3HJLiR2U8Xug4iQNgQyun11/A1SmMg2qVnsWfLhsDykfGbcOtTW0yxpc7h7HWZDI32hxF+NJjIVkUGHOCtBpK/NGE6f5HDKfnCilNEY99N4WugM2qArsmzsaZg3JurdQvLWEb1FOV0zZhXZ2FeCYEVgCrjFdQHPPEUnfQSM3E4Px7aNBwrwKcM8/3pSn1pR22Yi+cJdpLmK4/o2wZRouHdIgc/Ug2zBeTO8OJIUNvqmO8wmLwkOOg964Db/tCi1OyAL0KgNFES5FUbHmOXWyRLYEaGidcJWFMyuLJBLJs6HwDoyhApadB20p4h/7FH/1KNs0FLQIA9z7AcEoZ9L5o/eaoD+FmSoMHlH26oRJhAAfym3Ld5MwYjltZImkymr710owG//34PPEbWPvdSZHaYApUv5XcH9M03ZtgBLiVdxa0QZi2ozCOGHerzCA0Gf1SvakDUmHBPB6tAlhx4NUE02ScsebAeRpeUjYzyMWqDwiyETduVzUE6cSdVA/cBFlg0TdbVTYVGCGPB7+wuwd071WrYBvMpUBqpK14rdx0ysDUzBLrMOLs3Q/XVJmZNlkwLR33arIEsNj4Ep63PwRANzUXY/jfw7wMUnRM0n44QII7mQU3QzQHYgEyIgrUjgLXs7d24UNBmE38FtdOjGreWWiSvtTFE0y4Hz0=
