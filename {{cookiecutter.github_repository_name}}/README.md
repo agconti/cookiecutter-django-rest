@@ -13,24 +13,22 @@
 
 # Initialize the project
 
-Start the dev server for local development:
-
-```bash
-docker-compose up
-```
-
 Create a superuser to login to the admin:
 
 ```bash
 docker-compose run --rm web ./{{cookiecutter.app_name}}/manage.py createsuperuser
 ```
 
+Start the dev server for local development:
+```bash
+docker-compose up
+```
 
 # Continuous Deployment
 
 Deployment is automated via Travis. When builds pass on the master or qa branch, Travis will deploy that branch to Heroku. Enable this by:
 
-Creating the production sever:
+Initializing the production sever:
 
 ```
 heroku create {{cookiecutter.app_name}}-prod --remote prod && \
@@ -43,7 +41,7 @@ heroku create {{cookiecutter.app_name}}-prod --remote prod && \
         --app {{cookiecutter.app_name}}-prod
 ```
 
-Creating the qa sever:
+Initializing the qa sever:
 
 ```
 heroku create `{{cookiecutter.app_name}}-qa --remote qa && \
@@ -64,9 +62,8 @@ travis encrypt HEROKU_AUTH_TOKEN="$(heroku auth:token)" --add
 Committing your changes and pushing to master and qa to trigger your first deploys:
 
 ```bash
-git commit -m "ci(travis): added heroku credentials" && \
-git push origin master && \
-git checkout -b qa && \
-git push -u origin qa
+git commit -a -m "ci(travis): added heroku credentials" && \
+git push origin master:qa && \
+git push origin master
 ```
 You're now ready to continuously ship! ✨ 💅 🛳
