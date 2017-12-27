@@ -9,7 +9,8 @@ install:
   - cookiecutter . --no-input
   - cd piedpiper-web
 script:
-  - docker-compose run --rm web bash -c "python wait_for_postgres.py &&
+  - docker-compose run --rm web bash -c "flake8 . &&
+                                         python wait_for_postgres.py &&
                                          ./piedpiper/manage.py test"
 notifications:
   email: false
