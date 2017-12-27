@@ -2,7 +2,7 @@
 pytz==2017.3
 Django==1.11.8
 django-configurations==2.0
-newrelic==2.96.0.80
+newrelic==2.98.0.81
 
 # For the persistence stores
 psycopg2==2.7.3.2
@@ -13,14 +13,14 @@ django-model-utils==3.0.0
 django_unique_upload==0.2.1
 
 # Rest apis
-djangorestframework==3.7.3
-Markdown==2.6.9
+djangorestframework==3.7.7
+Markdown==2.6.10
 django-filter==1.1.0
 
 # Developer Tools
 ipdb==0.10.3
-ipython==5.3.0
-mkdocs==0.17.1
+ipython==6.2.1
+mkdocs==0.17.2
 flake8==3.5.0
 
 # Testing
