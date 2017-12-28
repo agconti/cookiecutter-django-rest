@@ -15,12 +15,14 @@
   </p>
 </p>
 
+
 You need to make a scalable api on a deadline. You deeply care about the quality of your work.
 `cookiecutter-django-rest` takes care of the details so you can focus on making your api awesome.  Scaffolding a project takes seconds and it gives you [authentication](https://github.com/agconti/cookiecutter-django-rest/blob/master/%7B%7Bcookiecutter.github_repository_name%7D%7D/docs/api/authentication.md), [user accounts](https://github.com/agconti/cookiecutter-django-rest/blob/master/%7B%7Bcookiecutter.github_repository_name%7D%7D/%7B%7Bcookiecutter.app_name%7D%7D/users/views.py), and the [docs](https://github.com/agconti/cookiecutter-django-rest/blob/master/%7B%7Bcookiecutter.github_repository_name%7D%7D/docs/api/users.md) and [tests](https://github.com/agconti/cookiecutter-django-rest/blob/master/%7B%7Bcookiecutter.github_repository_name%7D%7D/%7B%7Bcookiecutter.app_name%7D%7D/users/test/test_views.py) to support them. Just add your own resources to the api and start shipping. ✨ 💅
 
 
 
 ## Highlights
+
 - Modern Python development with Python 3.6+
 - Bleeding edge Django 2.0+
 - Fully dockerized, local development via docker-compose.
@@ -82,6 +84,7 @@ curl -d '{"username":"'"$RANDOM"'", "password":"test", "email":"test@test.com", 
 - [x] CORS  [#364](https://github.com/agconti/cookiecutter-django-rest/issues/364)
 
 #### Release 0.7.0 #327
+
 - [x] Upgrade to Django 1.10 #328
 - [x] Add auth password validators #253
 - [x] Update manage.py with new django 1.10 content. #252
