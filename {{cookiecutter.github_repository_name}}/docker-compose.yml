@@ -7,6 +7,7 @@ services:
     restart: always
     environment:
       - DJANGO_SECRET_KEY=local
+    image: web
     build: ./
     command: >
       bash -c "./manage.py migrate &&
