@@ -23,11 +23,11 @@ class Common(Configuration):
         'django_filters',            # for filtering rest endpoints
 
         # Your apps
-        'users',
+        '{{cookiecutter.app_name}}.users',
 
     )
 
-    # https://docs.djangoproject.com/en/1.11/topics/http/middleware/
+    # https://docs.djangoproject.com/en/2.0/topics/http/middleware/
     MIDDLEWARE = (
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
@@ -39,9 +39,9 @@ class Common(Configuration):
     )
 
     ALLOWED_HOSTS = ["*"]
-    ROOT_URLCONF = 'urls'
+    ROOT_URLCONF = '{{ cookiecutter.app_name }}.urls'
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
-    WSGI_APPLICATION = 'wsgi.application'
+    WSGI_APPLICATION = '{{ cookiecutter.app_name }}.wsgi.application'
 
     # Email
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -70,7 +70,7 @@ class Common(Configuration):
     LOGIN_REDIRECT_URL = '/'
 
     # Static files (CSS, JavaScript, Images)
-    # https://docs.djangoproject.com/en/1.11/howto/static-files/
+    # https://docs.djangoproject.com/en/2.0/howto/static-files/
     STATIC_ROOT = os.path.normpath(join(os.path.dirname(BASE_DIR), 'static'))
     STATICFILES_DIRS = []
     STATIC_URL = '/static/'
@@ -104,7 +104,7 @@ class Common(Configuration):
     DEBUG = strtobool(os.getenv('DJANGO_DEBUG', 'no'))
 
     # Password Validation
-    # https://docs.djangoproject.com/en/1.11/topics/auth/passwords/#module-django.contrib.auth.password_validation
+    # https://docs.djangoproject.com/en/2.0/topics/auth/passwords/#module-django.contrib.auth.password_validation
     AUTH_PASSWORD_VALIDATORS = [
         {
             'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

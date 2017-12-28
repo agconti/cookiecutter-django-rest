@@ -16,7 +16,7 @@ class Local(Common):
         '--nologcapture',
         '--with-coverage',
         '--with-progressive',
-        '--cover-package={}'.format(BASE_DIR)
+        '--cover-package={{cookiecutter.app_name}}'
     ]
 
     # Mail
