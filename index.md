@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="64" src="media/cdr-icon.png" alt="cookiecutter-django-rest" >
+  <img width="64" src="https://cdn.rawgit.com/agconti/cookiecutter-django-rest/master/media/cdr-icon.png" alt="cookiecutter-django-rest" >
   <h3 align="center">cookiecutter-django-rest</h3>
   <p align="center">a factory for building bleeding edge, best practiced, scalable, rest apis<p>
   <p align="center">
@@ -44,7 +44,7 @@ Scaffold your project:
 cookiecutter gh:agconti/cookiecutter-django-rest
 ```
 
-![Scaffolding](media/scaffolding.gif)
+![Scaffolding](https://cdn.rawgit.com/agconti/cookiecutter-django-rest/master/media/scaffolding.gif)
 
 Example of the result: https://github.com/agconti/piedpiper-web
 

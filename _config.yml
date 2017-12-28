@@ -1,5 +1,5 @@
-title: Cookiecutter-django-rest
-description: For scaffolding REST apis for rapidly developing mobile products. 
+title: cookiecutter-django-rest
+description: a factory for building bleeding edge, best practiced, scalable, rest apis. 
 google_analytics: UA-42266786-6
 show_downloads: true
 theme: jekyll-theme-cayman
