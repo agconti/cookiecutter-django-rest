@@ -1,7 +1,7 @@
 <p align="center">
   <img width="64" src="media/cdr-icon.png" alt="cookiecutter-django-rest" >
   <h3 align="center">cookiecutter-django-rest</h3>
-  <p align="center">a factory for building bleeding edge, best practiced, scalable, apis<p>
+  <p align="center">a factory for building bleeding edge, best practiced, scalable, rest apis<p>
   <p align="center">
     <a href="https://travis-ci.org/agconti/cookiecutter-django-rest">
       <img src="https://travis-ci.org/agconti/cookiecutter-django-rest.svg?branch=master" alt="Build Status">
