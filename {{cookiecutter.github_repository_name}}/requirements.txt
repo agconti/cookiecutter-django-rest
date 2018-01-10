@@ -10,7 +10,7 @@ psycopg2==2.7.3.2
 dj-database-url==0.4.2
 
 # Model Tools
-django-model-utils==3.0.0
+django-model-utils==3.1.1
 django_unique_upload==0.2.1
 
 # Rest apis
