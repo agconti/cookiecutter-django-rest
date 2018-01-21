@@ -34,7 +34,7 @@ Initialize the production server:
 heroku create {{cookiecutter.app_name}}-prod --remote prod && \
     heroku addons:create newrelic:wayne --app {{cookiecutter.app_name}}-prod && \
     heroku addons:create heroku-postgresql:hobby-dev --app {{cookiecutter.app_name}}-prod && \
-    heroku config:set DJANGO_SECRET=`openssl rand -base64 32` \
+    heroku config:set DJANGO_SECRET_KEY=`openssl rand -base64 32` \
         DJANGO_AWS_ACCESS_KEY_ID="Add your id" \
         DJANGO_AWS_SECRET_ACCESS_KEY="Add your key" \
         DJANGO_AWS_STORAGE_BUCKET_NAME="{{cookiecutter.app_name}}-prod" \
@@ -47,7 +47,7 @@ Initialize the qa server:
 heroku create {{cookiecutter.app_name}}-qa --remote qa && \
     heroku addons:create newrelic:wayne --app {{cookiecutter.app_name}}-qa && \
     heroku addons:create heroku-postgresql:hobby-dev --app {{cookiecutter.app_name}}-qa && \
-    heroku config:set DJANGO_SECRET=`openssl rand -base64 32` \
+    heroku config:set DJANGO_SECRET_KEY=`openssl rand -base64 32` \
         DJANGO_AWS_ACCESS_KEY_ID="Add your id" \
         DJANGO_AWS_SECRET_ACCESS_KEY="Add your key" \
         DJANGO_AWS_STORAGE_BUCKET_NAME="{{cookiecutter.app_name}}-qa" \
