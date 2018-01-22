@@ -38,6 +38,8 @@ heroku create {{cookiecutter.app_name}}-prod --remote prod && \
         DJANGO_AWS_ACCESS_KEY_ID="Add your id" \
         DJANGO_AWS_SECRET_ACCESS_KEY="Add your key" \
         DJANGO_AWS_STORAGE_BUCKET_NAME="{{cookiecutter.app_name}}-prod" \
+        DJANGO_CONFIGURATION="Production" \
+        DJANGO_SETTINGS_MODULE="{{cookiecutter.app_name}}.config" \
         --app {{cookiecutter.app_name}}-prod
 ```
 
@@ -51,6 +53,8 @@ heroku create {{cookiecutter.app_name}}-qa --remote qa && \
         DJANGO_AWS_ACCESS_KEY_ID="Add your id" \
         DJANGO_AWS_SECRET_ACCESS_KEY="Add your key" \
         DJANGO_AWS_STORAGE_BUCKET_NAME="{{cookiecutter.app_name}}-qa" \
+        DJANGO_CONFIGURATION="Production" \
+        DJANGO_SETTINGS_MODULE="{{cookiecutter.app_name}}.config" \
         --app {{cookiecutter.app_name}}-qa
 ```
 
