@@ -3,6 +3,7 @@ site_description: {{cookiecutter.description}}
 repo_url: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}
 site_dir: site
 copyright: Copyright &copy; 2018, <a href="https://github.com/{{cookiecutter.github_username}}">{{cookiecutter.github_username}}</a>.
+dev_addr: 0.0.0.0:8001
 
 pages:
   - Home: 'index.md'
