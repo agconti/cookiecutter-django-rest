@@ -1,0 +1,38 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+pytz = "==2018.3"
+Django = "==2.0.2"
+django-configurations = "==2.0"
+gunicorn = "==19.7.1"
+newrelic = "==2.104.0.86"
+"psycopg2" = "==2.7.4"
+dj-database-url = "==0.4.2"
+django-model-utils = "==3.1.1"
+django-unique-upload = "==0.2.1"
+djangorestframework = "==3.7.7"
+markdown = "==2.6.11"
+django-filter = "==1.1.0"
+ipdb = "==0.11"
+ipython = "==6.2.1"
+mkdocs = "==0.17.2"
+"flake8" = "==3.5.0"
+mock = "==2.0.0"
+factory_boy = "==2.10.0"
+django-nose = "==1.4.5"
+nose-progressive = "==1.5.1"
+coverage = "==4.5.1"
+django-storages = "==1.6.5"
+"boto3" = "==1.5.36"
+
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
