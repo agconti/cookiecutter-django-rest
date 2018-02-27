@@ -5,6 +5,6 @@ omit = *migrations*,
        *test*,
        *admin*,
        ./manage.py,
-       ./{{ cookiecutter.app_name }}/config/*,
-       ./{{ cookiecutter.app_name }}/wsgi.py,
+       ./config/settings/*,
+       ./config/wsgi.py,
        *__init__*

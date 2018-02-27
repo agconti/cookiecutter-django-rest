@@ -3,7 +3,7 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ cookiecutter.app_name }}.config")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
     os.environ.setdefault("DJANGO_CONFIGURATION", "Local")
 
     try:
