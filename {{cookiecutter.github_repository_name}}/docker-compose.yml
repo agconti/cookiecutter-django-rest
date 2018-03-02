@@ -1,8 +1,17 @@
-version: '2'
+version: '2.1'
 
 services:
   postgres:
     image: postgres:9.6
+    healthcheck:
+      test: "pg_isready -h localhost -p 5432 -q -U postgres"
+      interval: 3s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
   web:
     restart: always
     environment:
@@ -10,15 +19,17 @@ services:
     image: web
     build: ./
     command: >
-      bash -c "python wait_for_postgres.py &&
-               ./manage.py migrate &&
+      bash -c "./manage.py migrate &&
                ./manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./:/code
     ports:
       - "8000:8000"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
+    networks:
+      - backend
   documentation:
     restart: always
     build: ./
@@ -27,3 +38,11 @@ services:
       - ./:/code
     ports:
       - "8001:8001"
+    networks:
+      - backend
+ 
+volumes:
+  db-data:
+
+networks:
+  backend:
