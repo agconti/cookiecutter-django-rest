@@ -9,6 +9,9 @@ RUN pip install -r requirements.txt
 COPY . code
 WORKDIR code
 
+# Build documentation site
+RUN mkdocs build
+
 EXPOSE 8000
 
 # Migrates the database, uploads staticfiles, and runs the production server
