@@ -1,6 +1,6 @@
 # Core
 pytz==2018.5
-Django==2.0.7
+Django==2.0.8
 django-configurations==2.0
 gunicorn==19.8.1
 newrelic==4.2.0.100
