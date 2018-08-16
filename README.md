@@ -22,7 +22,7 @@ You need to make a scalable api on a deadline. You deeply care about the quality
 
 ## Highlights
 - Modern Python development with Python 3.6+
-- Bleeding edge Django 2.0+
+- Bleeding edge Django 2.1+
 - Fully dockerized, local development via docker-compose.
 - PostgreSQL 9.6+
 - Start off with full test coverage, [continuous integration](https://github.com/agconti/cookiecutter-django-rest/blob/master/%7B%7Bcookiecutter.github_repository_name%7D%7D/.travis.yml), and continuous deployment.
