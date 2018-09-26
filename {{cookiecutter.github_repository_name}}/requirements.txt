@@ -15,7 +15,7 @@ django_unique_upload==0.2.1
 
 # Rest apis
 djangorestframework==3.8.2
-Markdown==2.6.11
+Markdown==3.0.1
 django-filter==2.0.0
 
 # Developer Tools
