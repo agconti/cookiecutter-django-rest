@@ -1,5 +1,5 @@
 # Core
-pytz==2018.6
+pytz==2018.7
 Django==2.1.2
 django-configurations==2.1
 gunicorn==19.9.0
