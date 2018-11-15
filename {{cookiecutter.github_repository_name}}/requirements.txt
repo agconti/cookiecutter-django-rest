@@ -29,7 +29,7 @@ mock==2.0.0
 factory-boy==2.11.1
 django-nose==1.4.6
 nose-progressive==1.5.1
-coverage==4.5.1
+coverage==4.5.2
 
 # Static and Media Storage
 django-storages==1.7.1
