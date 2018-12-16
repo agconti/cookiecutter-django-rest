@@ -33,7 +33,7 @@ Deployment automated via Travis. When builds pass on the master or qa branch, Tr
 Creating the production sever:
 
 ```
-heroku create {{cookiecutter.app_name}}-prod --remote prod && \
+heroku create {{cookiecutter.app_name|lower|replace("_", "-")}}-prod --remote prod && \
     heroku addons:create newrelic:wayne --app {{cookiecutter.app_name}}-prod && \
     heroku addons:create heroku-postgresql:hobby-dev --app {{cookiecutter.app_name}}-prod && \
     heroku config:set DJANGO_SECRET=`openssl rand -base64 32` \
@@ -46,7 +46,7 @@ heroku create {{cookiecutter.app_name}}-prod --remote prod && \
 Creating the qa sever:
 
 ```
-heroku create `{{cookiecutter.app_name}}-qa --remote qa && \
+heroku create `{{cookiecutter.app_name|lower|replace("_", "-")}}-qa --remote qa && \
     heroku addons:create newrelic:wayne && \
     heroku addons:create heroku-postgresql:hobby-dev && \
     heroku config:set DJANGO_SECRET=`openssl rand -base64 32` \
