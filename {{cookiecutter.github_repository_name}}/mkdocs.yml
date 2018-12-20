@@ -2,10 +2,10 @@ site_name: {{cookiecutter.app_name}}
 site_description: {{cookiecutter.description}}
 repo_url: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.github_repository_name}}
 site_dir: site
-copyright: Copyright &copy; 2018, <a href="https://github.com/{{cookiecutter.github_username}}">{{cookiecutter.github_username}}</a>.
+copyright: Copyright &copy; 2019, <a href="https://github.com/{{cookiecutter.github_username}}">{{cookiecutter.github_username}}</a>.
 dev_addr: 0.0.0.0:8001
 
-pages:
+nav:
   - Home: 'index.md'
   - API:
     - Authentication: 'api/authentication.md'
