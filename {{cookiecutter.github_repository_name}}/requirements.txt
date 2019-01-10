@@ -3,7 +3,7 @@ pytz==2018.9
 Django==2.1.5
 django-configurations==2.1
 gunicorn==19.9.0
-newrelic==4.8.0.110
+newrelic==4.10.0.112
 
 # For the persistence stores
 psycopg2-binary==2.7.6.1
