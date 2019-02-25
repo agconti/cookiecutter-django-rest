@@ -36,7 +36,7 @@ You need to make a scalable api on a deadline. You deeply care about the quality
 Install [cookiecutter](https://github.com/audreyr/cookiecutter):
 
 ```bash
-brew install cookiecutter
+pip install cookiecutter
 ```
 
 Scaffold your project:
