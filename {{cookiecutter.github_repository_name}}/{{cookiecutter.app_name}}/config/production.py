@@ -10,6 +10,16 @@ class Production(Common):
     ALLOWED_HOSTS = ["*"]
     INSTALLED_APPS += ("gunicorn", )
 
+    # CORS
+    # A list of origin hostnames that are authorized to make cross-site HTTP requests. 
+    # For more granular settings see https://github.com/ottoyiu/django-cors-headers/
+    CORS_ORIGIN_WHITELIST = (
+        'google.com',
+        'hostname.example.com',
+        'localhost:8000',
+        '127.0.0.1:9000'
+    )
+
     # Static files (CSS, JavaScript, Images)
     # https://docs.djangoproject.com/en/2.0/howto/static-files/
     # http://django-storages.readthedocs.org/en/latest/index.html

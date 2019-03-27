@@ -23,3 +23,6 @@ class Local(Common):
     EMAIL_HOST = 'localhost'
     EMAIL_PORT = 1025
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+    # CORS
+    CORS_ORIGIN_ALLOW_ALL = True
