@@ -26,7 +26,7 @@ You need to make a scalable api on a deadline. You deeply care about the quality
 - Fully dockerized, local development via docker-compose.
 - PostgreSQL 9.6+
 - Start off with full test coverage, [continuous integration](https://github.com/agconti/cookiecutter-django-rest/blob/master/%7B%7Bcookiecutter.github_repository_name%7D%7D/.travis.yml), and continuous deployment.
-- Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration
+- Complete [Django Rest Framework](http://www.django-rest-framework.org/) integration, incl. [CORS support](https://github.com/ottoyiu/django-cors-headers)
 - Auto deployment to Heroku included. Also since we're using containers we can easily deploy anywhere.
 - Always current dependencies and security updates enforced by [pyup.io](https://pyup.io/).
 - A slim but robust foundation -- just enough to maximize your productivity, nothing more.
