@@ -12,6 +12,9 @@ pin: True
 # default: empty, the default branch on GitHub
 branch: master
 
+requirements:
+  - "{{cookiecutter.github_repository_name}}/requirements.txt"
+
 # update schedule
 # default: empty
 # allowed: "every day", "every week", ..
