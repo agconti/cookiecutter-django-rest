@@ -21,7 +21,7 @@ You need to make a scalable api on a deadline. You deeply care about the quality
 
 
 ## Highlights
-- Modern Python development with Python 3.6+
+- Modern Python development with Python 3.8+
 - Bleeding edge Django 3.0+
 - Fully dockerized, local development via docker-compose.
 - PostgreSQL 9.6+
