@@ -13,7 +13,7 @@ pin: True
 branch: master
 
 requirements:
-  - "{{cookiecutter.github_repository_name}}/requirements.txt"
+  - /{/{cookiecutter.github_repository_name/}/}/requirements.txt
 
 # update schedule
 # default: empty
