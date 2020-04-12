@@ -5,10 +5,10 @@ up:
 	docker-compose up -d
 
 test: up
-	docker-compose run --rm --no-deps --entrypoint=pytest
+	docker-compose run --rm web test
 
 logs:
-	docker-compose logs --tail=25 api redis_pubsub
+	docker-compose logs --tail=25 web redis_pubsub
 
 down:
 	docker-compose down --remove-orphans
