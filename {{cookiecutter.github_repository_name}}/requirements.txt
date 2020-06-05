@@ -1,9 +1,9 @@
 # Core
 pytz==2020.1
-Django==3.0.6
+Django==3.0.7
 django-configurations==2.2
 gunicorn==20.0.4
-newrelic==5.12.1.141
+newrelic==5.14.0.142
 
 # For the persistence stores
 psycopg2-binary==2.8.5
@@ -20,7 +20,7 @@ django-filter==2.2.0
 
 # Developer Tools
 ipdb==0.13.2
-ipython==7.14.0
+ipython==7.15.0
 mkdocs==1.1.2
 flake8==3.8.2
 
@@ -33,5 +33,5 @@ coverage==5.1
 
 # Static and Media Storage
 django-storages==1.9.1
-boto3==1.13.17
+boto3==1.13.23
 
