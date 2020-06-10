@@ -16,13 +16,13 @@ django_unique_upload==0.2.1
 # Rest apis
 djangorestframework==3.11.0
 Markdown==3.2.2
-django-filter==2.2.0
+django-filter==2.3.0
 
 # Developer Tools
 ipdb==0.13.2
 ipython==7.15.0
 mkdocs==1.1.2
-flake8==3.8.2
+flake8==3.8.3
 
 # Testing
 mock==4.0.2
@@ -33,5 +33,5 @@ coverage==5.1
 
 # Static and Media Storage
 django-storages==1.9.1
-boto3==1.13.23
+boto3==1.13.26
 
