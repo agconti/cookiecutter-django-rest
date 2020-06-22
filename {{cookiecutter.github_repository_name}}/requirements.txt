@@ -3,7 +3,7 @@ pytz==2020.1
 Django==3.0.7
 django-configurations==2.2
 gunicorn==20.0.4
-newrelic==5.14.0.142
+newrelic==5.14.1.144
 
 # For the persistence stores
 psycopg2-binary==2.8.5
@@ -33,5 +33,5 @@ coverage==5.1
 
 # Static and Media Storage
 django-storages==1.9.1
-boto3==1.14.4
+boto3==1.14.7
 
