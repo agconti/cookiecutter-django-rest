@@ -14,7 +14,7 @@ django-model-utils==4.0.0
 django_unique_upload==0.2.1
 
 # Rest apis
-djangorestframework==3.11.0
+djangorestframework==3.11.1
 Markdown==3.2.2
 django-filter==2.3.0
 
@@ -33,5 +33,5 @@ coverage==5.2.1
 
 # Static and Media Storage
 django-storages==1.9.1
-boto3==1.14.33
+boto3==1.14.35
 
