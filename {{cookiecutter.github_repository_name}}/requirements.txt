@@ -27,7 +27,7 @@ flake8==3.8.3
 # Testing
 mock==4.0.2
 factory-boy==3.0.1
-django-nose==1.4.6
+django-nose==1.4.7
 nose-progressive==1.5.2
 coverage==5.2.1
 
