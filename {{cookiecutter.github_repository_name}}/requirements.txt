@@ -1,6 +1,6 @@
 # Core
 pytz==2020.1
-Django==3.1.1
+Django==3.1.2
 django-configurations==2.2
 gunicorn==20.0.4
 newrelic==5.20.0.149
@@ -33,5 +33,5 @@ coverage==5.3
 
 # Static and Media Storage
 django-storages==1.10.1
-boto3==1.15.8
+boto3==1.15.9
 
