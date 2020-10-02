@@ -19,7 +19,7 @@ Markdown==3.2.2
 django-filter==2.4.0
 
 # Developer Tools
-ipdb==0.13.3
+ipdb==0.13.4
 ipython==7.18.1
 mkdocs==1.1.2
 flake8==3.8.3
@@ -33,5 +33,5 @@ coverage==5.3
 
 # Static and Media Storage
 django-storages==1.10.1
-boto3==1.15.9
+boto3==1.15.10
 
