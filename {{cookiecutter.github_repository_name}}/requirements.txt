@@ -22,16 +22,16 @@ django-filter==2.4.0
 ipdb==0.13.4
 ipython==7.18.1
 mkdocs==1.1.2
-flake8==3.8.3
+flake8==3.8.4
 
 # Testing
 mock==4.0.2
-factory-boy==3.0.1
+factory-boy==3.1.0
 django-nose==1.4.7
 nose-progressive==1.5.2
 coverage==5.3
 
 # Static and Media Storage
 django-storages==1.10.1
-boto3==1.15.10
+boto3==1.15.11
 
