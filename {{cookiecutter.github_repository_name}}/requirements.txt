@@ -3,7 +3,7 @@ pytz==2020.1
 Django==3.1.2
 django-configurations==2.2
 gunicorn==20.0.4
-newrelic==5.20.0.149
+newrelic==5.20.1.150
 
 # For the persistence stores
 psycopg2-binary==2.8.6
@@ -15,7 +15,7 @@ django_unique_upload==0.2.1
 
 # Rest apis
 djangorestframework==3.12.1
-Markdown==3.2.2
+Markdown==3.3
 django-filter==2.4.0
 
 # Developer Tools
@@ -33,5 +33,5 @@ coverage==5.3
 
 # Static and Media Storage
 django-storages==1.10.1
-boto3==1.15.12
+boto3==1.15.13
 
