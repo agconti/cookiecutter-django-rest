@@ -15,7 +15,7 @@ django_unique_upload==0.2.1
 
 # Rest apis
 djangorestframework==3.12.1
-Markdown==3.3.1
+Markdown==3.3.2
 django-filter==2.4.0
 
 # Developer Tools
@@ -33,5 +33,5 @@ coverage==5.3
 
 # Static and Media Storage
 django-storages==1.10.1
-boto3==1.15.18
+boto3==1.16.0
 
