@@ -1,9 +1,9 @@
 # Core
-pytz==2020.4
+pytz==2020.5
 Django==3.1.4
 django-configurations==2.2
 gunicorn==20.0.4
-newrelic==5.22.1.152
+newrelic==5.24.0.153
 
 # For the persistence stores
 psycopg2-binary==2.8.6
@@ -32,6 +32,6 @@ nose-progressive==1.5.2
 coverage==5.3.1
 
 # Static and Media Storage
-django-storages==1.11
-boto3==1.16.41
+django-storages==1.11.1
+boto3==1.16.43
 
