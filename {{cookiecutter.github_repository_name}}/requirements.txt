@@ -3,7 +3,7 @@ pytz==2021.1
 Django==3.1.7
 django-configurations==2.2
 gunicorn==20.0.4
-newrelic==6.0.1.155
+newrelic==6.2.0.156
 
 # For the persistence stores
 psycopg2-binary==2.8.6
@@ -19,8 +19,8 @@ Markdown==3.3.4
 django-filter==2.4.0
 
 # Developer Tools
-ipdb==0.13.4
-ipython==7.20.0
+ipdb==0.13.5
+ipython==7.21.0
 mkdocs==1.1.2
 flake8==3.8.4
 
@@ -29,9 +29,9 @@ mock==4.0.3
 factory-boy==3.2.0
 django-nose==1.4.7
 nose-progressive==1.5.2
-coverage==5.4
+coverage==5.5
 
 # Static and Media Storage
 django-storages==1.11.1
-boto3==1.17.16
+boto3==1.17.22
 
