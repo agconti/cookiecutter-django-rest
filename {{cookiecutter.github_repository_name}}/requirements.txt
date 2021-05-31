@@ -19,7 +19,7 @@ Markdown==3.3.4
 django-filter==2.4.0
 
 # Developer Tools
-ipdb==0.13.7
+ipdb==0.13.8
 ipython==7.22.0
 mkdocs==1.1.2
 flake8==3.9.0
