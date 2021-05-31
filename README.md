@@ -3,8 +3,8 @@
   <h3 align="center">cookiecutter-django-rest</h3>
   <p align="center">a factory for building bleeding edge, best practiced, scalable, rest apis</p>
   <p align="center">
-    <a href="https://travis-ci.org/agconti/cookiecutter-django-rest">
-      <img src="https://travis-ci.org/agconti/cookiecutter-django-rest.svg?branch=master" alt="Build Status">
+    <a href="https://github.com/agconti/cookiecutter-django-rest/actions/workflows/push.yaml">
+      <img src="https://github.com/agconti/cookiecutter-django-rest/actions/workflows/push.yaml/badge.svg?branch=master" alt="Build Status">
     </a>
     <a href="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/">
       <img src="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/shield.svg" alt="Dependencies">
