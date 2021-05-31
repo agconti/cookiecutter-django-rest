@@ -23,44 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install --user cookiecutter
         cookiecutter gh:agconti/cookiecutter-django-rest --no-input
-    
-    - name: Set up Docker Buildx
-      id: buildx
-      uses: docker/setup-buildx-action@master
-
-    - name: Cache Web Docker layers
-      uses: actions/cache@v2
-      with:
-        path: /tmp/.buildx-cache-web
-        key: ${{ runner.os }}-buildx-web-${{ github.sha }}
-        restore-keys: |
-          ${{ runner.os }}-buildx
-    
-    - name: Build Web image
-      uses: docker/build-push-action@v2
-      with:
-        push: false
-        load: true
-        context: ./piedpiper-web
-        builder: ${{ steps.buildx.outputs.name }}
-        tags: "local.web:latest"
-        cache-from: type=local,src=/tmp/.buildx-cache-web
-        cache-to: type=local,dest=/tmp/.buildx-cache-web-new
 
     - name: Start docker-compose
-      run: docker-compose up --no-build -d web postgres
+      run: docker-compose up -d
     
     - name: Run Web tests
       run: docker-compose run --rm web bash -c "flake8 . &&
                                                 python wait_for_postgres.py &&
                                                 python -Wall ./manage.py test"
-
-    -
-      # Temp fix
-      # https://github.com/docker/build-push-action/issues/252
-      # https://github.com/moby/buildkit/issues/1896
-      # https://github.com/Islanders-Game/Islanders/blob/master/.github/workflows/dockerimage.yml
-      name: Limit image file size
-      run: |
-        rm -rf /tmp/.buildx-cache-web
-        mv /tmp/.buildx-cache-web-new /tmp/.buildx-cache-web
