@@ -1,5 +1,3 @@
-version: '2'
-
 services:
   postgres:
     image: postgres:11.6
@@ -7,7 +5,7 @@ services:
     restart: always
     environment:
       - DJANGO_SECRET_KEY=local
-    image: web
+    image: "local.web:latest"
     build: ./
     command: >
       bash -c "python wait_for_postgres.py &&
@@ -21,6 +19,7 @@ services:
       - postgres
   documentation:
     restart: always
+    image: "local.documentation:latest"
     build: ./
     command: "mkdocs serve"
     volumes:
