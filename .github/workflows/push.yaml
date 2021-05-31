@@ -37,6 +37,7 @@ jobs:
       with:
         push: false
         load: true
+        context: ./
         builder: ${{ steps.buildx.outputs.name }}
         tags: "local.web:latest"
         cache-from: type=local,src=/tmp/.buildx-cache-web
