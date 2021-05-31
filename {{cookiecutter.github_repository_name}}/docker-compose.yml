@@ -4,9 +4,9 @@ services:
     image: postgres:11.6
   web:
     restart: always
+    image: "local.web:latest"
     environment:
       - DJANGO_SECRET_KEY=local
-    image: "local.web:latest"
     build: ./
     command: >
       bash -c "python wait_for_postgres.py &&
