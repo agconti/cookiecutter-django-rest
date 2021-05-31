@@ -7,9 +7,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: ./piedpiper-web
+    defaults:
+      run:
+        working-directory: ./piedpiper-web
+  
     steps:
     - name: Set up Python 3.8
       uses: actions/setup-python@v2
@@ -17,6 +18,7 @@ jobs:
         python-version: 3.8
     
     - name: Scaffold Project
+      working-directory: ./
       run: |
         python -m pip install --upgrade pip
         pip install --user cookiecutter
@@ -48,11 +50,10 @@ jobs:
         cache-from: type=local,src=/tmp/.buildx-cache-web
         cache-to: type=local,dest=/tmp/.buildx-cache-web-new
 
-    - name: Start docker-compose 
-      working-directory: ./piedpiper-web
+    - name: Start docker-compose
       run: docker-compose up --no-build -d web postgres
+    
     - name: Run Web tests
-      working-directory: ./piedpiper-web
       run: docker-compose run --rm web bash -c "flake8 . &&
                                                 python wait_for_postgres.py &&
                                                 python -Wall ./manage.py test"
