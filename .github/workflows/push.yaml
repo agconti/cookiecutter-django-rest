@@ -31,7 +31,8 @@ jobs:
         key: ${{ runner.os }}-buildx-web-${{ github.sha }}
         restore-keys: |
           ${{ runner.os }}-buildx
-    
+    - name: show file strucutre
+      run: echo ls
     - name: Build Web image
       uses: docker/build-push-action@v2
       with:
