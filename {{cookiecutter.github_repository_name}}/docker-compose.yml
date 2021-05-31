@@ -4,7 +4,6 @@ services:
     image: postgres:11.6
   web:
     restart: always
-    image: "local.web:latest"
     environment:
       - DJANGO_SECRET_KEY=local
     build: ./
@@ -20,7 +19,6 @@ services:
       - postgres
   documentation:
     restart: always
-    image: "local.documentation:latest"
     build: ./
     command: "mkdocs serve"
     volumes:
