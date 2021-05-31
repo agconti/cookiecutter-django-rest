@@ -14,11 +14,11 @@ jobs:
         python-version: 3.8
     
     - name: Scaffold Project
-        run: |
-          python -m pip install --upgrade pip
-          pip install --user cookiecutter
-          cookiecutter gh:agconti/cookiecutter-django-rest --no-input
-          cd piedpiper-web
+      run: |
+        python -m pip install --upgrade pip
+        pip install --user cookiecutter
+        cookiecutter gh:agconti/cookiecutter-django-rest --no-input
+        cd piedpiper-web
     
     - name: Set up Docker Buildx
       id: buildx
