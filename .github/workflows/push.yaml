@@ -38,13 +38,11 @@ jobs:
       run: echo "$(ls)"
     
     - name: Build Web image
-      working-directory: ./piedpiper-web
-
       uses: docker/build-push-action@v2
       with:
         push: false
         load: true
-        context: ./
+        context: ./piedpiper-web
         builder: ${{ steps.buildx.outputs.name }}
         tags: "local.web:latest"
         cache-from: type=local,src=/tmp/.buildx-cache-web
