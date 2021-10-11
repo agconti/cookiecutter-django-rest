@@ -33,5 +33,5 @@ coverage==6.0.1
 
 # Static and Media Storage
 django-storages==1.12
-boto3==1.18.41
+boto3==1.18.58
 
