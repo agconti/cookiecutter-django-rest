@@ -22,7 +22,7 @@ django-filter==21.1
 ipdb==0.13.9
 ipython==7.28.0
 mkdocs==1.2.2
-flake8==4.0.0
+flake8==4.0.1
 
 # Testing
 mock==4.0.3
