@@ -20,7 +20,7 @@ django-filter==21.1
 
 # Developer Tools
 ipdb==0.13.9
-ipython==7.30.1
+ipython==8.0.0
 mkdocs==1.2.3
 flake8==4.0.1
 
