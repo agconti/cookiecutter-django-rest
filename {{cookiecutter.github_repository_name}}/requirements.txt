@@ -15,12 +15,12 @@ django_unique_upload==0.2.1
 
 # Rest apis
 djangorestframework==3.13.1
-Markdown==3.3.6
+Markdown==3.3.7
 django-filter==21.1
 
 # Developer Tools
 ipdb==0.13.9
-ipython==8.2.0
+ipython==8.3.0
 mkdocs==1.3.0
 flake8==4.0.1
 
@@ -33,5 +33,5 @@ coverage==6.3.2
 
 # Static and Media Storage
 django-storages==1.12.3
-boto3==1.21.37
+boto3==1.22.9
 
