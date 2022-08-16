@@ -32,6 +32,6 @@ nose-progressive==1.5.2
 coverage==6.4.3
 
 # Static and Media Storage
-django-storages==1.12.3
+django-storages==1.13.1
 boto3==1.24.46
 
