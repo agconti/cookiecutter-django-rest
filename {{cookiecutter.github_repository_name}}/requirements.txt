@@ -29,9 +29,9 @@ mock==5.0.1
 factory-boy==3.2.1
 django-nose==1.4.7
 nose-progressive==1.5.2
-coverage==7.0.4
+coverage==7.0.5
 
 # Static and Media Storage
 django-storages==1.13.2
-boto3==1.26.46
+boto3==1.26.47
 
