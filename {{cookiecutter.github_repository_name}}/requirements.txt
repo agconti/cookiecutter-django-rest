@@ -1,5 +1,5 @@
 # Core
-pytz==2022.7
+pytz==2022.7.1
 Django==4.1.5
 django-configurations==2.4
 gunicorn==20.1.0
@@ -33,5 +33,5 @@ coverage==7.0.5
 
 # Static and Media Storage
 django-storages==1.13.2
-boto3==1.26.47
+boto3==1.26.50
 
