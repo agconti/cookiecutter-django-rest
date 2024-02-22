@@ -26,7 +26,7 @@ flake8==7.0.0
 
 # Testing
 mock==5.1.0
-factory-boy==3.2.1
+factory-boy==3.3.0
 django-nose==1.4.7
 nose-progressive==1.5.2
 coverage==7.2.5
