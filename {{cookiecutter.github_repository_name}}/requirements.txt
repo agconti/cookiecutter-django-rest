@@ -1,5 +1,5 @@
 # Core
-pytz==2023.3
+pytz==2024.1
 Django==4.2.1
 django-configurations==2.4.1
 gunicorn==20.1.0
