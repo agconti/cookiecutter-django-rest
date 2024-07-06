@@ -21,7 +21,7 @@ django-filter==24.2
 # Developer Tools
 ipdb==0.13.13
 ipython==8.26.0
-mkdocs==1.4.3
+mkdocs==1.6.0
 flake8==6.0.0
 
 # Testing
