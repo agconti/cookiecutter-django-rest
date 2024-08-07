@@ -2,7 +2,7 @@
 pytz==2024.1
 Django==5.0.8
 django-configurations==2.5.1
-gunicorn==20.1.0
+gunicorn==22.0.0
 newrelic==8.8.0
 
 # For the persistence stores
