@@ -6,7 +6,7 @@ gunicorn==22.0.0
 newrelic==9.13.0
 
 # For the persistence stores
-psycopg2-binary==2.9.6
+psycopg2-binary==2.9.9
 dj-database-url==2.0.0
 
 # Model Tools
