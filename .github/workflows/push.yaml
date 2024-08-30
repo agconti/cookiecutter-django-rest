@@ -27,7 +27,7 @@ jobs:
         pip install --user cookiecutter
         cookiecutter gh:agconti/cookiecutter-django-rest --checkout $BRANCH_NAME --no-input
     - name: Build image
-      run: docker compose build web
+      run: docker compose up -d --build
     
     - name: Run Web tests
       run: docker run --rm app bash -c "flake8 . &&
