@@ -1,14 +1,20 @@
 from rest_framework import permissions
 
 
-class IsUserOrReadOnly(permissions.BasePermission):
+class IsUserOrCreatingAccountOrReadOnly(permissions.BasePermission):
     """
-    Object-level permission to only allow owners of an object to edit it.
+    Object-level permission that allows users to create accounts or edit their
+    own accounts.
     """
 
     def has_object_permission(self, request, view, obj):
-
-        if request.method in permissions.SAFE_METHODS:
+        user_is_making_new_account = self.action == 'create'
+        if user_is_making_new_account:
+            return True
+        
+        is_read_only_action = request.method in permissions.SAFE_METHODS
+        if is_read_only_action:
             return True
 
-        return obj == request.user
+        is_accessing_their_own_user_object = obj == request.user
+        return is_accessing_their_own_user_object

@@ -1,7 +1,6 @@
 from rest_framework import viewsets, mixins
-from rest_framework.permissions import AllowAny
 from .models import User
-from .permissions import IsUserOrReadOnly
+from .permissions import IsUserOrCreatingAccountOrReadOnly
 from .serializers import CreateUserSerializer, UserSerializer
 
 
@@ -13,14 +12,10 @@ class UserViewSet(mixins.RetrieveModelMixin,
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = (IsUserOrReadOnly,)
+    permission_classes = (IsUserOrCreatingAccountOrReadOnly,)
 
-
-class UserCreateViewSet(mixins.CreateModelMixin,
-                        viewsets.GenericViewSet):
-    """
-    Creates user accounts
-    """
-    queryset = User.objects.all()
-    serializer_class = CreateUserSerializer
-    permission_classes = (AllowAny,)
+    def get_serialzier_class(self):
+        is_creating_a_new_user = self.action == 'create'
+        if is_creating_a_new_user:
+            return CreateUserSerializer
+        return self.serializer_class
