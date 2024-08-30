@@ -1,7 +1,6 @@
-version: '3'
 services:
   postgres:
-    image: postgres:11.6
+    image: postgres:16.4
   web:
     restart: always
     environment:
