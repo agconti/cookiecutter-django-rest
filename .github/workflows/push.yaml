@@ -1,4 +1,6 @@
 name: CI
+env:
+  BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
 on:
   push:
     branches: master
@@ -23,7 +25,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install --user cookiecutter
-        cookiecutter gh:agconti/cookiecutter-django-rest --no-input
+        cookiecutter gh:agconti/cookiecutter-django-rest --checkout $BRANCH_NAME --no-input
     - name: Build image
       run: docker compose build web
     
