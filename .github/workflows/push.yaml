@@ -29,5 +29,6 @@ jobs:
     
     - name: Run Web tests
       run: docker compose run --rm web bash -c "flake8 . &&
-                                                python wait_for_postgres.py &&
-                                                python -Wall ./manage.py test"
+                                                python3 wait_for_postgres.py &&
+                                                python3 -Wall ./manage.py check --deploy &&
+                                                python3 -m pytest"
