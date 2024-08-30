@@ -21,7 +21,7 @@ django-filter==24.3
 # Developer Tools
 ipdb==0.13.13
 ipython==8.26.0
-mkdocs==1.6.0
+mkdocs==1.6.1
 flake8==7.1.1
 
 # Testing
@@ -33,5 +33,5 @@ coverage==7.6.1
 
 # Static and Media Storage
 django-storages==1.14.4
-boto3==1.35.8
+boto3==1.35.9
 
