@@ -1,10 +1,12 @@
 from django.test import TestCase
 from django.forms.models import model_to_dict
 from django.contrib.auth.hashers import check_password
+import pytest
 from .factories import UserFactory
 from ..serializers import CreateUserSerializer
 
 
+@pytest.mark.django_db
 class TestCreateUserSerializer(TestCase):
 
     def setUp(self):
