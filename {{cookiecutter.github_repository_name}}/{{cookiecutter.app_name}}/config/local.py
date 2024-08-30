@@ -15,7 +15,6 @@ class Local(Common):
         '-s',
         '--nologcapture',
         '--with-coverage',
-        '--with-progressive',
         '--cover-package={{cookiecutter.app_name}}'
     ]
 
