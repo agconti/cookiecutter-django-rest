@@ -12,7 +12,7 @@ class TestCreateUserSerializer(TestCase):
 
     def test_serializer_with_empty_data(self):
         serializer = CreateUserSerializer(data={})
-        assert serializer.is_valid() == False
+        assert serializer.is_valid() is False
 
     def test_serializer_with_valid_data(self):
         serializer = CreateUserSerializer(data=self.user_data)

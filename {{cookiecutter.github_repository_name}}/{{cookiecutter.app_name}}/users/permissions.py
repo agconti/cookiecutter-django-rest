@@ -11,7 +11,7 @@ class IsUserOrCreatingAccountOrReadOnly(permissions.BasePermission):
         user_is_making_new_account = view.action == 'create'
         if user_is_making_new_account:
             return True
-        
+
         is_read_only_action = request.method in permissions.SAFE_METHODS
         if is_read_only_action:
             return True
