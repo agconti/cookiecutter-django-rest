@@ -4,7 +4,8 @@ from .permissions import IsUserOrCreatingAccountOrReadOnly
 from .serializers import CreateUserSerializer, UserSerializer
 
 
-class UserViewSet(mixins.RetrieveModelMixin,
+class UserViewSet(mixins.CreateModelMixin,
+                  mixins.RetrieveModelMixin,
                   mixins.UpdateModelMixin,
                   viewsets.GenericViewSet):
     """
@@ -14,7 +15,7 @@ class UserViewSet(mixins.RetrieveModelMixin,
     serializer_class = UserSerializer
     permission_classes = (IsUserOrCreatingAccountOrReadOnly,)
 
-    def get_serialzier_class(self):
+    def get_serializer_class(self):
         is_creating_a_new_user = self.action == 'create'
         if is_creating_a_new_user:
             return CreateUserSerializer
