@@ -25,7 +25,7 @@ flake8==7.1.1
 # Testing
 mock==5.1.0
 factory-boy==3.3.1
-django-nose==1.4.7
+pytest-django==4.8.0
 coverage==7.6.1
 
 # Static and Media Storage
