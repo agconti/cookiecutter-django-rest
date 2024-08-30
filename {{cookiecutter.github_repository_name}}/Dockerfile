@@ -1,15 +1,19 @@
-FROM python:3.12-alpine as base
+FROM python:3.12-slim as base
 FROM base as builder
 
-RUN mkdir /install
-WORKDIR /install
-
 # Allows docker to cache installed dependencies between builds
-COPY requirements.txt /requirements.txt
-RUN pip install --config-settings="--prefix=/install" -r /requirements.txt
+RUN apt-get update && apt-get -y install libpq-dev gcc
+COPY ./requirements.txt requirements.txt
+RUN pip3 install --no-cache-dir --target=packages -r requirements.txt
 
 FROM base as runtime
-COPY --from=builder /install /usr/local
+COPY --from=builder packages /usr/lib/python3.12/site-packages
+ENV PYTHONPATH=/usr/lib/python3.12/site-packages
+
+# Security Context 
+RUN useradd -m nonroot
+USER nonroot
+
 COPY . code
 WORKDIR code
 
