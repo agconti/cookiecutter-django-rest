@@ -31,6 +31,7 @@ jobs:
     
     - name: Run Web tests
       run: docker compose run --rm web bash -c "python3 -m flake8 . &&
-                                                python3 wait_for_postgres.py &&
                                                 python3 -Wall ./manage.py check --deploy &&
-                                                python3 -m pytest --ds=piedpiper.settings --dc=Local"
+                                                python3 wait_for_postgres.py &&
+                                                python3 -m pytest --ds=piedpiper.config --dc=Local -p no:cacheprovider -s"
+

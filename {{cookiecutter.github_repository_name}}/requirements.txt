@@ -1,5 +1,4 @@
 # Core
-pytz==2024.1
 Django==5.1
 django-configurations==2.5.1
 gunicorn==23.0.0
@@ -15,7 +14,6 @@ django_unique_upload==0.2.1
 
 # Rest apis
 djangorestframework==3.15.2
-Markdown==3.7
 django-filter==24.3
 
 # Developer Tools
@@ -27,8 +25,7 @@ flake8==7.1.1
 # Testing
 mock==5.1.0
 factory-boy==3.3.1
-django-nose==1.4.7
-nose-progressive==1.5.2
+pytest-django==4.8.0
 coverage==7.6.1
 
 # Static and Media Storage
