@@ -24,7 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install --user cookiecutter
         cookiecutter gh:agconti/cookiecutter-django-rest --no-input
-
     - name: Start docker-compose
       run: docker compose up -d
     
