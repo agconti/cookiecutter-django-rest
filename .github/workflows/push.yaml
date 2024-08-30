@@ -24,11 +24,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install --user cookiecutter
         cookiecutter gh:agconti/cookiecutter-django-rest --no-input
-    - name: Start docker-compose
-      run: docker compose up -d
+    - name: Build image
+      run: docker compose build web
     
     - name: Run Web tests
-      run: docker compose run --rm web bash -c "flake8 . &&
+      run: docker run --rm app bash -c "flake8 . &&
                                                 python3 wait_for_postgres.py &&
                                                 python3 -Wall ./manage.py check --deploy &&
                                                 python3 -m pytest"
