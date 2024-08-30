@@ -30,7 +30,7 @@ jobs:
       run: docker compose up -d --build
     
     - name: Run Web tests
-      run: docker run --rm web bash -c "flake8 . &&
-                                        python3 wait_for_postgres.py &&
-                                        python3 -Wall ./manage.py check --deploy &&
-                                        python3 -m pytest"
+      run: docker compose run --rm web bash -c "flake8 . &&
+                                                python3 wait_for_postgres.py &&
+                                                python3 -Wall ./manage.py check --deploy &&
+                                                python3 -m pytest"
