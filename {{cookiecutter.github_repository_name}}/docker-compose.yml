@@ -1,14 +1,15 @@
-version: '3'
 services:
   postgres:
-    image: postgres:11.6
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    image: postgres:16.4
   web:
     restart: always
     environment:
       - DJANGO_SECRET_KEY=local
     build: ./
     command: >
-      bash -c "python wait_for_postgres.py &&
+      bash -c "python3 wait_for_postgres.py &&
                ./manage.py migrate &&
                ./manage.py runserver 0.0.0.0:8000"
     volumes:
@@ -20,7 +21,7 @@ services:
   documentation:
     restart: always
     build: ./
-    command: "mkdocs serve"
+    command: "python3 -m mkdocs serve"
     volumes:
       - ./:/code
     ports:
