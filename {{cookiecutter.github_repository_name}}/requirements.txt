@@ -2,7 +2,7 @@
 Django==5.1.2
 django-configurations==2.5.1
 gunicorn==23.0.0
-newrelic==9.13.0
+newrelic==10.1.0
 
 # For the persistence stores
 psycopg2-binary==2.9.9
