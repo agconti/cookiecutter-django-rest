@@ -6,7 +6,7 @@ newrelic==10.3.0
 
 # For the persistence stores
 psycopg2-binary==2.9.10
-dj-database-url==2.2.0
+dj-database-url==2.3.0
 
 # Model Tools
 django-model-utils==4.5.1
