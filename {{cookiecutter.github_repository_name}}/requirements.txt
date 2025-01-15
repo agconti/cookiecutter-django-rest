@@ -2,7 +2,7 @@
 Django==5.1.5
 django-configurations==2.5.1
 gunicorn==23.0.0
-newrelic==10.3.0
+newrelic==10.3.1
 setuptools==75.6.0
 
 # For the persistence stores
@@ -19,7 +19,7 @@ django-filter==24.3
 
 # Developer Tools
 ipdb==0.13.13
-ipython==8.29.0
+ipython==8.30.0
 mkdocs==1.6.1
 flake8==7.1.1
 
@@ -27,9 +27,9 @@ flake8==7.1.1
 mock==5.1.0
 factory-boy==3.3.1
 pytest-django==4.9.0
-coverage==7.6.8
+coverage==7.6.9
 
 # Static and Media Storage
 django-storages==1.14.4
-boto3==1.35.68
+boto3==1.35.76
 
