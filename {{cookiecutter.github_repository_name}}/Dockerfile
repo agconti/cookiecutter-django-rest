@@ -1,4 +1,4 @@
-FROM python:3.12.4-slim as base
+FROM python:3.13-slim as base
 FROM base as builder
 
 # Allows docker to cache installed dependencies between builds

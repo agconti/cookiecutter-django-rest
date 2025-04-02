@@ -6,12 +6,6 @@
     <a href="https://github.com/agconti/cookiecutter-django-rest/actions/workflows/push.yaml">
       <img src="https://github.com/agconti/cookiecutter-django-rest/actions/workflows/push.yaml/badge.svg?branch=master" alt="Build Status">
     </a>
-    <a href="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/">
-      <img src="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/shield.svg" alt="Dependencies">
-    </a>
-    <a href="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/">
-      <img src="https://pyup.io/repos/github/agconti/cookiecutter-django-rest/python-3-shield.svg" alt="Python 3">
-    </a>
   </p>
 </p>
 
