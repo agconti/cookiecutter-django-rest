@@ -1,4 +1,4 @@
-FROM python:3.13 as base
+FROM python:bookworm as base
 FROM base as builder
 
 # Allows docker to cache installed dependencies between builds
